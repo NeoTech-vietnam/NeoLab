@@ -1,5 +1,7 @@
 # NeoFilos — thiết kế lại hệ thống module
 
+> **NeoCam:** Bắt đầu phát triển module camera từ XIAO ESP32S3 Sense đã có. Xem [hình concept, đặc điểm và kế hoạch chuẩn bị NeoCam](../neocam/README.md). Pin riêng, nam châm, pogo và kết hợp module là mục tiêu cần kiểm chứng; nguyên mẫu đầu bắt đầu bằng xem hình qua Wi-Fi.
+
 > **Ý tưởng bổ sung:** [Tấm lưng tích hợp vùng sạc điện thoại không dây có định vị từ tính](assets/neofilos-rear-wireless-phone-charging-v1.png), đồng thời hướng tới sạc module qua pogo. Vùng này cần bộ phát không dây riêng, nguồn USB-C phù hợp, quản lý công suất, nhiệt và kiểm tra an toàn; mặt kim loại trong hình chỉ minh họa, cần vật liệu/kết cấu phù hợp cuộn dây. Tương thích điện thoại, căn chỉnh, khả năng giữ từ, sạc đồng thời và độ ổn định chân đỡ cần kiểm chứng; không khẳng định sạc được mọi điện thoại.
 
 > **Điều chỉnh mới nhất:** Thay thanh sạc nằm trên bàn bằng [tấm sạc mỏng gắn sau các module khi đồng hồ vẫn đứng](assets/neofilos-rear-charging-plate-v1.png). Tấm nhận nguồn USB-C, cấp điện qua các cặp pogo tới nhiều module cùng lúc; mỗi module có hai tiếp điểm sạc phía sau. Hình chỉ minh họa ý tưởng: vị trí, số chân và khả năng tiếp cận các module hai bên chưa khớp yêu cầu và cần thiết kế lại; cách đứng và tấm sạc phải phối hợp về cơ khí. Các mô tả thanh sạc, dock và adapter cũ phía dưới là lịch sử.
