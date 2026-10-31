@@ -1,0 +1,6 @@
+{
+  "mode": "built-in image_gen",
+  "reference": "neo-clock-five-module-layout-v3.png",
+  "output": "neo-clock-single-device-charging-v4.png",
+  "prompt": "Edit the supplied product concept image. Preserve the recognizable Neo modular desk clock: rectangular display, exactly three minimalist detachable modules on top (plain AI + Wi-Fi at upper left without speaker or microphone, camera centered, environmental sensor upper right) and exactly two side ear modules (audio left, small light right). Rework the dock to be smaller and attractive, with exactly ONE usable external device charging location: a single clearly visible circular wireless charging pad on its top front-right, holding ONE smartphone. Dock also powers the attached clock and modules separately through its mounting, and receives power from ONE USB-C input cable at the rear or side. No other phone, smartwatch, earbuds, charging locations, extra USB output ports, or charging devices. Preserve balanced brushed aluminum, black glass, minimal premium design, accessible pad, realistic scale, desk setting, beautiful uncluttered layout. A simple single large three-quarter product visual, no extra diagrams, no invented capabilities, no labels or text necessary. This is a concept render, not an engineering blueprint."
+}

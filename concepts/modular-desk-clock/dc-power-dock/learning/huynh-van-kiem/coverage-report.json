@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-30",
+  "evidence_type": "Structural page-range coverage of reading maps, not learner progress or hardware validation",
+  "pdf_page_total": 129,
+  "chapters": [
+    {
+      "chapter": 1,
+      "filename": "Chuong1_Modau.pdf",
+      "pages": 8,
+      "reading_map_rows": 17,
+      "covered_pages": 8,
+      "missing_pages": [],
+      "out_of_range_pages": []
+    },
+    {
+      "chapter": 2,
+      "filename": "chuong2_Linh_kien_CS.pdf",
+      "pages": 17,
+      "reading_map_rows": 28,
+      "covered_pages": 17,
+      "missing_pages": [],
+      "out_of_range_pages": []
+    },
+    {
+      "chapter": 3,
+      "filename": "Chuong3_DK_ap_AC.pdf",
+      "pages": 15,
+      "reading_map_rows": 25,
+      "covered_pages": 15,
+      "missing_pages": [],
+      "out_of_range_pages": []
+    },
+    {
+      "chapter": 4,
+      "filename": "Chuong4_Chinh_luu_DK_pha.pdf",
+      "pages": 37,
+      "reading_map_rows": 69,
+      "covered_pages": 37,
+      "missing_pages": [],
+      "out_of_range_pages": []
+    },
+    {
+      "chapter": 5,
+      "filename": "Chuong5_Bo_bien_doi_ap_mot_chieu.pdf",
+      "pages": 24,
+      "reading_map_rows": 28,
+      "covered_pages": 24,
+      "missing_pages": [],
+      "out_of_range_pages": []
+    },
+    {
+      "chapter": 6,
+      "filename": "Chuong6_Nghich_luu_doc_lap_va_bien_tan.pdf",
+      "pages": 28,
+      "reading_map_rows": 34,
+      "covered_pages": 28,
+      "missing_pages": [],
+      "out_of_range_pages": []
+    }
+  ],
+  "local_links_checked": 17,
+  "errors": []
+}

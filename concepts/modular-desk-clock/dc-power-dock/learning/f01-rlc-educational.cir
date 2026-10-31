@@ -1,0 +1,15 @@
+* DOCK-F01 - Mo hinh RLC mot tan so de hoc; KHONG phai mach Qi/Qi2.
+* Nguon ly tuong xung hai cuc la mo hinh ap ngo ra cau H, KHONG mo phong 4 MOSFET.
+* R = toan bo dien tro tuong duong o tan so co ban, bao gom ton hao va tai quy doi.
+* Gia dinh doc lap: Vdc = 12 V; f = 150 kHz; L = 10 uH; C = 112.579 nF.
+* Chu y: khong co cuon RX, chinh luu, giao thuc Qi, pin, FOD hay linh kien thuc.
+Vbridge src 0 PULSE(-12 12 0 1n 1n 3.332333u 6.666667u)
+Rtotal src n1 3.735104
+Lcoil n1 n2 10u
+Cres n2 0 112.579093n
+.tran 0 400u 0 5n
+.meas TRAN i_coil_rms RMS I(Lcoil) FROM 200u TO 400u
+.meas TRAN i_coil_peak MAX I(Lcoil) FROM 200u TO 400u
+.meas TRAN v_cap_rms RMS V(n2) FROM 200u TO 400u
+.meas TRAN v_cap_peak MAX V(n2) FROM 200u TO 400u
+.end

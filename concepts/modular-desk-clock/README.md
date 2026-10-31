@@ -1,5 +1,13 @@
 # Modular AI Desk Clock
 
+**Cập nhật 2026-10-31 — NeoFilos:** Tên và kiến trúc module mới được mô tả trong [Thiết kế hệ thống NeoFilos](neofilos-system-design.md). Các quyết định mới về pin riêng, BLE Mesh và kết hợp hai module được ưu tiên khi khác với tài liệu lịch sử bên dưới; ngoại hình v7 và các mục tiêu dock vẫn được kế thừa trong phạm vi đã nêu.
+
+**Concept đã chốt ngày 2026-10-30:** [Mốc sản phẩm và các quyết định hiện tại](approved-concept.md), theo [hình v7](assets/neo-clock-hidden-support-dock-v7.png). Màn hình sát dock với chân đỡ ẩn; dock dùng luân phiên cho đồng hồ, điện thoại sạc không dây hoặc thiết bị qua USB-C. Mốc này được ưu tiên khi khác với mô tả và kế hoạch kỹ thuật trước đó bên dưới.
+
+**Đặc điểm dock:** [Danh sách 10 đặc điểm sản phẩm đã ghi nhận](dc-power-dock/product-features.md), gồm cách sạc, pin dự phòng, chuyển nguồn, báo trạng thái, định vị, bảo vệ và bảo trì.
+
+**Trọng tâm hiện tại (2026-10-30):** Ưu tiên định nghĩa và kiểm chứng **DC Power Dock** trước khi tích hợp prototype đồng hồ đầy đủ ở mục 5. Tải đầu tiên là lõi đồng hồ cơ bản và màn hình; mục tiêu di động là mang cả cụm đồng hồ cùng đế để sử dụng trong vài giờ. Công suất và thời lượng cụ thể cần đo/chốt trong [hồ sơ kế hoạch DC Power Dock](dc-power-dock/README.md). Các thông số từ hình concept vẫn là giả thuyết thiết kế.
+
 ## 1. Giới thiệu concept
 
 Modular AI Desk Clock là thiết bị đồng hồ để bàn tích hợp trợ lý AI, được thiết kế theo kiến trúc mô-đun. Người dùng có thể tháo lắp, thay thế và nâng cấp từng bộ phận theo nhu cầu.

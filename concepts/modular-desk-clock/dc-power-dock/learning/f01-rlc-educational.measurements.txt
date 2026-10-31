@@ -1,0 +1,8 @@
+.meas tran i_coil_rms rms i(lcoil) from 200u to 400u:
+        2.89636
+.meas tran i_coil_peak max i(lcoil) from 200u to 400u:
+        4.08472 (at Time=0.000241564)
+.meas tran v_cap_rms rms v(n2) from 200u to 400u:
+        27.2633
+.meas tran v_cap_peak max v(n2) from 200u to 400u:
+        38.7965 (at Time=0.000243413)

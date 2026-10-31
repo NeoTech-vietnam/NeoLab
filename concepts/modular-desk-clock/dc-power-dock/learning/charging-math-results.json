@@ -1,0 +1,74 @@
+{
+  "evidence_type": "Analytical models and numerical integration only",
+  "limitations": "No circuit simulation, SPICE run, pack selection or hardware test",
+  "original_ideal_bridge": {
+    "resistance_ohm": 2.3248353048152,
+    "conduction_start_ms": 1.2603816188905377,
+    "average_a": 40.00000000192191,
+    "rms_a": 51.03191934203758,
+    "peak_a": 82.2109778383951,
+    "resistor_loss_w": 6054.468132223852,
+    "ideal_emf_power_w": 4800.00000023063,
+    "useful_emf_efficiency": 0.4422142053997834
+  },
+  "dc_resistor_counterexample": [
+    {
+      "battery_v": 3.0,
+      "current_a": 1.25,
+      "resistor_loss_w": 2.5,
+      "battery_terminal_power_w": 3.75
+    },
+    {
+      "battery_v": 3.7,
+      "current_a": 0.8124999999999999,
+      "resistor_loss_w": 1.0562499999999997,
+      "battery_terminal_power_w": 3.0062499999999996
+    },
+    {
+      "battery_v": 4.2,
+      "current_a": 0.4999999999999999,
+      "resistor_loss_w": 0.39999999999999986,
+      "battery_terminal_power_w": 2.0999999999999996
+    }
+  ],
+  "power_budget_assumptions": {
+    "clock_w": 2.0,
+    "system_efficiency": 0.9,
+    "charge_efficiency": 0.9,
+    "overhead_w": 0.1,
+    "battery_terminal_v": 4.2,
+    "example_charge_set_a": 0.5
+  },
+  "power_budgets": [
+    {
+      "source_v": 5.0,
+      "allowed_input_a": 0.5,
+      "available_input_w": 2.5,
+      "input_headroom_w": 0.1777777777777776,
+      "charge_budget_before_pack_limits_a": 0.03809523809523806,
+      "charge_a_after_example_set_limit": 0.03809523809523806,
+      "source_cannot_sustain_assumed_clock": false
+    },
+    {
+      "source_v": 5.0,
+      "allowed_input_a": 1.5,
+      "available_input_w": 7.5,
+      "input_headroom_w": 5.177777777777777,
+      "charge_budget_before_pack_limits_a": 1.1095238095238094,
+      "charge_a_after_example_set_limit": 0.5,
+      "source_cannot_sustain_assumed_clock": false
+    }
+  ],
+  "input_required_for_example_full_charge_w": 4.655555555555555,
+  "battery_energy_example": {
+    "nominal_wh": 18.5,
+    "delivered_wh_before_extra_overhead": 12.58,
+    "runtime_at_2w_h_before_extra_overhead": 6.29
+  },
+  "contact_example": {
+    "loop_ohm": 0.1,
+    "current_a": 2.0,
+    "drop_v": 0.2,
+    "loss_w": 0.4
+  }
+}
