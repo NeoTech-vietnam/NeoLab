@@ -15,6 +15,10 @@ Ngày ghi nhận: **2026-10-31**. Các mục dưới đây là mục tiêu phát
 | **CAM-F07** | **Nắp che và đèn báo:** che ống kính bằng tay, biết khi camera đang chụp/truyền. | Hành trình nắp, vùng che hoàn toàn, điều khiển chỉ báo, GPIO phù hợp. Nắp đóng vẫn có thể để camera lấy khung hình tối; chưa chốt cơ chế cắt nguồn cảm biến. | P2, P5 |
 | **CAM-F08** | **Điều khiển qua BLE Mesh:** nhận yêu cầu chụp, báo trạng thái sẵn sàng/bận/lỗi/kết quả. | Provisioning, quyền, model/định dạng thông điệp, phản hồi, timeout, gửi trùng và hoạt động cùng Wi-Fi. Không dùng Mesh để stream hình. | P4 |
 
+## Yêu cầu bổ sung: quay video độc lập có âm thanh
+
+Người dùng đã xác định NeoCam cần **quay cả hình và tiếng khi hoạt động độc lập**, không cần gắn màn hình hoặc module Neo khác. Đây là yêu cầu cần phát triển và kiểm chứng, chưa phải chức năng đã hoạt động. Xem [bài toán đang xét và hệ thống nguồn](standalone-video-audio-problem.md). Tám mã ban đầu và ảnh concept được giữ nguyên để đối chiếu.
+
 ## Phạm vi theo phiên bản thử
 
 **Nguyên mẫu V0 trên bàn:** camera chạy từ USB, chụp và xem hình qua Wi-Fi. Giữ ảnh/log để xác nhận phần camera trước. V0 chưa hoàn thành các mục tiêu pin, nam châm, pogo hay kết hợp module.
@@ -37,7 +41,6 @@ Các cặp cần được thử sau thiết lập mạng, với chỉ hai module
 ## Ý tưởng mở rộng chưa đưa vào bản đầu
 
 - Phát hiện chuyển động và báo động qua module âm thanh.
-- Ghi video: nghiên cứu dung lượng lưu, chất lượng, thời lượng và nhiệt.
 - Webcam cho máy tính: cần chọn giao thức và chứng minh tương thích; không coi demo web qua Wi-Fi là webcam USB.
 - Phân tích hình ảnh nâng cao với module AI; không hứa chạy mô hình AI lớn trên XIAO.
 

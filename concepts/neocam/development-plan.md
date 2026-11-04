@@ -4,6 +4,8 @@ Ngày: **2026-10-31**. Bắt đầu bằng XIAO ESP32S3 Sense đã có, rồi ph
 
 **Framework đã chọn: ESP-IDF**, dùng từ P0 đến tích hợp camera, Wi-Fi, microSD và BLE Mesh. Camera dùng component `espressif/esp32-camera`; phiên bản ESP-IDF và component cần được chọn tương thích và lưu cùng cấu hình dự án.
 
+**Cập nhật 2026-11-03:** người dùng đã xác định yêu cầu quay video độc lập có hình và tiếng. Xem [bài toán và những điều chưa chốt](standalone-video-audio-problem.md). Các chặng P0–P6 bên dưới được ghi trước yêu cầu này và chưa phải kế hoạch kiểm chứng đầy đủ cho video có âm thanh.
+
 ## 1. Chuẩn bị vật tư và công cụ
 
 | Hạng mục | Cần cho | Việc cần làm |
@@ -46,7 +48,7 @@ Ngày: **2026-10-31**. Bắt đầu bằng XIAO ESP32S3 Sense đã có, rồi ph
 
 ### P3 Đo tải và chọn pin
 
-Lập bảng tải cho: khởi động, chờ, chụp, ghi SD, xem Wi-Fi liên tục và ngủ. Ghi vị trí đo, điện áp, dòng trung bình, dòng đỉnh đo được, nhiệt, thời gian và độ sáng/độ phân giải liên quan. Ghi riêng số đo USB và số đo tại đường pin.
+Lập bảng tải cho: khởi động, chờ, chụp, quay video có âm thanh và ghi dữ liệu, xem Wi-Fi liên tục và ngủ. Ghi vị trí đo, điện áp, dòng trung bình, dòng đỉnh đo được, nhiệt, thời gian và độ sáng/độ phân giải liên quan. Ghi riêng số đo USB và số đo tại đường pin; chưa xác định chế độ nào có dòng lớn nhất.
 
 Tính gần đúng theo năng lượng:
 

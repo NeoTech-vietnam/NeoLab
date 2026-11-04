@@ -1,8 +1,8 @@
 # NeoCam
 
-NeoCam là module camera của NeoFilos, hướng tới chụp ảnh, dùng độc lập bằng pin riêng, gắn bằng nam châm và kết hợp với các module Neo. Nguyên mẫu đầu tiên bắt đầu từ **Seeed Studio XIAO ESP32S3 Sense mà người dùng đã có**. Ưu tiên hiện tại là giá thấp và kiểm chứng từng chức năng trên board trước khi làm PCB, pin và vỏ riêng.
+NeoCam là module camera của NeoFilos, hướng tới chụp ảnh, quay video có âm thanh, dùng độc lập bằng pin riêng, gắn bằng nam châm và kết hợp với các module Neo. Nguyên mẫu đầu tiên bắt đầu từ **Seeed Studio XIAO ESP32S3 Sense mà người dùng đã có**. Ưu tiên hiện tại là giá thấp và kiểm chứng từng chức năng trên board trước khi làm PCB, pin và vỏ riêng.
 
-Ngày cập nhật: **2026-10-31**. Trạng thái: **concept và kế hoạch chuẩn bị; chưa có kết quả chạy trên board trong hồ sơ này**.
+Ngày cập nhật: **2026-11-04**. Trạng thái: **concept và kế hoạch chuẩn bị; chưa có kết quả chạy trên board trong hồ sơ này**.
 
 ![Concept NeoCam và tám đặc điểm dự kiến](assets/neocam-features-v1.png)
 
@@ -10,10 +10,25 @@ Ngày cập nhật: **2026-10-31**. Trạng thái: **concept và kế hoạch ch
 
 Ảnh minh họa thiết kế sản phẩm, không phải ảnh board XIAO hay bản vẽ chế tạo. Kích thước, nội thất, nắp che, nút, đèn và vị trí tiếp điểm cần được thiết kế theo phần cứng thật.
 
+## Mind map NeoCam
+
+Sơ đồ có hai nhánh: **hoạt động độc lập** và **kết hợp**. Nhánh kết hợp để trống để phát triển sau. Các chức năng độc lập là mục tiêu cần kiểm chứng; việc xem ảnh/video vẫn cần thiết bị có màn hình.
+
+![Mind map NeoCam: độc lập và kết hợp](assets/neocam-standalone-mindmap.drawio.svg)
+
+[Mở tệp draw.io để chỉnh sửa](assets/neocam-standalone-mindmap.drawio) · [Bản SVG có dữ liệu sơ đồ](assets/neocam-standalone-mindmap.drawio.svg)
+
+Sau khi sửa tệp `.drawio`, hãy xuất lại SVG và bật **Include a copy of my diagram** để ảnh xem trước trên GitHub khớp với bản chỉnh sửa.
+
 ## Hồ sơ phát triển
 
 | Tài liệu | Nội dung |
 |---|---|
+| [Bài toán quay video độc lập có âm thanh](standalone-video-audio-problem.md) | Yêu cầu đang xét, bài toán nguồn, dữ liệu cần xác định và giới hạn bằng chứng. |
+| [Đọc mạch nguồn XIAO ESP32-S3 Sense](xiao-esp32s3-power-circuit.md) | Sơ đồ nguồn và sạc V1.51 của Seeed, cách tính dòng sạc và các thông số nguồn còn mở. |
+| [Phân tích pin 1S, PCM và điện áp tối thiểu](battery-pcm-voltage-analysis.md) | Cách đối chiếu cell/PCM, các bài tính bảo vệ và sụt áp, giới hạn điện áp và các thông số còn mở. |
+| [Đánh giá OV3660 qua Wi-Fi](ov3660-wifi-quality-evaluation.md) | Thông số sensor có nguồn và cách xác định chất lượng stream thực tế. |
+| [Phân tích OV3660 → ESP32-S3 → Wi-Fi](esp32s3-ov3660-wifi-analysis.md) | Đường dữ liệu, giới hạn datasheet, số liệu Espressif và phép tính băng thông. |
 | [Đặc điểm NeoCam](product-features.md) | Tám đặc điểm CAM-F01 đến CAM-F08, phạm vi thử nghiệm và các ý tưởng mở rộng. |
 | [Kế hoạch chuẩn bị và phát triển](development-plan.md) | Vật tư, trình tự thử, tiêu chí kiểm chứng, đo pin và hồ sơ cần lưu. |
 | [Kiến trúc NeoFilos](../modular-desk-clock/neofilos-system-design.md) | Quan hệ giữa các module và lịch sử thiết kế hệ thống. |
@@ -24,7 +39,7 @@ Ngày cập nhật: **2026-10-31**. Trạng thái: **concept và kế hoạch ch
 
 Theo [Seeed Studio](https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/), bản Sense có ESP32-S3, 8 MB PSRAM, 8 MB Flash, camera, microphone số và khe microSD. Có USB-C và hỗ trợ pin sạc phù hợp. Những khả năng này cần firmware và cấu hình đúng để trở thành chức năng NeoCam.
 
-Camera trên các đợt board có thể khác nhau, gồm OV2640, OV3660 hoặc OV5640. Cần đọc sensor PID trên board đang có trước khi chốt độ phân giải, khả năng lấy nét và đặc tính tiêu thụ. Microphone có sẵn trên board không tự trở thành đặc điểm đã chốt của sản phẩm NeoCam; chức năng âm thanh chính vẫn thuộc module âm thanh riêng.
+Camera trên các đợt board có thể khác nhau, gồm OV2640, OV3660 hoặc OV5640. Cần đọc sensor PID trên board đang có trước khi chốt độ phân giải, khả năng lấy nét và đặc tính tiêu thụ. Người dùng đã xác định NeoCam cần quay video kèm âm thanh khi hoạt động độc lập; việc thu âm bằng microphone trên board và ghi đồng thời với hình cần được kiểm chứng. Module loa là module riêng.
 
 ## Nguyên tắc thiết kế
 
@@ -34,6 +49,8 @@ Camera trên các đợt board có thể khác nhau, gồm OV2640, OV3660 hoặc
 - **Dễ bảo trì, ưu tiên rẻ:** bố trí vỏ có thể mở, nghiên cứu thay pin, giữ khoảng trống cho antenna và nhiệt; dùng board có sẵn để tránh mua lặp trước khi đo.
 - **Giá:** yêu cầu ngân sách trước đó “1 triệu cho 5 bộ” còn cần xác định phạm vi. Chưa phân bổ một giá trần riêng cho NeoCam và chưa có BOM sản xuất. Khi lập BOM phải ghi cả chi phí tăng thêm với board đã có và chi phí làm lại một NeoCam hoàn chỉnh.
 
-## Việc đầu tiên
+## Chuẩn bị nguyên mẫu
+
+Bài toán hiện đang xét là [quay video độc lập có âm thanh và hệ thống nguồn cho chế độ đó](standalone-video-audio-problem.md). Các bước chuẩn bị board dưới đây chưa phải bằng chứng rằng chức năng này đã hoạt động.
 
 Kiểm tra đúng board/camera/antenna và cáp USB dữ liệu, ghi phiên bản ESP-IDF, thiết lập target `esp32s3` và PSRAM đúng board, rồi nạp chương trình đọc thông tin camera. Dùng [component camera chính thức của Espressif](https://github.com/espressif/esp32-camera) để chụp ảnh, sau đó thêm xem hình qua Wi-Fi nội bộ; đối chiếu pin map với [tài liệu XIAO của Seeed](https://wiki.seeedstudio.com/xiao_esp32s3_camera_usage/). Đầu ra đầu tiên là ảnh thật và log chạy; không cần chờ hệ đồng hồ hoàn chỉnh.
