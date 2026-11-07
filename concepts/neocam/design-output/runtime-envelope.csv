@@ -1,0 +1,9 @@
+﻿recording_average_mA_scenario,recording_minutes_target,recording_mAh,boot_close_reserve_mAh_allocation,required_usable_mAh,fraction_of_800mAh_label,fraction_of_1000mAh_label,classification
+150,45,112.5,50.0,162.5,0.203125,0.1625,requirement_scenario_not_runtime_prediction
+250,45,187.5,50.0,237.5,0.296875,0.2375,requirement_scenario_not_runtime_prediction
+300,45,225.0,50.0,275.0,0.34375,0.275,requirement_scenario_not_runtime_prediction
+350,45,262.5,50.0,312.5,0.390625,0.3125,requirement_scenario_not_runtime_prediction
+500,45,375.0,50.0,425.0,0.53125,0.425,requirement_scenario_not_runtime_prediction
+750,45,562.5,50.0,612.5,0.765625,0.6125,requirement_scenario_not_runtime_prediction
+800,45,600.0,50.0,650.0,0.8125,0.65,requirement_scenario_not_runtime_prediction
+1000,45,750.0,50.0,800.0,1.0,0.8,requirement_scenario_not_runtime_prediction

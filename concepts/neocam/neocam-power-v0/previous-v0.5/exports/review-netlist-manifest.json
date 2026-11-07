@@ -1,0 +1,21 @@
+{
+  "purpose": "Connectivity review; not a board fabrication/import netlist",
+  "main_source": "E:\\workspace\\NeoLab\\concepts\\neocam\\neocam-power-v0\\neocam-power-v0.kicad_sch",
+  "main_source_sha256": "586b3f4fddf5d34a50ae720e993b8e93100499f7d3e915584c2069ecfb63566d",
+  "only_changes": {
+    "R_MB9": {
+      "on_board": [
+        "no",
+        "yes"
+      ]
+    }
+  },
+  "unchanged": "All electrical pins, wires, labels, BOM flags and component values",
+  "normalization": "Only retained R9 on_board boolean replaced by an identical sentinel before hashing",
+  "unchanged_child_source_sha256": "fe9d33bde652fa06a996315d65aebb656ea959e752789268599a828ea8d07111",
+  "source_normalized_sha256": "8c5a593cd4fec2595082cf8e68e71ab44defe116cd9c2c5c2ee402d980ccfd8d",
+  "review_source_normalized_sha256": "8c5a593cd4fec2595082cf8e68e71ab44defe116cd9c2c5c2ee402d980ccfd8d",
+  "normalized_sources_identical": true,
+  "output": "neocam-power-v0-review-full.net",
+  "output_sha256": "d46e53dfd01910b903f3973eba1d839ffb8d9c18f41cdb3c5d769219679a198a"
+}

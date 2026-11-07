@@ -1,0 +1,6 @@
+﻿block,voltage_V,current_mA,power_W,kind,missing
+ESP32-S3,3.3,81.3,0.26829,typical_240MHz_dual_32bit_all_peripheral_clocks,actual_AV_workload_R8_memory_and_maximum
+OV3660_sensor,multiple,not_add_at_load_rails,0.1912,typical_external_DVDD_full_size_speed_compression,720p30_active_mean_peak_and_LDO_overhead
+microSD,3.3,109.0909090909091,0.36,conditional_default_speed_budget_averaged_1s,exact_Ultra_SKU_peak_inrush_write_busy
+microphone,1.8,0.67,0.001206,typical_1V8_2point4MHz_not_board_3V3,3V3_actual_clock_and_maximum
+MAX17048,pack_2.5_to_4.5,0.04,0.00016800000000000002,active_max_from_specified_electrical_table,board_leakage_and_I2C_pullup_activity

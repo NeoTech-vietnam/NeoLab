@@ -1,0 +1,6 @@
+﻿VCC_IN_V,input_reference_A_excluding_overhead,sensor_reference_W,input_reference_W,LDO_loss_W_excluding_overhead,efficiency_excluding_overhead,classification
+3.3,0.098,0.1912,0.3234,0.1322,0.5912183055040198,same_sensor_typical_point_not_720p_measurement
+3.5,0.098,0.1912,0.343,0.15180000000000002,0.5574344023323615,same_sensor_typical_point_not_720p_measurement
+3.7,0.098,0.1912,0.36260000000000003,0.17140000000000002,0.5273028130170987,same_sensor_typical_point_not_720p_measurement
+4.2,0.098,0.1912,0.4116,0.2204,0.4645286686103013,same_sensor_typical_point_not_720p_measurement
+5.0,0.098,0.1912,0.49,0.29879999999999995,0.3902040816326531,same_sensor_typical_point_not_720p_measurement

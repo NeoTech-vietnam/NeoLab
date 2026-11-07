@@ -1,0 +1,20 @@
+* NeoCam ADC isolation: ideal switch + explicit leakage stress, NOT TI model.
+* RT/RB/RP = 100k; capacitor BEFORE switch, not on ADC pin.
+* VDD is an imposed ramp, not an ESP32/mainboard regulator simulation.
+* 2uA source is a chosen off-leakage stress. It does not predict real leakage.
+Vpack pack 0 4.234
+Vdd vdd 0 PWL(0 0 1m 0 2m 3.3 80m 3.3 81m 0 120m 0)
+Rtop pack div 100k
+Rbottom div 0 100k
+Cfilter div 0 100n
+Siso div adc vdd 0 ISOLATION
+.model ISOLATION SW(Ron=2 Roff=1e12 Vt=1.5 Vh=0)
+Rpull adc 0 100k
+Boff 0 adc I=if(V(vdd)<1.5,2u,0)
+.tran 0 120m 0 10u
+.meas tran ADC_on FIND V(adc) AT=60m
+.meas tran DIV_on FIND V(div) AT=60m
+.meas tran ADC_off MAX V(adc) FROM=85m TO=120m
+.meas tran DIV_off FIND V(div) AT=120m
+.save V(pack) V(div) V(adc) V(vdd)
+.end

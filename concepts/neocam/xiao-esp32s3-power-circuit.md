@@ -2,6 +2,8 @@
 
 Ngày ghi nhận: **2026-11-03**. Đây là phân tích từ tài liệu hãng, chưa phải kết quả đo hoặc sơ đồ nguồn hoàn chỉnh của NeoCam. Mục tiêu sản phẩm vẫn là [quay video có tiếng và xem trước qua Wi-Fi trong ít nhất 45 phút](standalone-video-audio-problem.md).
 
+**Cập nhật 2026-11-06, v0.6:** tài liệu này giữ phân tích mạch stock làm đối chiếu. [Hồ sơ nguồn hiện hành](power-design-review.md) và [bài tính chuyển USB/pin](usb-battery-switchover-design.md) chọn **TPS2121 + ba tụ 330 µF**, tháo Q1/D2 stock, không lắp QM1/R6 của v0.4; giữ charger/buck/R9 stock. [Bài tính buck 3V3](buck-3v3-design.md) bổ sung dropout, đáp ứng LC/điện lượng và nhánh ESP/SD/VDD_SPI; giữ L/C stock, không thêm bulk 3V3. Chưa rework kit thật. Chế độ quay độc lập 45 phút tắt radio ưu tiên trước, Wi-Fi giữ riêng. Điện áp 4,234 V dưới đây là điểm bảng IC, **không phải trần toàn thuật toán**, do SGM40567 còn có bù sụt áp điện trở.
+
 ## Phạm vi tài liệu
 
 Sơ đồ được đọc là [XIAO ESP32-S3 Sense V1.51, trang 4](https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/new-res/202003753_XIAO%20ESP32S3%20Sense_V1.51_SCH_260611.pdf), ngày 2026-06-11. Chưa xác định revision của board người dùng đang có, do đó các mã linh kiện và điện trở dưới đây là của **sơ đồ V1.51**; cần đối chiếu revision thực tế trước khi áp dụng.

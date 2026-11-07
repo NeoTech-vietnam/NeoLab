@@ -1,0 +1,25 @@
+{
+  "classification": "imposed_bound_RC_model_not_actual_TPS2121_or_ESP32_validation",
+  "header": "Title: * NeoCam v0.5 HOLD-UP ENVELOPE,NOT a TI TPS2121 macromodel.\nDate: Fri Nov  6 08:44:01 2026\nPlotname: Transient Analysis\nFlags: real\nAbscissa:     0.000000000000000e+00     3.000000000000000e-03                     \nNo. Variables: 7\nNo. Points: 15119                \nCommand: QSPICE64, Build Oct 22 2026 10:48:27\n.param temp=27\nVariables:\n\t0\tTime\ttime\n\t1\tV(bat)\tvoltage\n\t2\tV(usb)\tvoltage\n\t3\tV(bat_ctl)\tvoltage\n\t4\tV(usb_ctl)\tvoltage\n\t5\tV(sys)\tvoltage\n\t6\tV(cstore)\tvoltage\n",
+  "events": [
+    {
+      "event": "USB_to_BAT_post_coast_envelope",
+      "model_SYS_min_V_excluding_ESL": 3.5916668880768574,
+      "model_min_minus_20mV_layout_allowance_V": 3.5716668880768574,
+      "meets_SYS3V5_in_this_imposed_model": true
+    },
+    {
+      "event": "BAT_to_USB_envelope",
+      "model_SYS_min_V_excluding_ESL": 3.5916489473977724,
+      "model_min_minus_20mV_layout_allowance_V": 3.5716489473977724,
+      "meets_SYS3V5_in_this_imposed_model": true
+    }
+  ],
+  "limits": [
+    "50us blackout imposed",
+    "20uC reverse current imposed",
+    "ideal unidirectional sources",
+    "no comparator threshold,SS,RCB delay,full buck,MCU,SD,charger or USB cable model",
+    "20mV ESL allowance subtracted after simulation,not a parasitic model"
+  ]
+}

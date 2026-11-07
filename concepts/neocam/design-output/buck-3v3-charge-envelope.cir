@@ -1,0 +1,21 @@
+* NeoCam v0.6 OUTPUT CHARGE ENVELOPE, NOT an SGM6029 controller model.
+* Imposed NET output deficit 0.5A*0.5us and surplus0.4A*1us, with1ns edges.
+* Ceff8uF/ESR20mOhm; baseline voltages are qualification requirements.
+* Reference clamps are ideal restoration, NOT the physical buck loop.
+Vlo ref_lo 0 3.234
+Vhi ref_hi 0 3.366
+Vclo ctl_lo 0 PWL(0 1 9.999u 1 9.9991u 0 10.501u 0 10.5011u 1 50u 1)
+Vchi ctl_hi 0 PWL(0 1 29.999u 1 29.9991u 0 31.001u 0 31.0011u 1 50u 1)
+Slo ref_lo rail_lo ctl_lo 0 REGCLAMP
+Shi ref_hi rail_hi ctl_hi 0 REGCLAMP
+.model REGCLAMP SW(Ron=0.001 Roff=1T Vt=0.5 Vh=0)
+Idef rail_lo 0 PWL(0 0 10u 0 10.001u 0.5 10.499u 0.5 10.5u 0 50u 0)
+Isur rail_hi 0 PWL(0 0 30u 0 30.001u -0.4 30.999u -0.4 31u 0 50u 0)
+Rlo rail_lo cap_lo 0.020
+Rhi rail_hi cap_hi 0.020
+Clo cap_lo 0 8u
+Chi cap_hi 0 8u
+.nodeset V(rail_lo)=3.234 V(cap_lo)=3.234 V(rail_hi)=3.366 V(cap_hi)=3.366
+.tran 0 50u 0 2n
+.save V(rail_lo) V(rail_hi) V(cap_lo) V(cap_hi)
+.end

@@ -1,0 +1,3363 @@
+(export
+	(version "E")
+	(design
+		(source "C:\\Users\\daveb\\AppData\\Local\\Temp\\neocam-review-netlist-d2jazexv\\neocam-power-v0.kicad_sch")
+		(date "2026-11-06T08:36:47")
+		(tool "Eeschema 10.0.6")
+		(sheet
+			(number "1")
+			(name "/")
+			(tstamps "/")
+			(title_block
+				(title "NeoCam companion power and controls")
+				(company "NeoLab")
+				(rev "0.5-mux")
+				(date "2026-11-06")
+				(source "neocam-power-v0.kicad_sch")
+				(comment
+					(number "1")
+					(value "Power mux rework; not released for manufacture")
+				)
+				(comment
+					(number "2")
+					(value "")
+				)
+				(comment
+					(number "3")
+					(value "")
+				)
+				(comment
+					(number "4")
+					(value "")
+				)
+				(comment
+					(number "5")
+					(value "")
+				)
+				(comment
+					(number "6")
+					(value "")
+				)
+				(comment
+					(number "7")
+					(value "")
+				)
+				(comment
+					(number "8")
+					(value "")
+				)
+				(comment
+					(number "9")
+					(value "")
+				)
+			)
+		)
+		(sheet
+			(number "2")
+			(name "/USB_Battery_Power_Mux/")
+			(tstamps "/c37f59b0-4f78-44a4-ab3c-4e5860925377/")
+			(title_block
+				(title "NeoCam USB / battery power mux")
+				(company "NeoLab")
+				(rev "0.5-mux")
+				(date "2026-11-06")
+				(source "neocam-power-mux-v0.5.kicad_sch")
+				(comment
+					(number "1")
+					(value "Power mux rework; not released for manufacture")
+				)
+				(comment
+					(number "2")
+					(value "")
+				)
+				(comment
+					(number "3")
+					(value "")
+				)
+				(comment
+					(number "4")
+					(value "")
+				)
+				(comment
+					(number "5")
+					(value "")
+				)
+				(comment
+					(number "6")
+					(value "")
+				)
+				(comment
+					(number "7")
+					(value "")
+				)
+				(comment
+					(number "8")
+					(value "")
+				)
+				(comment
+					(number "9")
+					(value "")
+				)
+			)
+		)
+	)
+	(components
+		(comp
+			(ref "BT1")
+			(value "DNK102050 1S 1000mAh + PCM")
+			(datasheet "https://www.dnkpower.com/wp-content/uploads/2023/11/DNK102050-3.7V-1000mAh-Lipo-Battery-Specification.pdf")
+			(fields
+				(field
+					(name "Selection") "Technical reference only; charge/PCM coordination and procurement unresolved")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet") "https://www.dnkpower.com/wp-content/uploads/2023/11/DNK102050-3.7V-1000mAh-Lipo-Battery-Specification.pdf")
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "Battery_Cell")
+				(description "Single-cell battery")
+			)
+			(property
+				(name "Selection")
+				(value "Technical reference only; charge/PCM coordination and procurement unresolved")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "C:/Users/daveb/AppData/Local/Temp/neocam-review-netlist-d2jazexv/neocam-power-v0.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "battery cell")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "c3a4de47-6aa3-42b8-82c7-7cbc38db0b04")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C1")
+			(value "100nF 10V X7R")
+			(footprint "Capacitor_SMD:C_0603_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "C:/Users/daveb/AppData/Local/Temp/neocam-review-netlist-d2jazexv/neocam-power-v0.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "0ece270d-f967-49ff-a108-259e5aafd1f9")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C2")
+			(value "100nF 10V X7R")
+			(footprint "Capacitor_SMD:C_0603_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "C:/Users/daveb/AppData/Local/Temp/neocam-review-netlist-d2jazexv/neocam-power-v0.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "9d228733-56dc-45e5-8848-9d624e1db179")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "D1")
+			(value "RED 0603")
+			(footprint "LED_SMD:LED_0603_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "LED_SMD:LED_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "LED")
+				(description "Light emitting diode")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "C:/Users/daveb/AppData/Local/Temp/neocam-review-netlist-d2jazexv/neocam-power-v0.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "LED diode")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "LED* LED_SMD:* LED_THT:*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "1d7a3180-ab2b-4fdb-96a8-e135cb00edbc")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "F1")
+			(value "046701.5NR | 1.5A")
+			(footprint "Fuse:Fuse_0603_1608Metric")
+			(datasheet "https://www.littelfuse.com/products/fuses/surface-mount-fuses/surface-mount-fuses/467.aspx")
+			(fields
+				(field
+					(name "Footprint") "Fuse:Fuse_0603_1608Metric")
+				(field
+					(name "Datasheet") "https://www.littelfuse.com/products/fuses/surface-mount-fuses/surface-mount-fuses/467.aspx")
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "Fuse")
+				(description "Fuse")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "C:/Users/daveb/AppData/Local/Temp/neocam-review-netlist-d2jazexv/neocam-power-v0.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "fuse")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "*Fuse*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "b3a49d87-6be6-40e0-9cb3-e53945f49e17")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J1")
+			(value "JST PH2 battery")
+			(footprint "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical")
+			(fields
+				(field
+					(name "Footprint") "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Connector_Generic")
+				(part "Conn_01x02")
+				(description "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "C:/Users/daveb/AppData/Local/Temp/neocam-review-netlist-d2jazexv/neocam-power-v0.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "connector")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Connector*:*_1x??_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "1957accb-138f-47c3-aebf-2d21f23a5fa0")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J2")
+			(value "POGO FUTURE / DNP")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "NeoCam")
+				(part "Rear_Charging_Reserved")
+				(description "Unimplemented electrical interface, no footprint released.")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "C:/Users/daveb/AppData/Local/Temp/neocam-review-netlist-d2jazexv/neocam-power-v0.kicad_sch")
+			)
+			(property
+				(name "dnp")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "e01d1a6e-d432-48ad-a517-b4a19e09bb09")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R1")
+			(value "2.2k 1%")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "C:/Users/daveb/AppData/Local/Temp/neocam-review-netlist-d2jazexv/neocam-power-v0.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "79e4fa71-8132-4632-88a4-e9e251cb55c6")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R2")
+			(value "2.2k 1%")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "C:/Users/daveb/AppData/Local/Temp/neocam-review-netlist-d2jazexv/neocam-power-v0.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "ad045ce2-a618-41c3-8fda-618df5c400b3")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R3")
+			(value "10k 1%")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "C:/Users/daveb/AppData/Local/Temp/neocam-review-netlist-d2jazexv/neocam-power-v0.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "39dd1e1c-a14e-42cb-b34e-080582f152d0")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R4")
+			(value "10k 1%")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "C:/Users/daveb/AppData/Local/Temp/neocam-review-netlist-d2jazexv/neocam-power-v0.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "6734a0b9-273b-4846-8516-d36fc168ab39")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R5")
+			(value "2.2k 1%")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "C:/Users/daveb/AppData/Local/Temp/neocam-review-netlist-d2jazexv/neocam-power-v0.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "64997388-8321-45dd-9516-290d51018969")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R_MB9")
+			(value "100k (existing)")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "NeoCam")
+				(part "Existing_R_MB9")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "C:/Users/daveb/AppData/Local/Temp/neocam-review-netlist-d2jazexv/neocam-power-v0.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "e8395f36-698e-4cad-8f60-28b864da322a")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "SW1")
+			(value "B3U-1000P RECORD / STOP")
+			(footprint "Button_Switch_SMD:SW_SPST_B3U-1000P")
+			(datasheet "https://components.omron.com/us-en/products/switches/B3U")
+			(fields
+				(field
+					(name "Footprint") "Button_Switch_SMD:SW_SPST_B3U-1000P")
+				(field
+					(name "Datasheet") "https://components.omron.com/us-en/products/switches/B3U")
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Switch")
+				(part "SW_Push")
+				(description "Push button switch, generic, two pins")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "C:/Users/daveb/AppData/Local/Temp/neocam-review-netlist-d2jazexv/neocam-power-v0.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "switch normally-open pushbutton push-button")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "af09ddfb-e882-47bb-ba6c-9a620154eea0")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "TP1")
+			(value "BAT")
+			(footprint "TestPoint:TestPoint_Pad_D1.5mm")
+			(fields
+				(field
+					(name "Footprint") "TestPoint:TestPoint_Pad_D1.5mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Connector")
+				(part "TestPoint")
+				(description "test point")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "C:/Users/daveb/AppData/Local/Temp/neocam-review-netlist-d2jazexv/neocam-power-v0.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "test point tp")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Pin* Test*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "d01a36ce-a936-42af-afc9-74b3200a1d55")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "TP2")
+			(value "VIN")
+			(footprint "TestPoint:TestPoint_Pad_D1.5mm")
+			(fields
+				(field
+					(name "Footprint") "TestPoint:TestPoint_Pad_D1.5mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Connector")
+				(part "TestPoint")
+				(description "test point")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "C:/Users/daveb/AppData/Local/Temp/neocam-review-netlist-d2jazexv/neocam-power-v0.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "test point tp")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Pin* Test*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "dc9894c1-fb1a-4818-8ae4-d3f0be0caf23")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "TP3")
+			(value "VBUS")
+			(footprint "TestPoint:TestPoint_Pad_D1.5mm")
+			(fields
+				(field
+					(name "Footprint") "TestPoint:TestPoint_Pad_D1.5mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Connector")
+				(part "TestPoint")
+				(description "test point")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "C:/Users/daveb/AppData/Local/Temp/neocam-review-netlist-d2jazexv/neocam-power-v0.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "test point tp")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Pin* Test*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "24dce8d5-6ae9-43fd-9c7f-cba7019ec59f")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "TP4")
+			(value "GND")
+			(footprint "TestPoint:TestPoint_Pad_D1.5mm")
+			(fields
+				(field
+					(name "Footprint") "TestPoint:TestPoint_Pad_D1.5mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Connector")
+				(part "TestPoint")
+				(description "test point")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "C:/Users/daveb/AppData/Local/Temp/neocam-review-netlist-d2jazexv/neocam-power-v0.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "test point tp")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Pin* Test*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "5141e8af-65f2-4c44-966d-68dcfe3c48cb")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U1")
+			(value "XIAO Sense; remove Q1 + D2")
+			(datasheet "https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet") "https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/")
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "NeoCam")
+				(part "XIAO_ESP32S3_Sense_Power_Interface")
+				(description "Selected mux rework: stock Q1 and D2 removed; old QM1/R6 omitted. Charger/buck retained. Named old-Q1 pads provide BAT/VIN/VBUS access; verify actual board before rework.")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "C:/Users/daveb/AppData/Local/Temp/neocam-review-netlist-d2jazexv/neocam-power-v0.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "70422c19-8318-40f5-908b-1bd8493d754c")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "B+")
+						)
+						(pin
+							(num "B-")
+						)
+						(pin
+							(num "GND")
+						)
+						(pin
+							(num "Q1_S3")
+						)
+						(pin
+							(num "Q1_G2")
+						)
+						(pin
+							(num "3V3")
+						)
+						(pin
+							(num "D0")
+						)
+						(pin
+							(num "D1")
+						)
+						(pin
+							(num "D3")
+						)
+						(pin
+							(num "D4")
+						)
+						(pin
+							(num "D5")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U2")
+			(value "MAX17048G+")
+			(datasheet "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX17048-MAX17049.pdf")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet") "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX17048-MAX17049.pdf")
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "NeoCam")
+				(part "MAX17048G_Plus")
+				(description "ADI MAX17048G+, TDFN-8 exposed pad. Package land pattern remains to verify.")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "C:/Users/daveb/AppData/Local/Temp/neocam-review-netlist-d2jazexv/neocam-power-v0.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "ed4fd7ba-5654-449f-818c-4a29b1d88d5c")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "9")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "5")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C3")
+			(value "4.7uF 10V X7R")
+			(footprint "Capacitor_SMD:C_0805_2012Metric")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0805_2012Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "USB_Battery_Power_Mux")
+			)
+			(property
+				(name "Sheetfile")
+				(value "neocam-power-mux-v0.5.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/USB_Battery_Power_Mux/")
+				(tstamps "/c37f59b0-4f78-44a4-ab3c-4e5860925377/")
+			)
+			(tstamps "e573e9b1-c6c7-4ea6-9642-834a1681b230")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C4")
+			(value "4.7uF 10V X7R")
+			(footprint "Capacitor_SMD:C_0805_2012Metric")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0805_2012Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "USB_Battery_Power_Mux")
+			)
+			(property
+				(name "Sheetfile")
+				(value "neocam-power-mux-v0.5.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/USB_Battery_Power_Mux/")
+				(tstamps "/c37f59b0-4f78-44a4-ab3c-4e5860925377/")
+			)
+			(tstamps "16ea0917-e01d-4128-991e-e4f051456496")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C5")
+			(value "4.7uF 10V X7R")
+			(footprint "Capacitor_SMD:C_0805_2012Metric")
+			(fields
+				(field
+					(name "ManufacturerPart") "Value/package selected; supplier code pending")
+				(field
+					(name "Polarity") "Unpolarized")
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0805_2012Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "ManufacturerPart")
+				(value "Value/package selected; supplier code pending")
+			)
+			(property
+				(name "Polarity")
+				(value "Unpolarized")
+			)
+			(property
+				(name "Sheetname")
+				(value "USB_Battery_Power_Mux")
+			)
+			(property
+				(name "Sheetfile")
+				(value "neocam-power-mux-v0.5.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/USB_Battery_Power_Mux/")
+				(tstamps "/c37f59b0-4f78-44a4-ab3c-4e5860925377/")
+			)
+			(tstamps "3c65b098-57f2-4202-a499-a344af2eb7a0")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C6")
+			(value "100nF 10V")
+			(footprint "Capacitor_SMD:C_0603_1608Metric")
+			(fields
+				(field
+					(name "ManufacturerPart") "Value/package selected; supplier code pending")
+				(field
+					(name "Polarity") "Unpolarized")
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "ManufacturerPart")
+				(value "Value/package selected; supplier code pending")
+			)
+			(property
+				(name "Polarity")
+				(value "Unpolarized")
+			)
+			(property
+				(name "Sheetname")
+				(value "USB_Battery_Power_Mux")
+			)
+			(property
+				(name "Sheetfile")
+				(value "neocam-power-mux-v0.5.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/USB_Battery_Power_Mux/")
+				(tstamps "/c37f59b0-4f78-44a4-ab3c-4e5860925377/")
+			)
+			(tstamps "8bdf95c3-9b1c-4bf7-97c0-0050e7ddf7cc")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C7")
+			(value "1uF 10V X7R")
+			(footprint "Capacitor_SMD:C_0603_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "USB_Battery_Power_Mux")
+			)
+			(property
+				(name "Sheetfile")
+				(value "neocam-power-mux-v0.5.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/USB_Battery_Power_Mux/")
+				(tstamps "/c37f59b0-4f78-44a4-ab3c-4e5860925377/")
+			)
+			(tstamps "6cede117-931b-4341-825c-9ed4f14a6d1a")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C8")
+			(value "330uF 10V")
+			(footprint "Capacitor_Tantalum_SMD:CP_EIA-7343-43_Kemet-X")
+			(fields
+				(field
+					(name "ManufacturerPart") "T520X337M010ATE025")
+				(field
+					(name "Polarity") "+ to VIN_SYS; - to GND")
+				(field
+					(name "Footprint") "Capacitor_Tantalum_SMD:CP_EIA-7343-43_Kemet-X")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "C_Polarized")
+				(description "Polarized capacitor")
+			)
+			(property
+				(name "ManufacturerPart")
+				(value "T520X337M010ATE025")
+			)
+			(property
+				(name "Polarity")
+				(value "+ to VIN_SYS; - to GND")
+			)
+			(property
+				(name "Sheetname")
+				(value "USB_Battery_Power_Mux")
+			)
+			(property
+				(name "Sheetfile")
+				(value "neocam-power-mux-v0.5.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "CP_*")
+			)
+			(sheetpath
+				(names "/USB_Battery_Power_Mux/")
+				(tstamps "/c37f59b0-4f78-44a4-ab3c-4e5860925377/")
+			)
+			(tstamps "85d7772a-da11-4424-bd01-04d2d682e2ea")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C9")
+			(value "330uF 10V")
+			(footprint "Capacitor_Tantalum_SMD:CP_EIA-7343-43_Kemet-X")
+			(fields
+				(field
+					(name "ManufacturerPart") "T520X337M010ATE025")
+				(field
+					(name "Polarity") "+ to VIN_SYS; - to GND")
+				(field
+					(name "Footprint") "Capacitor_Tantalum_SMD:CP_EIA-7343-43_Kemet-X")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "C_Polarized")
+				(description "Polarized capacitor")
+			)
+			(property
+				(name "ManufacturerPart")
+				(value "T520X337M010ATE025")
+			)
+			(property
+				(name "Polarity")
+				(value "+ to VIN_SYS; - to GND")
+			)
+			(property
+				(name "Sheetname")
+				(value "USB_Battery_Power_Mux")
+			)
+			(property
+				(name "Sheetfile")
+				(value "neocam-power-mux-v0.5.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "CP_*")
+			)
+			(sheetpath
+				(names "/USB_Battery_Power_Mux/")
+				(tstamps "/c37f59b0-4f78-44a4-ab3c-4e5860925377/")
+			)
+			(tstamps "c675af64-f279-4505-ad8d-b7b35bbdfc03")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C10")
+			(value "330uF 10V")
+			(footprint "Capacitor_Tantalum_SMD:CP_EIA-7343-43_Kemet-X")
+			(fields
+				(field
+					(name "ManufacturerPart") "T520X337M010ATE025")
+				(field
+					(name "Polarity") "+ to VIN_SYS; - to GND")
+				(field
+					(name "Footprint") "Capacitor_Tantalum_SMD:CP_EIA-7343-43_Kemet-X")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "C_Polarized")
+				(description "Polarized capacitor")
+			)
+			(property
+				(name "ManufacturerPart")
+				(value "T520X337M010ATE025")
+			)
+			(property
+				(name "Polarity")
+				(value "+ to VIN_SYS; - to GND")
+			)
+			(property
+				(name "Sheetname")
+				(value "USB_Battery_Power_Mux")
+			)
+			(property
+				(name "Sheetfile")
+				(value "neocam-power-mux-v0.5.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "CP_*")
+			)
+			(sheetpath
+				(names "/USB_Battery_Power_Mux/")
+				(tstamps "/c37f59b0-4f78-44a4-ab3c-4e5860925377/")
+			)
+			(tstamps "85a2c959-ac6a-44d4-b1e0-4cccdf836d79")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R7")
+			(value "20k 1%")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "USB_Battery_Power_Mux")
+			)
+			(property
+				(name "Sheetfile")
+				(value "neocam-power-mux-v0.5.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/USB_Battery_Power_Mux/")
+				(tstamps "/c37f59b0-4f78-44a4-ab3c-4e5860925377/")
+			)
+			(tstamps "617e812f-a3fc-4956-8cb3-db3852f9deea")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R8")
+			(value "10k 1%")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "USB_Battery_Power_Mux")
+			)
+			(property
+				(name "Sheetfile")
+				(value "neocam-power-mux-v0.5.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/USB_Battery_Power_Mux/")
+				(tstamps "/c37f59b0-4f78-44a4-ab3c-4e5860925377/")
+			)
+			(tstamps "21f687c2-29eb-44ac-a9f2-aef56fa5d2e1")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R9")
+			(value "20k 1%")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "USB_Battery_Power_Mux")
+			)
+			(property
+				(name "Sheetfile")
+				(value "neocam-power-mux-v0.5.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/USB_Battery_Power_Mux/")
+				(tstamps "/c37f59b0-4f78-44a4-ab3c-4e5860925377/")
+			)
+			(tstamps "ba0d15b4-9744-46aa-9f61-0bf816686c82")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R10")
+			(value "10k 1%")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "USB_Battery_Power_Mux")
+			)
+			(property
+				(name "Sheetfile")
+				(value "neocam-power-mux-v0.5.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/USB_Battery_Power_Mux/")
+				(tstamps "/c37f59b0-4f78-44a4-ab3c-4e5860925377/")
+			)
+			(tstamps "52d7c37f-1242-4ca9-8fca-04a54a80d433")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R11")
+			(value "10k 1%")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "USB_Battery_Power_Mux")
+			)
+			(property
+				(name "Sheetfile")
+				(value "neocam-power-mux-v0.5.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/USB_Battery_Power_Mux/")
+				(tstamps "/c37f59b0-4f78-44a4-ab3c-4e5860925377/")
+			)
+			(tstamps "04389130-e1e7-4c59-827d-7d5b9019bb38")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R12")
+			(value "80.0k 1%")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "USB_Battery_Power_Mux")
+			)
+			(property
+				(name "Sheetfile")
+				(value "neocam-power-mux-v0.5.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/USB_Battery_Power_Mux/")
+				(tstamps "/c37f59b0-4f78-44a4-ab3c-4e5860925377/")
+			)
+			(tstamps "97e3a46d-8384-4e21-8596-ed737f9b7447")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "TP5")
+			(value "MUX_STATUS")
+			(footprint "TestPoint:TestPoint_Pad_D1.5mm")
+			(fields
+				(field
+					(name "Footprint") "TestPoint:TestPoint_Pad_D1.5mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Connector")
+				(part "TestPoint")
+				(description "test point")
+			)
+			(property
+				(name "Sheetname")
+				(value "USB_Battery_Power_Mux")
+			)
+			(property
+				(name "Sheetfile")
+				(value "neocam-power-mux-v0.5.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "test point tp")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Pin* Test*")
+			)
+			(sheetpath
+				(names "/USB_Battery_Power_Mux/")
+				(tstamps "/c37f59b0-4f78-44a4-ab3c-4e5860925377/")
+			)
+			(tstamps "be7a7c35-ad00-47e1-afd1-34ad7885eeac")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U3")
+			(value "TPS2121RUXR")
+			(datasheet "https://www.ti.com/lit/ds/symlink/tps2121.pdf")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet") "https://www.ti.com/lit/ds/symlink/tps2121.pdf")
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "NeoCam")
+				(part "TPS2121RUXR")
+				(description "TI TPS2121RUXR VQFN-HR12. Pin1 and8 are both OUT; pin8 passive type is only the ERC representation of the same output rail. Land pattern must be verified.")
+			)
+			(property
+				(name "Sheetname")
+				(value "USB_Battery_Power_Mux")
+			)
+			(property
+				(name "Sheetfile")
+				(value "neocam-power-mux-v0.5.kicad_sch")
+			)
+			(sheetpath
+				(names "/USB_Battery_Power_Mux/")
+				(tstamps "/c37f59b0-4f78-44a4-ab3c-4e5860925377/")
+			)
+			(tstamps "5ef283bb-2af7-4111-9fd7-3b6c93cf299b")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "12")
+						)
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "9")
+						)
+						(pin
+							(num "10")
+						)
+						(pin
+							(num "11")
+						)
+					)
+				)
+			)
+		)
+	)
+	(groups)
+	(variants)
+	(libparts
+		(libpart
+			(lib "Connector")
+			(part "TestPoint")
+			(description "test point")
+			(footprints
+				(fp "Pin*")
+				(fp "Test*")
+			)
+			(fields
+				(field
+					(name "Reference") "TP")
+				(field
+					(name "Value") "TestPoint")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "test point")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "1")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Connector_Generic")
+			(part "Conn_01x02")
+			(description "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			(footprints
+				(fp "Connector*:*_1x??_*")
+			)
+			(fields
+				(field
+					(name "Reference") "J")
+				(field
+					(name "Value") "Conn_01x02")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "Pin_1")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "Pin_2")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Device")
+			(part "Battery_Cell")
+			(description "Single-cell battery")
+			(fields
+				(field
+					(name "Reference") "BT")
+				(field
+					(name "Value") "Battery_Cell")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Single-cell battery")
+				(field
+					(name "Sim.Device") "V")
+				(field
+					(name "Sim.Type") "DC")
+				(field
+					(name "Sim.Pins") "1=+ 2=-")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "+")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "-")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Device")
+			(part "C")
+			(description "Unpolarized capacitor")
+			(footprints
+				(fp "C_*")
+			)
+			(fields
+				(field
+					(name "Reference") "C")
+				(field
+					(name "Value") "C")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Unpolarized capacitor")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Device")
+			(part "C_Polarized")
+			(description "Polarized capacitor")
+			(footprints
+				(fp "CP_*")
+			)
+			(fields
+				(field
+					(name "Reference") "C")
+				(field
+					(name "Value") "C_Polarized")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Polarized capacitor")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Device")
+			(part "Fuse")
+			(description "Fuse")
+			(footprints
+				(fp "*Fuse*")
+			)
+			(fields
+				(field
+					(name "Reference") "F")
+				(field
+					(name "Value") "Fuse")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Fuse")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Device")
+			(part "LED")
+			(description "Light emitting diode")
+			(footprints
+				(fp "LED*")
+				(fp "LED_SMD:*")
+				(fp "LED_THT:*")
+			)
+			(fields
+				(field
+					(name "Reference") "D")
+				(field
+					(name "Value") "LED")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Light emitting diode")
+				(field
+					(name "Sim.Pins") "1=K 2=A")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "K")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "A")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Device")
+			(part "R")
+			(description "Resistor")
+			(footprints
+				(fp "R_*")
+			)
+			(fields
+				(field
+					(name "Reference") "R")
+				(field
+					(name "Value") "R")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "NeoCam")
+			(part "Existing_R_MB9")
+			(description "Resistor")
+			(fields
+				(field
+					(name "Reference") "R")
+				(field
+					(name "Value") "R")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "NeoCam")
+			(part "MAX17048G_Plus")
+			(description "ADI MAX17048G+, TDFN-8 exposed pad. Package land pattern remains to verify.")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "MAX17048G_Plus")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "ADI MAX17048G+, TDFN-8 exposed pad. Package land pattern remains to verify.")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "CTG")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "CELL")
+					(type "input")
+				)
+				(pin
+					(num "3")
+					(name "VDD")
+					(type "power_in")
+				)
+				(pin
+					(num "4")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "5")
+					(name "ALRT")
+					(type "open_collector")
+				)
+				(pin
+					(num "6")
+					(name "QSTRT")
+					(type "input")
+				)
+				(pin
+					(num "7")
+					(name "SCL")
+					(type "input")
+				)
+				(pin
+					(num "8")
+					(name "SDA")
+					(type "open_collector")
+				)
+				(pin
+					(num "9")
+					(name "EP")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "NeoCam")
+			(part "Rear_Charging_Reserved")
+			(description "Unimplemented electrical interface, no footprint released.")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "Rear_Charging_Reserved")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Unimplemented electrical interface, no footprint released.")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "RESERVED_1")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "RESERVED_2")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "NeoCam")
+			(part "TPS2121RUXR")
+			(description "TI TPS2121RUXR VQFN-HR12. Pin1 and8 are both OUT; pin8 passive type is only the ERC representation of the same output rail. Land pattern must be verified.")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "TPS2121RUXR")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "TI TPS2121RUXR VQFN-HR12. Pin1 and8 are both OUT; pin8 passive type is only the ERC representation of the same output rail. Land pattern must be verified.")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "OUT")
+					(type "power_out")
+				)
+				(pin
+					(num "2")
+					(name "IN2")
+					(type "power_in")
+				)
+				(pin
+					(num "3")
+					(name "CP2")
+					(type "input")
+				)
+				(pin
+					(num "4")
+					(name "OV2")
+					(type "input")
+				)
+				(pin
+					(num "5")
+					(name "OV1")
+					(type "input")
+				)
+				(pin
+					(num "6")
+					(name "PR1")
+					(type "input")
+				)
+				(pin
+					(num "7")
+					(name "IN1")
+					(type "power_in")
+				)
+				(pin
+					(num "8")
+					(name "OUT")
+					(type "passive")
+				)
+				(pin
+					(num "9")
+					(name "ST")
+					(type "open_collector")
+				)
+				(pin
+					(num "10")
+					(name "ILIM")
+					(type "passive")
+				)
+				(pin
+					(num "11")
+					(name "SS")
+					(type "passive")
+				)
+				(pin
+					(num "12")
+					(name "GND")
+					(type "power_in")
+				)
+			)
+		)
+		(libpart
+			(lib "NeoCam")
+			(part "XIAO_ESP32S3_Sense_Power_Interface")
+			(description "Selected mux rework: stock Q1 and D2 removed; old QM1/R6 omitted. Charger/buck retained. Named old-Q1 pads provide BAT/VIN/VBUS access; verify actual board before rework.")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "XIAO_ESP32S3_Sense_Power_Interface")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Selected mux rework: stock Q1 and D2 removed; old QM1/R6 omitted. Charger/buck retained. Named old-Q1 pads provide BAT/VIN/VBUS access; verify actual board before rework.")
+			)
+			(pins
+				(pin
+					(num "3V3")
+					(name "3V3")
+					(type "power_out")
+				)
+				(pin
+					(num "B+")
+					(name "BAT+")
+					(type "passive")
+				)
+				(pin
+					(num "B-")
+					(name "BAT-")
+					(type "passive")
+				)
+				(pin
+					(num "D0")
+					(name "D0_/_GPIO1_/_ALERT_N")
+					(type "input")
+				)
+				(pin
+					(num "D1")
+					(name "D1_/_GPIO2_/_REC_N")
+					(type "input")
+				)
+				(pin
+					(num "D3")
+					(name "D3_/_GPIO4_/_LED")
+					(type "output")
+				)
+				(pin
+					(num "D4")
+					(name "D4_/_GPIO5_/_SDA")
+					(type "bidirectional")
+				)
+				(pin
+					(num "D5")
+					(name "D5_/_GPIO6_/_SCL")
+					(type "output")
+				)
+				(pin
+					(num "GND")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "Q1_G2")
+					(name "VBUS_/_oldQ1_G_PAD2")
+					(type "power_out")
+				)
+				(pin
+					(num "Q1_S3")
+					(name "VIN_SYS_/_oldQ1_S_PAD3")
+					(type "power_in")
+				)
+			)
+		)
+		(libpart
+			(lib "Switch")
+			(part "SW_Push")
+			(description "Push button switch, generic, two pins")
+			(fields
+				(field
+					(name "Reference") "SW")
+				(field
+					(name "Value") "SW_Push")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Push button switch, generic, two pins")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "1")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "2")
+					(type "passive")
+				)
+			)
+		)
+	)
+	(libraries
+		(library
+			(logical "Connector")
+			(uri "${KICAD10_SYMBOL_DIR}/Connector.kicad_sym")
+		)
+		(library
+			(logical "Connector_Generic")
+			(uri "${KICAD10_SYMBOL_DIR}/Connector_Generic.kicad_sym")
+		)
+		(library
+			(logical "Device")
+			(uri "${KICAD10_SYMBOL_DIR}/Device.kicad_sym")
+		)
+		(library
+			(logical "Switch")
+			(uri "${KICAD10_SYMBOL_DIR}/Switch.kicad_sym")
+		)
+	)
+	(nets
+		(net
+			(code "1")
+			(name "/BAT_ALERT_N")
+			(class "Default")
+			(node
+				(ref "R3")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "D0")
+				(pinfunction "D0_/_GPIO1_/_ALERT_N_D0")
+				(pintype "input")
+			)
+			(node
+				(ref "U2")
+				(pin "5")
+				(pinfunction "ALRT_5")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "2")
+			(name "/GAUGE_SCL")
+			(class "Default")
+			(node
+				(ref "R1")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "D5")
+				(pinfunction "D5_/_GPIO6_/_SCL_D5")
+				(pintype "output")
+			)
+			(node
+				(ref "U2")
+				(pin "7")
+				(pinfunction "SCL_7")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "3")
+			(name "/GAUGE_SDA")
+			(class "Default")
+			(node
+				(ref "R2")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "D4")
+				(pinfunction "D4_/_GPIO5_/_SDA_D4")
+				(pintype "bidirectional")
+			)
+			(node
+				(ref "U2")
+				(pin "8")
+				(pinfunction "SDA_8")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "4")
+			(name "/REC_N")
+			(class "Default")
+			(node
+				(ref "C2")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R4")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW1")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "D1")
+				(pinfunction "D1_/_GPIO2_/_REC_N_D1")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "5")
+			(name "/STATUS_LED")
+			(class "Default")
+			(node
+				(ref "R5")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "D3")
+				(pinfunction "D3_/_GPIO4_/_LED_D3")
+				(pintype "output")
+			)
+		)
+		(net
+			(code "6")
+			(name "/USB_Battery_Power_Mux/CP2_SENSE")
+			(class "Default")
+			(node
+				(ref "R10")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R9")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U3")
+				(pin "3")
+				(pinfunction "CP2_3")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "7")
+			(name "/USB_Battery_Power_Mux/MUX_ST")
+			(class "Default")
+			(node
+				(ref "R11")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "TP5")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U3")
+				(pin "9")
+				(pinfunction "ST_9")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "8")
+			(name "/USB_Battery_Power_Mux/PR1_SENSE")
+			(class "Default")
+			(node
+				(ref "R7")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R8")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U3")
+				(pin "6")
+				(pinfunction "PR1_6")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "9")
+			(name "3V3_XIAO")
+			(class "Default")
+			(node
+				(ref "R1")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R11")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R2")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R3")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R4")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "3V3")
+				(pinfunction "3V3_3V3")
+				(pintype "power_out")
+			)
+		)
+		(net
+			(code "10")
+			(name "GND")
+			(class "Default")
+			(node
+				(ref "BT1")
+				(pin "2")
+				(pinfunction "-_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C1")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C10")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C2")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C3")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C4")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C5")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C6")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C7")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C8")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C9")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "D1")
+				(pin "1")
+				(pinfunction "K_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J1")
+				(pin "2")
+				(pinfunction "Pin_2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R10")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R12")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R8")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R_MB9")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW1")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "TP4")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "B-")
+				(pinfunction "BAT-_B-")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "GND")
+				(pinfunction "GND_GND")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U2")
+				(pin "1")
+				(pinfunction "CTG_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "4")
+				(pinfunction "GND_4")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U2")
+				(pin "6")
+				(pinfunction "QSTRT_6")
+				(pintype "input")
+			)
+			(node
+				(ref "U2")
+				(pin "9")
+				(pinfunction "EP_9")
+				(pintype "passive")
+			)
+			(node
+				(ref "U3")
+				(pin "12")
+				(pinfunction "GND_12")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U3")
+				(pin "4")
+				(pinfunction "OV2_4")
+				(pintype "input")
+			)
+			(node
+				(ref "U3")
+				(pin "5")
+				(pinfunction "OV1_5")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "11")
+			(name "Net-(BT1-+)")
+			(class "Default")
+			(node
+				(ref "BT1")
+				(pin "1")
+				(pinfunction "+_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "F1")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J1")
+				(pin "1")
+				(pinfunction "Pin_1_1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "12")
+			(name "Net-(D1-A)")
+			(class "Default")
+			(node
+				(ref "D1")
+				(pin "2")
+				(pinfunction "A_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R5")
+				(pin "2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "13")
+			(name "Net-(U3-ILIM)")
+			(class "Default")
+			(node
+				(ref "R12")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U3")
+				(pin "10")
+				(pinfunction "ILIM_10")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "14")
+			(name "Net-(U3-SS)")
+			(class "Default")
+			(node
+				(ref "C7")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U3")
+				(pin "11")
+				(pinfunction "SS_11")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "15")
+			(name "VBAT_XIAO")
+			(class "Default")
+			(node
+				(ref "C1")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C4")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "F1")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R9")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "TP1")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "B+")
+				(pinfunction "BAT+_B+")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "2")
+				(pinfunction "CELL_2")
+				(pintype "input")
+			)
+			(node
+				(ref "U2")
+				(pin "3")
+				(pinfunction "VDD_3")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U3")
+				(pin "2")
+				(pinfunction "IN2_2")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "16")
+			(name "VBUS_REWORK")
+			(class "Default")
+			(node
+				(ref "C3")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R7")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R_MB9")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "TP3")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "Q1_G2")
+				(pinfunction "VBUS_/_oldQ1_G_PAD2_Q1_G2")
+				(pintype "power_out")
+			)
+			(node
+				(ref "U3")
+				(pin "7")
+				(pinfunction "IN1_7")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "17")
+			(name "VIN_SYS")
+			(class "Default")
+			(node
+				(ref "C10")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C5")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C6")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C8")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C9")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "TP2")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "Q1_S3")
+				(pinfunction "VIN_SYS_/_oldQ1_S_PAD3_Q1_S3")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U3")
+				(pin "1")
+				(pinfunction "OUT_1")
+				(pintype "power_out")
+			)
+			(node
+				(ref "U3")
+				(pin "8")
+				(pinfunction "OUT_8")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "18")
+			(name "unconnected-(J2-RESERVED_1-Pad1)")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "1")
+				(pinfunction "RESERVED_1_1")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "19")
+			(name "unconnected-(J2-RESERVED_2-Pad2)")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "2")
+				(pinfunction "RESERVED_2_2")
+				(pintype "passive+no_connect")
+			)
+		)
+	)
+)

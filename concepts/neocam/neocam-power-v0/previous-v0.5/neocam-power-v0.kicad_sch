@@ -1,0 +1,2085 @@
+(kicad_sch (version 20260306) (generator "eeschema") (generator_version "10.0")
+  (uuid "f9993b18-d3df-48ee-ae00-0b9fd455017d") (paper "A3")
+  (title_block (title "NeoCam companion power and controls") (date "2026-11-06") (rev "0.5-mux") (company "NeoLab") (comment 1 "Power mux rework; not released for manufacture"))
+  (lib_symbols (symbol "Device:Battery_Cell"
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 0)
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "BT"
+			(at 2.54 2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Battery_Cell"
+			(at 2.54 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 1.524 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 1.524 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Single-cell battery"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "V"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Type" "DC"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=+ 2=-"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "battery cell"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "Battery_Cell_0_1"
+			(rectangle
+				(start -2.286 1.778)
+				(end 2.286 1.524)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type outline)
+				)
+			)
+			(rectangle
+				(start -1.524 1.016)
+				(end 1.524 0.508)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type outline)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0 1.778) (xy 0 2.54)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0 0.762) (xy 0 0)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0.762 3.048) (xy 1.778 3.048)
+				)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 1.27 3.556) (xy 1.27 2.54)
+				)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "Battery_Cell_1_1"
+			(pin passive line
+				(at 0 5.08 270)
+				(length 2.54)
+				(name "+"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 0 -2.54 90)
+				(length 2.54)
+				(name "-"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)(symbol "Device:R"
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 0)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "R"
+			(at 2.032 0 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "R"
+			(at 0 0 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at -1.778 0 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "R res resistor"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "R_*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "R_0_1"
+			(rectangle
+				(start -1.016 -2.54)
+				(end 1.016 2.54)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "R_1_1"
+			(pin passive line
+				(at 0 3.81 270)
+				(length 1.27)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 0 -3.81 90)
+				(length 1.27)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)(symbol "Device:C"
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 0.254)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "C"
+			(at 0.635 2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "C"
+			(at 0.635 -2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 0.9652 -3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "cap capacitor"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "C_*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "C_0_1"
+			(polyline
+				(pts
+					(xy -2.032 0.762) (xy 2.032 0.762)
+				)
+				(stroke
+					(width 0.508)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -2.032 -0.762) (xy 2.032 -0.762)
+				)
+				(stroke
+					(width 0.508)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "C_1_1"
+			(pin passive line
+				(at 0 3.81 270)
+				(length 2.794)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 0 -3.81 90)
+				(length 2.794)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)(symbol "Device:C_Polarized"
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 0.254)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "C"
+			(at 0.635 2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "C_Polarized"
+			(at 0.635 -2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 0.9652 -3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Polarized capacitor"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "cap capacitor"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "CP_*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "C_Polarized_0_1"
+			(rectangle
+				(start -2.286 0.508)
+				(end 2.286 1.016)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -1.778 2.286) (xy -0.762 2.286)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -1.27 2.794) (xy -1.27 1.778)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(rectangle
+				(start 2.286 -0.508)
+				(end -2.286 -1.016)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type outline)
+				)
+			)
+		)
+		(symbol "C_Polarized_1_1"
+			(pin passive line
+				(at 0 3.81 270)
+				(length 2.794)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 0 -3.81 90)
+				(length 2.794)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)(symbol "Device:Fuse"
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 0)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "F"
+			(at 2.032 0 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Fuse"
+			(at -1.905 0 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at -1.778 0 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Fuse"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "fuse"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "*Fuse*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "Fuse_0_1"
+			(rectangle
+				(start -0.762 -2.54)
+				(end 0.762 2.54)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0 2.54) (xy 0 -2.54)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "Fuse_1_1"
+			(pin passive line
+				(at 0 3.81 270)
+				(length 1.27)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 0 -3.81 90)
+				(length 1.27)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)(symbol "Device:LED"
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 1.016)
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "D"
+			(at 0 2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED"
+			(at 0 -2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "LED diode"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "LED* LED_SMD:* LED_THT:*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "LED_0_1"
+			(polyline
+				(pts
+					(xy -3.048 -0.762) (xy -4.572 -2.286) (xy -3.81 -2.286) (xy -4.572 -2.286) (xy -4.572 -1.524)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -1.778 -0.762) (xy -3.302 -2.286) (xy -2.54 -2.286) (xy -3.302 -2.286) (xy -3.302 -1.524)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -1.27 0) (xy 1.27 0)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -1.27 -1.27) (xy -1.27 1.27)
+				)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
+				)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "LED_1_1"
+			(pin passive line
+				(at -3.81 0 0)
+				(length 2.54)
+				(name "K"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 3.81 0 180)
+				(length 2.54)
+				(name "A"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)(symbol "Connector:TestPoint"
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 0.762)
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "TP"
+			(at 0 6.858 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 0 5.08 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 5.08 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 5.08 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "test point tp"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "Pin* Test*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "TestPoint_0_1"
+			(circle
+				(center 0 3.302)
+				(radius 0.762)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "TestPoint_1_1"
+			(pin passive line
+				(at 0 0 90)
+				(length 2.54)
+				(name "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)(symbol "Switch:SW_Push"
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 1.016)
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "SW"
+			(at 1.27 2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SW_Push"
+			(at 0 -1.524 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 5.08 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 5.08 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "switch normally-open pushbutton push-button"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "SW_Push_0_1"
+			(circle
+				(center -2.032 0)
+				(radius 0.508)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0 1.27) (xy 0 3.048)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(circle
+				(center 2.032 0)
+				(radius 0.508)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 2.54 1.27) (xy -2.54 1.27)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(pin passive line
+				(at -5.08 0 0)
+				(length 2.54)
+				(name "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 5.08 0 180)
+				(length 2.54)
+				(name "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)(symbol "Connector_Generic:Conn_01x02"
+		(pin_names
+			(offset 1.016)
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "J"
+			(at 0 2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_01x02"
+			(at 0 -5.08 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "connector"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "Connector*:*_1x??_*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "Conn_01x02_1_1"
+			(rectangle
+				(start -1.27 1.27)
+				(end 1.27 -3.81)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+			(rectangle
+				(start -1.27 0.127)
+				(end 0 -0.127)
+				(stroke
+					(width 0.1524)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(rectangle
+				(start -1.27 -2.413)
+				(end 0 -2.667)
+				(stroke
+					(width 0.1524)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(pin passive line
+				(at -5.08 0 0)
+				(length 3.81)
+				(name "Pin_1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -5.08 -2.54 0)
+				(length 3.81)
+				(name "Pin_2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)(symbol "power:PWR_FLAG"
+		(power global)
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 0)
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "#FLG"
+			(at 0 1.905 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 0 3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "flag power"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "PWR_FLAG_0_0"
+			(pin power_out line
+				(at 0 0 90)
+				(length 0)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(symbol "PWR_FLAG_0_1"
+			(polyline
+				(pts
+					(xy 0 0) (xy 0 1.27) (xy -1.016 1.905) (xy 0 2.54) (xy 1.016 1.905) (xy 0 1.27)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)(symbol "NeoCam:XIAO_ESP32S3_Sense_Power_Interface"
+      (pin_names (offset 1)) (exclude_from_sim yes) (in_bom yes) (on_board yes)
+      (property "Reference" "U" (at 0 40 0) (effects (font (size 1.1 1.1)) )) (property "Value" "XIAO_ESP32S3_Sense_Power_Interface" (at 0 37 0) (effects (font (size 1.1 1.1)) ))
+      (property "Footprint" "" (at 0 0 0) (hide yes) (effects (font (size 1.1 1.1)) )) (property "Datasheet" "" (at 0 0 0) (hide yes) (effects (font (size 1.1 1.1)) ))
+      (property "Description" "Selected mux rework: stock Q1 and D2 removed; old QM1/R6 omitted. Charger/buck retained. Named old-Q1 pads provide BAT/VIN/VBUS access; verify actual board before rework." (at 0 0 0) (hide yes) (effects (font (size 1.1 1.1)) ))
+      (symbol "XIAO_ESP32S3_Sense_Power_Interface_0_1" (rectangle (start -34.29 35.56) (end 35.56 -40.64) (stroke (width 0.254) (type default)) (fill (type background)))(text "XIAO; Q1 + D2 REMOVED" (at 0 28 0) (effects (font (size 1.35 1.35))))(text "USB-C, charger and buck onboard" (at 0 19 0) (effects (font (size 1.05 1.05))))(text "ESP32-S3 + OV3660" (at 0 3 0) (effects (font (size 1.4 1.4))))(text "microphone + microSD" (at 0 -3 0) (effects (font (size 1.15 1.15)))))
+      (symbol "XIAO_ESP32S3_Sense_Power_Interface_1_1" (pin passive line (at -40.640000000000015 24.129999999999995 0) (length 5.08) (name "BAT+" (effects (font (size 1 1)))) (number "B+" (effects (font (size 1 1)))))(pin passive line (at -40.640000000000015 10.159999999999997 0) (length 5.08) (name "BAT-" (effects (font (size 1 1)))) (number "B-" (effects (font (size 1 1)))))(pin power_in line (at -40.640000000000015 -5.079999999999998 0) (length 5.08) (name "GND" (effects (font (size 1 1)))) (number "GND" (effects (font (size 1 1)))))(pin power_in line (at -40.640000000000015 -20.320000000000007 0) (length 5.08) (name "VIN_SYS / oldQ1_S_PAD3" (effects (font (size 1 1)))) (number "Q1_S3" (effects (font (size 1 1)))))(pin power_out line (at -40.640000000000015 -35.56 0) (length 5.08) (name "VBUS / oldQ1_G_PAD2" (effects (font (size 1 1)))) (number "Q1_G2" (effects (font (size 1 1)))))(pin power_out line (at 39.369999999999976 24.129999999999995 180) (length 5.08) (name "3V3" (effects (font (size 1 1)))) (number "3V3" (effects (font (size 1 1)))))(pin input line (at 39.369999999999976 10.159999999999997 180) (length 5.08) (name "D0 / GPIO1 / ALERT_N" (effects (font (size 1 1)))) (number "D0" (effects (font (size 1 1)))))(pin input line (at 39.369999999999976 -5.079999999999998 180) (length 5.08) (name "D1 / GPIO2 / REC_N" (effects (font (size 1 1)))) (number "D1" (effects (font (size 1 1)))))(pin output line (at 39.369999999999976 -15.240000000000009 180) (length 5.08) (name "D3 / GPIO4 / LED" (effects (font (size 1 1)))) (number "D3" (effects (font (size 1 1)))))(pin bidirectional line (at 39.369999999999976 -25.400000000000006 180) (length 5.08) (name "D4 / GPIO5 / SDA" (effects (font (size 1 1)))) (number "D4" (effects (font (size 1 1)))))(pin output line (at 39.369999999999976 -35.56 180) (length 5.08) (name "D5 / GPIO6 / SCL" (effects (font (size 1 1)))) (number "D5" (effects (font (size 1 1))))))
+      (embedded_fonts no))(symbol "NeoCam:MAX17048G_Plus"
+      (pin_names (offset 1)) (exclude_from_sim yes) (in_bom yes) (on_board yes)
+      (property "Reference" "U" (at 0 40 0) (effects (font (size 1.1 1.1)) )) (property "Value" "MAX17048G_Plus" (at 0 37 0) (effects (font (size 1.1 1.1)) ))
+      (property "Footprint" "" (at 0 0 0) (hide yes) (effects (font (size 1.1 1.1)) )) (property "Datasheet" "" (at 0 0 0) (hide yes) (effects (font (size 1.1 1.1)) ))
+      (property "Description" "ADI MAX17048G+, TDFN-8 exposed pad. Package land pattern remains to verify." (at 0 0 0) (hide yes) (effects (font (size 1.1 1.1)) ))
+      (symbol "MAX17048G_Plus_0_1" (rectangle (start -24.13 25.4) (end 25.4 -24.13) (stroke (width 0.254) (type default)) (fill (type background)))(text "1S VOLTAGE" (at 0 15 0) (effects (font (size 1.1 1.1))))(text "AND FUEL GAUGE" (at 0 9 0) (effects (font (size 1.1 1.1))))(text "I2C 0x36" (at 0 -7 0) (effects (font (size 1.1 1.1)))))
+      (symbol "MAX17048G_Plus_1_1" (pin power_in line (at -29.210000000000008 15.23999999999998 0) (length 5.08) (name "VDD" (effects (font (size 1 1)))) (number "3" (effects (font (size 1 1)))))(pin input line (at -29.210000000000008 5.079999999999984 0) (length 5.08) (name "CELL" (effects (font (size 1 1)))) (number "2" (effects (font (size 1 1)))))(pin passive line (at -29.210000000000008 -5.0800000000000125 0) (length 5.08) (name "CTG" (effects (font (size 1 1)))) (number "1" (effects (font (size 1 1)))))(pin input line (at -29.210000000000008 -15.240000000000009 0) (length 5.08) (name "QSTRT" (effects (font (size 1 1)))) (number "6" (effects (font (size 1 1)))))(pin input line (at 30.47999999999999 15.23999999999998 180) (length 5.08) (name "SCL" (effects (font (size 1 1)))) (number "7" (effects (font (size 1 1)))))(pin open_collector line (at 30.47999999999999 5.079999999999984 180) (length 5.08) (name "SDA" (effects (font (size 1 1)))) (number "8" (effects (font (size 1 1)))))(pin open_collector line (at 30.47999999999999 -5.0800000000000125 180) (length 5.08) (name "ALRT" (effects (font (size 1 1)))) (number "5" (effects (font (size 1 1)))))(pin power_in line (at 0.0 -29.210000000000008 90) (length 5.08) (name "GND" (effects (font (size 1 1)))) (number "4" (effects (font (size 1 1)))))(pin passive line (at 10.159999999999997 -29.210000000000008 90) (length 5.08) (name "EP" (effects (font (size 1 1)))) (number "9" (effects (font (size 1 1))))))
+      (embedded_fonts no))(symbol "NeoCam:Rear_Charging_Reserved"
+      (pin_names (offset 1)) (exclude_from_sim yes) (in_bom yes) (on_board yes)
+      (property "Reference" "U" (at 0 40 0) (effects (font (size 1.1 1.1)) )) (property "Value" "Rear_Charging_Reserved" (at 0 37 0) (effects (font (size 1.1 1.1)) ))
+      (property "Footprint" "" (at 0 0 0) (hide yes) (effects (font (size 1.1 1.1)) )) (property "Datasheet" "" (at 0 0 0) (hide yes) (effects (font (size 1.1 1.1)) ))
+      (property "Description" "Unimplemented electrical interface, no footprint released." (at 0 0 0) (hide yes) (effects (font (size 1.1 1.1)) ))
+      (symbol "Rear_Charging_Reserved_0_1" (rectangle (start -2.54 1.27) (end 2.54 -3.81) (stroke (width 0.254) (type default)) (fill (type background))))
+      (symbol "Rear_Charging_Reserved_1_1" (pin passive line (at -5.079999999999984 0.0 0) (length 5.08) (name "RESERVED_1" (effects (font (size 1 1)))) (number "1" (effects (font (size 1 1)))))(pin passive line (at -5.079999999999984 -2.539999999999992 0) (length 5.08) (name "RESERVED_2" (effects (font (size 1 1)))) (number "2" (effects (font (size 1 1))))))
+      (embedded_fonts no))(symbol "NeoCam:Existing_R_MB9"
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 0)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "R"
+			(at 2.032 0 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "R"
+			(at 0 0 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at -1.778 0 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "R res resistor"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		
+		(symbol "Existing_R_MB9_0_1"
+			(rectangle
+				(start -1.016 -2.54)
+				(end 1.016 2.54)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "Existing_R_MB9_1_1"
+			(pin passive line
+				(at 0 3.81 270)
+				(length 1.27)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 0 -3.81 90)
+				(length 1.27)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)(symbol "NeoCam:TPS2121RUXR"
+      (pin_names (offset 1)) (exclude_from_sim yes) (in_bom yes) (on_board yes)
+      (property "Reference" "U" (at 0 40 0) (effects (font (size 1.1 1.1)) )) (property "Value" "TPS2121RUXR" (at 0 37 0) (effects (font (size 1.1 1.1)) ))
+      (property "Footprint" "" (at 0 0 0) (hide yes) (effects (font (size 1.1 1.1)) )) (property "Datasheet" "" (at 0 0 0) (hide yes) (effects (font (size 1.1 1.1)) ))
+      (property "Description" "TI TPS2121RUXR VQFN-HR12. Pin1 and8 are both OUT; pin8 passive type is only the ERC representation of the same output rail. Land pattern must be verified." (at 0 0 0) (hide yes) (effects (font (size 1.1 1.1)) ))
+      (symbol "TPS2121RUXR_0_1" (rectangle (start -40.64 40.64) (end 40.64 -45.72) (stroke (width 0.254) (type default)) (fill (type background)))(text "USB / BATTERY MUX" (at 0 31 0) (effects (font (size 1.5 1.5))))(text "XCOMP automatic selection" (at 0 19 0) (effects (font (size 1.2 1.2))))(text "Current limit + soft start" (at 0 7 0) (effects (font (size 1.1 1.1))))(text "No diode bypass" (at 0 -9 0) (effects (font (size 1.15 1.15)))))
+      (symbol "TPS2121RUXR_1_1" (pin power_in line (at -44.45000000000002 30.47999999999999 0) (length 5.08) (name "IN1" (effects (font (size 1 1)))) (number "7" (effects (font (size 1 1)))))(pin power_in line (at -44.45000000000002 15.239999999999995 0) (length 5.08) (name "IN2" (effects (font (size 1 1)))) (number "2" (effects (font (size 1 1)))))(pin input line (at -44.45000000000002 0.0 0) (length 5.08) (name "PR1" (effects (font (size 1 1)))) (number "6" (effects (font (size 1 1)))))(pin input line (at -44.45000000000002 -13.969999999999999 0) (length 5.08) (name "CP2" (effects (font (size 1 1)))) (number "3" (effects (font (size 1 1)))))(pin power_out line (at 45.72 30.47999999999999 180) (length 5.08) (name "OUT" (effects (font (size 1 1)))) (number "1" (effects (font (size 1 1)))))(pin passive line (at 45.72 15.239999999999995 180) (length 5.08) (name "OUT" (effects (font (size 1 1)))) (number "8" (effects (font (size 1 1)))))(pin open_collector line (at 45.72 0.0 180) (length 5.08) (name "ST" (effects (font (size 1 1)))) (number "9" (effects (font (size 1 1)))))(pin passive line (at 45.72 -13.969999999999999 180) (length 5.08) (name "ILIM" (effects (font (size 1 1)))) (number "10" (effects (font (size 1 1)))))(pin passive line (at 45.72 -29.210000000000008 180) (length 5.08) (name "SS" (effects (font (size 1 1)))) (number "11" (effects (font (size 1 1)))))(pin input line (at -20.32000000000002 -49.53 90) (length 5.08) (name "OV1" (effects (font (size 1 1)))) (number "5" (effects (font (size 1 1)))))(pin input line (at -10.159999999999997 -49.53 90) (length 5.08) (name "OV2" (effects (font (size 1 1)))) (number "4" (effects (font (size 1 1)))))(pin power_in line (at 0.0 -49.53 90) (length 5.08) (name "GND" (effects (font (size 1 1)))) (number "12" (effects (font (size 1 1))))))
+      (embedded_fonts no)))
+(text "NeoCam | Companion power, battery sensing and local controls" (at 20.32 16.51 0) (effects (font (size 2.4 2.4)) (justify left top)) (uuid "98ed3ad0-d0ee-4e19-80b6-0d837437d599"))
+(text "REFERENCE DESIGN v0.5 | 2026-11-06 | power-mux rework, sheet 1 of 2; not released for manufacture" (at 20.32 22.86 0) (effects (font (size 1.3 1.3)) (justify left top)) (uuid "738981be-3aae-4eff-9562-56c944ea534e"))
+(text "1. Protected battery and stock XIAO" (at 20.32 35.56 0) (effects (font (size 1.6 1.6)) (justify left top)) (uuid "d86a2a87-314e-4314-a26f-bdf295f60379"))
+(symbol (lib_id "Device:Battery_Cell") (at 35.56 67.31 0) (unit 1)
+    (exclude_from_sim yes) (in_bom yes) (on_board yes) (dnp no)
+    (uuid "c3a4de47-6aa3-42b8-82c7-7cbc38db0b04")
+    (property "Reference" "BT1" (at 39.37 64.77 0) (effects (font (size 1.1 1.1)) (justify left)))
+    (property "Value" "DNK102050 1S 1000mAh + PCM" (at 39.37 67.31 0) (effects (font (size 1.1 1.1)) (justify left)))
+    (property "Footprint" "" (at 35.56 67.31 0) (hide yes) (effects (font (size 1.1 1.1)) )) (property "Datasheet" "https://www.dnkpower.com/wp-content/uploads/2023/11/DNK102050-3.7V-1000mAh-Lipo-Battery-Specification.pdf" (at 35.56 67.31 0) (hide yes) (effects (font (size 1.1 1.1)) ))
+    (property "Selection" "Technical reference only; charge/PCM coordination and procurement unresolved" (at 35.56 67.31 0) (hide yes) (effects (font (size 1.1 1.1)) ))
+    (instances (project "neocam-power-v0" (path "/f9993b18-d3df-48ee-ae00-0b9fd455017d" (reference "BT1") (unit 1)))))
+(symbol (lib_id "Connector_Generic:Conn_01x02") (at 64.77 58.42 0) (unit 1)
+    (exclude_from_sim yes) (in_bom yes) (on_board yes) (dnp no)
+    (uuid "1957accb-138f-47c3-aebf-2d21f23a5fa0")
+    (property "Reference" "J1" (at 64.77 50.8 0) (effects (font (size 1.1 1.1)) ))
+    (property "Value" "JST PH2 battery" (at 64.77 53.34 0) (effects (font (size 1.1 1.1)) ))
+    (property "Footprint" "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical" (at 64.77 58.42 0) (hide yes) (effects (font (size 1.1 1.1)) )) (property "Datasheet" "" (at 64.77 58.42 0) (hide yes) (effects (font (size 1.1 1.1)) ))
+    
+    (instances (project "neocam-power-v0" (path "/f9993b18-d3df-48ee-ae00-0b9fd455017d" (reference "J1") (unit 1)))))
+(wire (pts (xy 35.56 62.23) (xy 35.56 58.42)) (stroke (width 0) (type default)) (uuid "cd5d08ae-d38d-4bc2-af89-4ac7e43c8cab"))
+(wire (pts (xy 35.56 58.42) (xy 59.69 58.42)) (stroke (width 0) (type default)) (uuid "53b59687-3091-4fb2-a3b2-f1f2f250223a"))
+(wire (pts (xy 35.56 69.85) (xy 35.56 76.2)) (stroke (width 0) (type default)) (uuid "f4e690e9-2d1d-4dc3-9a5a-62a158dd5903"))
+(wire (pts (xy 35.56 76.2) (xy 54.61 76.2)) (stroke (width 0) (type default)) (uuid "ad7b904d-7339-4e06-8b47-5f30a1f4bb5f"))
+(wire (pts (xy 54.61 76.2) (xy 54.61 60.96)) (stroke (width 0) (type default)) (uuid "e12a927f-a691-4ec4-a66e-d4906cf0b7fe"))
+(wire (pts (xy 54.61 60.96) (xy 59.69 60.96)) (stroke (width 0) (type default)) (uuid "d559a436-3c70-47c6-adbf-0f44defd15d8"))
+(wire (pts (xy 44.45 58.42) (xy 44.45 44.45)) (stroke (width 0) (type default)) (uuid "208bb971-b6e5-4905-a528-57ea1ae60d10"))
+(wire (pts (xy 44.45 44.45) (xy 76.2 44.45)) (stroke (width 0) (type default)) (uuid "df0b2227-30b2-4bed-94ce-798e274bc9b2"))
+(junction (at 44.45 58.42) (diameter 0) (color 0 0 0 0) (uuid "189335fb-a12a-4a95-9d8d-d4a7bfc3451c"))
+(symbol (lib_id "Device:Fuse") (at 80.01 44.45 90) (unit 1)
+    (exclude_from_sim yes) (in_bom yes) (on_board yes) (dnp no)
+    (uuid "b3a49d87-6be6-40e0-9cb3-e53945f49e17")
+    (property "Reference" "F1" (at 80.01 38.1 90) (effects (font (size 1.1 1.1)) ))
+    (property "Value" "046701.5NR | 1.5A" (at 80.01 40.64 90) (effects (font (size 1.1 1.1)) ))
+    (property "Footprint" "Fuse:Fuse_0603_1608Metric" (at 80.01 44.45 0) (hide yes) (effects (font (size 1.1 1.1)) )) (property "Datasheet" "https://www.littelfuse.com/products/fuses/surface-mount-fuses/surface-mount-fuses/467.aspx" (at 80.01 44.45 0) (hide yes) (effects (font (size 1.1 1.1)) ))
+    
+    (instances (project "neocam-power-v0" (path "/f9993b18-d3df-48ee-ae00-0b9fd455017d" (reference "F1") (unit 1)))))
+(wire (pts (xy 83.82 44.45) (xy 105.41 44.45)) (stroke (width 0) (type default)) (uuid "15c04a8f-ec7e-4814-9c82-7cec9f4b3011"))
+(global_label "VBAT_XIAO" (shape bidirectional) (at 105.41 44.45 0) (effects (font (size 1.1 1.1)) (justify left)) (uuid "335edd2a-338c-4833-9255-59ff5428dd31"))
+(symbol (lib_id "power:PWR_FLAG") (at 105.41 44.45 0) (unit 1)
+    (exclude_from_sim yes) (in_bom no) (on_board no) (dnp no)
+    (uuid "892a51a9-b8da-41c1-87f5-77171d5a4f18")
+    (property "Reference" "#FLG03" (at 109.22 43.18 0) (hide yes) (effects (font (size 1.1 1.1)) (justify left)))
+    (property "Value" "PWR_FLAG" (at 109.22 45.72 0) (hide yes) (effects (font (size 1.1 1.1)) (justify left)))
+    (property "Footprint" "" (at 105.41 44.45 0) (hide yes) (effects (font (size 1.1 1.1)) )) (property "Datasheet" "" (at 105.41 44.45 0) (hide yes) (effects (font (size 1.1 1.1)) ))
+    
+    (instances (project "neocam-power-v0" (path "/f9993b18-d3df-48ee-ae00-0b9fd455017d" (reference "#FLG03") (unit 1)))))
+(global_label "GND" (shape bidirectional) (at 54.61 76.2 0) (effects (font (size 1.1 1.1)) (justify left)) (uuid "c6d38cc7-6830-4a1a-b8f7-6047bd7b3a1e"))
+(symbol (lib_id "power:PWR_FLAG") (at 44.45 58.42 0) (unit 1)
+    (exclude_from_sim yes) (in_bom no) (on_board no) (dnp no)
+    (uuid "b0a3b3e0-16f7-49d6-b2fe-e3f0c44180a2")
+    (property "Reference" "#FLG01" (at 49.53 55.88 0) (hide yes) (effects (font (size 1.1 1.1)) (justify left)))
+    (property "Value" "PWR_FLAG" (at 49.53 58.42 0) (hide yes) (effects (font (size 1.1 1.1)) (justify left)))
+    (property "Footprint" "" (at 44.45 58.42 0) (hide yes) (effects (font (size 1.1 1.1)) )) (property "Datasheet" "" (at 44.45 58.42 0) (hide yes) (effects (font (size 1.1 1.1)) ))
+    
+    (instances (project "neocam-power-v0" (path "/f9993b18-d3df-48ee-ae00-0b9fd455017d" (reference "#FLG01") (unit 1)))))
+(symbol (lib_id "power:PWR_FLAG") (at 54.61 76.2 0) (unit 1)
+    (exclude_from_sim yes) (in_bom no) (on_board no) (dnp no)
+    (uuid "3e53334e-8f5e-439d-85bd-260687fb2379")
+    (property "Reference" "#FLG02" (at 58.42 73.66 0) (hide yes) (effects (font (size 1.1 1.1)) (justify left)))
+    (property "Value" "PWR_FLAG" (at 58.42 76.2 0) (hide yes) (effects (font (size 1.1 1.1)) (justify left)))
+    (property "Footprint" "" (at 54.61 76.2 0) (hide yes) (effects (font (size 1.1 1.1)) )) (property "Datasheet" "" (at 54.61 76.2 0) (hide yes) (effects (font (size 1.1 1.1)) ))
+    
+    (instances (project "neocam-power-v0" (path "/f9993b18-d3df-48ee-ae00-0b9fd455017d" (reference "#FLG02") (unit 1)))))
+(symbol (lib_id "NeoCam:XIAO_ESP32S3_Sense_Power_Interface") (at 160.02 82.55 0) (unit 1)
+    (exclude_from_sim yes) (in_bom yes) (on_board yes) (dnp no)
+    (uuid "70422c19-8318-40f5-908b-1bd8493d754c")
+    (property "Reference" "U1" (at 160.02 39.37 0) (effects (font (size 1.1 1.1)) ))
+    (property "Value" "XIAO Sense; remove Q1 + D2" (at 160.02 41.91 0) (effects (font (size 1.1 1.1)) ))
+    (property "Footprint" "" (at 160.02 82.55 0) (hide yes) (effects (font (size 1.1 1.1)) )) (property "Datasheet" "https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/" (at 160.02 82.55 0) (hide yes) (effects (font (size 1.1 1.1)) ))
+    
+    (instances (project "neocam-power-v0" (path "/f9993b18-d3df-48ee-ae00-0b9fd455017d" (reference "U1") (unit 1)))))
+(wire (pts (xy 119.38 58.42) (xy 110.49 58.42)) (stroke (width 0) (type default)) (uuid "808de8a6-1c10-4233-837f-e3d68a01543e"))
+(global_label "VBAT_XIAO" (shape bidirectional) (at 110.49 58.42 180) (effects (font (size 1.1 1.1)) (justify right)) (uuid "a95cd9aa-ba2a-4cc6-99b5-3acaaa56c0b2"))
+(wire (pts (xy 119.38 72.39) (xy 110.49 72.39)) (stroke (width 0) (type default)) (uuid "0bbe8816-5374-4846-abef-6b54f3ecd1fa"))
+(global_label "GND" (shape bidirectional) (at 110.49 72.39 180) (effects (font (size 1.1 1.1)) (justify right)) (uuid "897149af-d4b3-4449-b62e-dbd1e27b3eb6"))
+(wire (pts (xy 119.38 87.63) (xy 110.49 87.63)) (stroke (width 0) (type default)) (uuid "af8a3611-715d-4fc4-b43d-6b5fba99cc41"))
+(global_label "GND" (shape bidirectional) (at 110.49 87.63 180) (effects (font (size 1.1 1.1)) (justify right)) (uuid "421ee53d-8b63-4f57-9ba7-48f03ecc38b5"))
+(wire (pts (xy 119.38 102.87) (xy 90.17 102.87)) (stroke (width 0) (type default)) (uuid "0a7e859b-ec8e-4a55-9320-952bd8d57b32"))
+(global_label "VIN_SYS" (shape bidirectional) (at 90.17 102.87 180) (effects (font (size 1.1 1.1)) (justify right)) (uuid "84edf271-7bbc-4cdc-af26-e630f7b2a11f"))
+(wire (pts (xy 119.38 118.11) (xy 90.17 118.11)) (stroke (width 0) (type default)) (uuid "a9d97b1d-92c5-4d20-8b5c-8e4b9221453d"))
+(global_label "VBUS_REWORK" (shape bidirectional) (at 90.17 118.11 180) (effects (font (size 1.1 1.1)) (justify right)) (uuid "630f3447-0028-46c7-b595-14e608b3c936"))
+(wire (pts (xy 199.39 58.42) (xy 214.63 58.42)) (stroke (width 0) (type default)) (uuid "15ae424a-2766-4ab7-81c6-f650149ca705"))
+(global_label "3V3_XIAO" (shape bidirectional) (at 214.63 58.42 0) (effects (font (size 1.1 1.1)) (justify left)) (uuid "915b7e12-7989-4f37-b58d-e9b948f4d64c"))
+(wire (pts (xy 199.39 72.39) (xy 214.63 72.39)) (stroke (width 0) (type default)) (uuid "239f6119-40ef-48b9-9b09-33bce1bc36c2"))
+(label "BAT_ALERT_N" (at 214.63 72.39 0) (effects (font (size 1.1 1.1)) (justify left bottom)) (uuid "211bb612-2eec-4d34-ae39-abab858c3d8f"))
+(wire (pts (xy 199.39 87.63) (xy 214.63 87.63)) (stroke (width 0) (type default)) (uuid "fbe30e90-7ceb-4256-9553-f73273d1bdc9"))
+(label "REC_N" (at 214.63 87.63 0) (effects (font (size 1.1 1.1)) (justify left bottom)) (uuid "7373d696-97f0-4df5-a506-1a9486fed7eb"))
+(wire (pts (xy 199.39 97.79) (xy 214.63 97.79)) (stroke (width 0) (type default)) (uuid "2f640362-dfb1-4814-a965-61307b3b409d"))
+(label "STATUS_LED" (at 214.63 97.79 0) (effects (font (size 1.1 1.1)) (justify left bottom)) (uuid "7210698e-15b6-45da-9e67-01bbd8cb987a"))
+(wire (pts (xy 199.39 107.95) (xy 214.63 107.95)) (stroke (width 0) (type default)) (uuid "6e1534df-4746-4e22-bee1-7c9a325515a7"))
+(label "GAUGE_SDA" (at 214.63 107.95 0) (effects (font (size 1.1 1.1)) (justify left bottom)) (uuid "6854505d-ae11-47b8-b4c6-91e73415a6f9"))
+(wire (pts (xy 199.39 118.11) (xy 214.63 118.11)) (stroke (width 0) (type default)) (uuid "d2c0bf58-1138-473c-91f9-b2d559c4fb1d"))
+(label "GAUGE_SCL" (at 214.63 118.11 0) (effects (font (size 1.1 1.1)) (justify left bottom)) (uuid "01cdf1a5-63db-4e2b-aa19-999d0c02dd36"))
+(text "SELECTED v0.5: remove stock Q1 and stock D2." (at 250.19 44.45 0) (effects (font (size 1.25 1.25)) (justify left top)) (uuid "6af11231-16e9-47dc-a9c8-36d3360effa3"))
+(text "Remove v0.4 QM1 and R6; no diode bypass around mux." (at 250.19 50.8 0) (effects (font (size 1.15 1.15)) (justify left top)) (uuid "60223f77-4782-4afe-8d1a-94953cce9ef8"))
+(text "USB/BAT -> TPS2121 -> VIN_SYS on sheet 2." (at 250.19 57.15 0) (effects (font (size 1.15 1.15)) (justify left top)) (uuid "87383cdf-6839-478f-a2b9-623b27f31d30"))
+(text "Stock USB-C, charger and buck remain on XIAO." (at 250.19 63.5 0) (effects (font (size 1.15 1.15)) (justify left top)) (uuid "d990db62-7cbe-49fa-8409-4b5e635e41ee"))
+(text "Stock VBUS -> charger -> BAT connection retained." (at 250.19 68.58 0) (effects (font (size 1.15 1.15)) (justify left top)) (uuid "a1433322-27ab-476e-99e2-51cfde2406c1"))
+(text "R_MB9 is the retained 100k VBUS pulldown." (at 250.19 74.93 0) (effects (font (size 1.15 1.15)) (justify left top)) (uuid "db49ae95-eab9-4ef2-bc0e-c6869d4f418c"))
+(text "Access old Q1 pads only after board revision/pin verification." (at 250.19 81.28 0) (effects (font (size 1.15 1.15)) (justify left top)) (uuid "dae282e9-acc7-4b6b-b522-f3457926f94c"))
+(text "Normal system current <=0.9A; hold-up budget uses 1A." (at 250.19 87.63 0) (effects (font (size 1.15 1.15)) (justify left top)) (uuid "70f9b861-3c2d-4521-9669-ecde35007ba4"))
+(text "VBAT_XIAO at mux IN2 >=3.8V under load." (at 250.19 92.71 0) (effects (font (size 1.15 1.15)) (justify left top)) (uuid "c4ad5db3-ec29-4aa9-aaae-0c76c0a8bb7b"))
+(text "No-reset behavior is an acceptance target, not a bench result." (at 250.19 99.06 0) (effects (font (size 1.15 1.15)) (justify left top)) (uuid "c34975c7-2f22-4bf1-97cb-2c0192932d45"))
+(symbol (lib_id "NeoCam:Existing_R_MB9") (at 95.25 80.01 0) (unit 1)
+    (exclude_from_sim yes) (in_bom no) (on_board no) (dnp no)
+    (uuid "e8395f36-698e-4cad-8f60-28b864da322a")
+    (property "Reference" "R_MB9" (at 99.06 77.47 0) (effects (font (size 1.1 1.1)) (justify left)))
+    (property "Value" "100k (existing)" (at 99.06 80.01 0) (effects (font (size 1.1 1.1)) (justify left)))
+    (property "Footprint" "" (at 95.25 80.01 0) (hide yes) (effects (font (size 1.1 1.1)) )) (property "Datasheet" "" (at 95.25 80.01 0) (hide yes) (effects (font (size 1.1 1.1)) ))
+    
+    (instances (project "neocam-power-v0" (path "/f9993b18-d3df-48ee-ae00-0b9fd455017d" (reference "R_MB9") (unit 1)))))
+(wire (pts (xy 95.25 76.2) (xy 95.25 68.58)) (stroke (width 0) (type default)) (uuid "9a70b310-6176-4208-b795-1f04d6fcee63"))
+(global_label "VBUS_REWORK" (shape bidirectional) (at 95.25 68.58 0) (effects (font (size 1.1 1.1)) (justify left)) (uuid "26a89a28-b1ae-4a94-9021-a87ad4a04147"))
+(wire (pts (xy 95.25 83.82) (xy 95.25 87.63)) (stroke (width 0) (type default)) (uuid "2f5e8b25-0466-4eef-ad8a-d08f7532de74"))
+(global_label "GND" (shape bidirectional) (at 95.25 87.63 0) (effects (font (size 1.1 1.1)) (justify left)) (uuid "49ed7485-60e0-4f49-b346-a28ab8b05b99"))
+(sheet (at 25.4 85.09) (size 50.8 25.4) (stroke (width 0.1524) (type default)) (fill (color 0 0 0 0)) (uuid "c37f59b0-4f78-44a4-ab3c-4e5860925377")
+ (property "Sheetname" "USB_Battery_Power_Mux" (at 25.4 83.82 0) (effects (font (size 1.27 1.27)) (justify left bottom)))
+ (property "Sheetfile" "neocam-power-mux-v0.5.kicad_sch" (at 25.4 111.76 0) (effects (font (size 1 1)) (justify left top)))
+ (instances (project "neocam-power-v0" (path "/f9993b18-d3df-48ee-ae00-0b9fd455017d" (page "2")))))
+(symbol (lib_id "Connector:TestPoint") (at 255.27 115.57 0) (unit 1)
+    (exclude_from_sim yes) (in_bom yes) (on_board yes) (dnp no)
+    (uuid "d01a36ce-a936-42af-afc9-74b3200a1d55")
+    (property "Reference" "TP1" (at 259.08 113.03 0) (effects (font (size 1.1 1.1)) (justify left)))
+    (property "Value" "BAT" (at 259.08 115.57 0) (effects (font (size 1.1 1.1)) (justify left)))
+    (property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm" (at 255.27 115.57 0) (hide yes) (effects (font (size 1.1 1.1)) )) (property "Datasheet" "" (at 255.27 115.57 0) (hide yes) (effects (font (size 1.1 1.1)) ))
+    
+    (instances (project "neocam-power-v0" (path "/f9993b18-d3df-48ee-ae00-0b9fd455017d" (reference "TP1") (unit 1)))))
+(wire (pts (xy 255.27 115.57) (xy 255.27 124.46)) (stroke (width 0) (type default)) (uuid "6a15fec5-2077-4809-aed5-a31c13de197a"))
+(global_label "VBAT_XIAO" (shape bidirectional) (at 255.27 124.46 0) (effects (font (size 1.1 1.1)) (justify left)) (uuid "cfdce674-cb16-4bc4-a92f-6c35db313cef"))
+(symbol (lib_id "Connector:TestPoint") (at 294.64 115.57 0) (unit 1)
+    (exclude_from_sim yes) (in_bom yes) (on_board yes) (dnp no)
+    (uuid "dc9894c1-fb1a-4818-8ae4-d3f0be0caf23")
+    (property "Reference" "TP2" (at 298.45 113.03 0) (effects (font (size 1.1 1.1)) (justify left)))
+    (property "Value" "VIN" (at 298.45 115.57 0) (effects (font (size 1.1 1.1)) (justify left)))
+    (property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm" (at 294.64 115.57 0) (hide yes) (effects (font (size 1.1 1.1)) )) (property "Datasheet" "" (at 294.64 115.57 0) (hide yes) (effects (font (size 1.1 1.1)) ))
+    
+    (instances (project "neocam-power-v0" (path "/f9993b18-d3df-48ee-ae00-0b9fd455017d" (reference "TP2") (unit 1)))))
+(wire (pts (xy 294.64 115.57) (xy 294.64 124.46)) (stroke (width 0) (type default)) (uuid "1a628515-bf50-407f-a5f0-86618982258d"))
+(global_label "VIN_SYS" (shape bidirectional) (at 294.64 124.46 0) (effects (font (size 1.1 1.1)) (justify left)) (uuid "15776498-7045-4a41-a1fa-b8d8850cf18a"))
+(symbol (lib_id "Connector:TestPoint") (at 335.28 115.57 0) (unit 1)
+    (exclude_from_sim yes) (in_bom yes) (on_board yes) (dnp no)
+    (uuid "24dce8d5-6ae9-43fd-9c7f-cba7019ec59f")
+    (property "Reference" "TP3" (at 339.09 113.03 0) (effects (font (size 1.1 1.1)) (justify left)))
+    (property "Value" "VBUS" (at 339.09 115.57 0) (effects (font (size 1.1 1.1)) (justify left)))
+    (property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm" (at 335.28 115.57 0) (hide yes) (effects (font (size 1.1 1.1)) )) (property "Datasheet" "" (at 335.28 115.57 0) (hide yes) (effects (font (size 1.1 1.1)) ))
+    
+    (instances (project "neocam-power-v0" (path "/f9993b18-d3df-48ee-ae00-0b9fd455017d" (reference "TP3") (unit 1)))))
+(wire (pts (xy 335.28 115.57) (xy 335.28 124.46)) (stroke (width 0) (type default)) (uuid "b8878d06-b47c-47b7-8f61-760124ca6b2e"))
+(global_label "VBUS_REWORK" (shape bidirectional) (at 335.28 124.46 0) (effects (font (size 1.1 1.1)) (justify left)) (uuid "326fb8b0-b94f-4019-81dd-750c26d6eeae"))
+(symbol (lib_id "Connector:TestPoint") (at 374.65 115.57 0) (unit 1)
+    (exclude_from_sim yes) (in_bom yes) (on_board yes) (dnp no)
+    (uuid "5141e8af-65f2-4c44-966d-68dcfe3c48cb")
+    (property "Reference" "TP4" (at 378.46 113.03 0) (effects (font (size 1.1 1.1)) (justify left)))
+    (property "Value" "GND" (at 378.46 115.57 0) (effects (font (size 1.1 1.1)) (justify left)))
+    (property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm" (at 374.65 115.57 0) (hide yes) (effects (font (size 1.1 1.1)) )) (property "Datasheet" "" (at 374.65 115.57 0) (hide yes) (effects (font (size 1.1 1.1)) ))
+    
+    (instances (project "neocam-power-v0" (path "/f9993b18-d3df-48ee-ae00-0b9fd455017d" (reference "TP4") (unit 1)))))
+(wire (pts (xy 374.65 115.57) (xy 374.65 124.46)) (stroke (width 0) (type default)) (uuid "844dfe02-ac4b-4285-bb0c-a2803f930ff5"))
+(global_label "GND" (shape bidirectional) (at 374.65 124.46 0) (effects (font (size 1.1 1.1)) (justify left)) (uuid "7df97a4e-2061-482d-9ac1-b4c10a67e7c8"))
+(text "2. Battery voltage and charge estimate over I2C" (at 20.32 132.08 0) (effects (font (size 1.6 1.6)) (justify left top)) (uuid "027727b5-e594-4d22-9bba-32509bb4a7b1"))
+(symbol (lib_id "NeoCam:MAX17048G_Plus") (at 144.78 175.26 0) (unit 1)
+    (exclude_from_sim yes) (in_bom yes) (on_board yes) (dnp no)
+    (uuid "ed4fd7ba-5654-449f-818c-4a29b1d88d5c")
+    (property "Reference" "U2" (at 144.78 139.7 0) (effects (font (size 1.1 1.1)) ))
+    (property "Value" "MAX17048G+" (at 144.78 142.24 0) (effects (font (size 1.1 1.1)) ))
+    (property "Footprint" "" (at 144.78 175.26 0) (hide yes) (effects (font (size 1.1 1.1)) )) (property "Datasheet" "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX17048-MAX17049.pdf" (at 144.78 175.26 0) (hide yes) (effects (font (size 1.1 1.1)) ))
+    
+    (instances (project "neocam-power-v0" (path "/f9993b18-d3df-48ee-ae00-0b9fd455017d" (reference "U2") (unit 1)))))
+(wire (pts (xy 115.57 160.02) (xy 105.41 160.02)) (stroke (width 0) (type default)) (uuid "68bde615-6ce7-4741-a2ae-99510b9bb810"))
+(global_label "VBAT_XIAO" (shape bidirectional) (at 80.01 160.02 180) (effects (font (size 1.1 1.1)) (justify right)) (uuid "519af842-d8be-45a5-a0ed-a6452e018847"))
+(wire (pts (xy 105.41 160.02) (xy 105.41 170.18)) (stroke (width 0) (type default)) (uuid "d3f46e81-1caf-4de9-ac39-9808475c0c50"))
+(wire (pts (xy 105.41 170.18) (xy 115.57 170.18)) (stroke (width 0) (type default)) (uuid "41dc3544-4b60-458f-b2b3-d24b1440eaad"))
+(junction (at 105.41 160.02) (diameter 0) (color 0 0 0 0) (uuid "5c03a308-d194-41f4-a430-826078cb801b"))
+(symbol (lib_id "Device:C") (at 80.01 175.26 0) (unit 1)
+    (exclude_from_sim yes) (in_bom yes) (on_board yes) (dnp no)
+    (uuid "0ece270d-f967-49ff-a108-259e5aafd1f9")
+    (property "Reference" "C1" (at 83.82 172.72 0) (effects (font (size 1.1 1.1)) (justify left)))
+    (property "Value" "100nF 10V X7R" (at 83.82 175.26 0) (effects (font (size 1.1 1.1)) (justify left)))
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 80.01 175.26 0) (hide yes) (effects (font (size 1.1 1.1)) )) (property "Datasheet" "" (at 80.01 175.26 0) (hide yes) (effects (font (size 1.1 1.1)) ))
+    
+    (instances (project "neocam-power-v0" (path "/f9993b18-d3df-48ee-ae00-0b9fd455017d" (reference "C1") (unit 1)))))
+(wire (pts (xy 80.01 171.45) (xy 80.01 160.02)) (stroke (width 0) (type default)) (uuid "0e64174d-df1e-4e1e-9a33-5b684a70bf1a"))
+(wire (pts (xy 80.01 160.02) (xy 105.41 160.02)) (stroke (width 0) (type default)) (uuid "572fb7a5-467d-4355-b60b-9a26e7d60420"))
+(wire (pts (xy 80.01 179.07) (xy 80.01 204.47)) (stroke (width 0) (type default)) (uuid "3a591728-95fb-4a92-9444-ebff4c8fbd0a"))
+(global_label "GND" (shape bidirectional) (at 80.01 204.47 0) (effects (font (size 1.1 1.1)) (justify left)) (uuid "f03cf978-8f61-452e-96a2-eb3ed5a83355"))
+(wire (pts (xy 115.57 180.34) (xy 105.41 180.34)) (stroke (width 0) (type default)) (uuid "319909ea-252a-40eb-a787-2911bd6e55a6"))
+(global_label "GND" (shape bidirectional) (at 105.41 180.34 180) (effects (font (size 1.1 1.1)) (justify right)) (uuid "4ea2f4ed-2744-4839-b8b9-d2119d133f7c"))
+(wire (pts (xy 115.57 190.5) (xy 105.41 190.5)) (stroke (width 0) (type default)) (uuid "9d5a1096-d7ee-4a14-99b7-8580811a6c67"))
+(global_label "GND" (shape bidirectional) (at 105.41 190.5 180) (effects (font (size 1.1 1.1)) (justify right)) (uuid "5fd907dd-d24e-4bcd-912a-e56135d7b346"))
+(wire (pts (xy 144.78 204.47) (xy 144.78 214.63)) (stroke (width 0) (type default)) (uuid "81b43e74-85ed-4caf-814d-11c40e1d17c5"))
+(wire (pts (xy 154.94 204.47) (xy 154.94 214.63)) (stroke (width 0) (type default)) (uuid "edf48453-722b-4251-b3cd-7413912af1e8"))
+(wire (pts (xy 144.78 214.63) (xy 154.94 214.63)) (stroke (width 0) (type default)) (uuid "2b586b62-7eca-4137-9791-b2846c1f221b"))
+(global_label "GND" (shape bidirectional) (at 144.78 214.63 180) (effects (font (size 1.1 1.1)) (justify right)) (uuid "c1de0f98-afdd-477b-a11f-69785c175af5"))
+(symbol (lib_id "Device:R") (at 195.58 139.7 0) (unit 1)
+    (exclude_from_sim yes) (in_bom yes) (on_board yes) (dnp no)
+    (uuid "79e4fa71-8132-4632-88a4-e9e251cb55c6")
+    (property "Reference" "R1" (at 199.39 138.43 0) (effects (font (size 1.1 1.1)) (justify left)))
+    (property "Value" "2.2k 1%" (at 199.39 140.97 0) (effects (font (size 1.1 1.1)) (justify left)))
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 195.58 139.7 0) (hide yes) (effects (font (size 1.1 1.1)) )) (property "Datasheet" "" (at 195.58 139.7 0) (hide yes) (effects (font (size 1.1 1.1)) ))
+    
+    (instances (project "neocam-power-v0" (path "/f9993b18-d3df-48ee-ae00-0b9fd455017d" (reference "R1") (unit 1)))))
+(wire (pts (xy 195.58 135.89) (xy 195.58 129.54)) (stroke (width 0) (type default)) (uuid "fbd080c9-79d9-4f15-8799-279f5d34a432"))
+(global_label "3V3_XIAO" (shape bidirectional) (at 195.58 129.54 0) (effects (font (size 1.1 1.1)) (justify left)) (uuid "30dbff8d-9d30-4915-9ad2-766d8d65c05c"))
+(wire (pts (xy 195.58 143.51) (xy 195.58 160.02)) (stroke (width 0) (type default)) (uuid "02ce3cb7-ea9a-4db1-9694-1a3a5521e459"))
+(wire (pts (xy 175.26 160.02) (xy 195.58 160.02)) (stroke (width 0) (type default)) (uuid "fc8cafb4-589b-4971-b186-68349d22b1bf"))
+(wire (pts (xy 195.58 160.02) (xy 203.2 160.02)) (stroke (width 0) (type default)) (uuid "e474067d-19c6-4e62-9c8f-924b3d2ae83a"))
+(junction (at 195.58 160.02) (diameter 0) (color 0 0 0 0) (uuid "bbcc093a-7ae7-4f76-9855-ee1cdb82fbe4"))
+(label "GAUGE_SCL" (at 203.2 160.02 0) (effects (font (size 1.1 1.1)) (justify left bottom)) (uuid "2047bf5c-8ba3-40d4-9db2-0cf9401a3aac"))
+(symbol (lib_id "Device:R") (at 214.63 139.7 0) (unit 1)
+    (exclude_from_sim yes) (in_bom yes) (on_board yes) (dnp no)
+    (uuid "ad045ce2-a618-41c3-8fda-618df5c400b3")
+    (property "Reference" "R2" (at 218.44 138.43 0) (effects (font (size 1.1 1.1)) (justify left)))
+    (property "Value" "2.2k 1%" (at 218.44 140.97 0) (effects (font (size 1.1 1.1)) (justify left)))
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 214.63 139.7 0) (hide yes) (effects (font (size 1.1 1.1)) )) (property "Datasheet" "" (at 214.63 139.7 0) (hide yes) (effects (font (size 1.1 1.1)) ))
+    
+    (instances (project "neocam-power-v0" (path "/f9993b18-d3df-48ee-ae00-0b9fd455017d" (reference "R2") (unit 1)))))
+(wire (pts (xy 214.63 135.89) (xy 214.63 129.54)) (stroke (width 0) (type default)) (uuid "ad0b3b2b-552c-43d2-bff8-1367db8bd134"))
+(global_label "3V3_XIAO" (shape bidirectional) (at 214.63 129.54 0) (effects (font (size 1.1 1.1)) (justify left)) (uuid "bcb6ecb0-9382-4b09-b371-75935e6874bb"))
+(wire (pts (xy 214.63 143.51) (xy 214.63 170.18)) (stroke (width 0) (type default)) (uuid "9f1fd689-37ef-4526-af38-25ebdcadcfb7"))
+(wire (pts (xy 175.26 170.18) (xy 214.63 170.18)) (stroke (width 0) (type default)) (uuid "78fcab9f-8d7a-4b5c-9328-6d851fe1136f"))
+(wire (pts (xy 214.63 170.18) (xy 223.52 170.18)) (stroke (width 0) (type default)) (uuid "5ab3a52d-2327-413c-a6d4-083dacd9e08c"))
+(junction (at 214.63 170.18) (diameter 0) (color 0 0 0 0) (uuid "dc497701-962e-4e2f-b763-f0884db8265b"))
+(label "GAUGE_SDA" (at 223.52 170.18 0) (effects (font (size 1.1 1.1)) (justify left bottom)) (uuid "d4e9047f-cfaa-4b7d-b067-11689f9b5750"))
+(symbol (lib_id "Device:R") (at 234.95 139.7 0) (unit 1)
+    (exclude_from_sim yes) (in_bom yes) (on_board yes) (dnp no)
+    (uuid "39dd1e1c-a14e-42cb-b34e-080582f152d0")
+    (property "Reference" "R3" (at 238.76 138.43 0) (effects (font (size 1.1 1.1)) (justify left)))
+    (property "Value" "10k 1%" (at 238.76 140.97 0) (effects (font (size 1.1 1.1)) (justify left)))
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 234.95 139.7 0) (hide yes) (effects (font (size 1.1 1.1)) )) (property "Datasheet" "" (at 234.95 139.7 0) (hide yes) (effects (font (size 1.1 1.1)) ))
+    
+    (instances (project "neocam-power-v0" (path "/f9993b18-d3df-48ee-ae00-0b9fd455017d" (reference "R3") (unit 1)))))
+(wire (pts (xy 234.95 135.89) (xy 234.95 129.54)) (stroke (width 0) (type default)) (uuid "806663d2-388f-4f4b-8ce0-8927578e7a5d"))
+(global_label "3V3_XIAO" (shape bidirectional) (at 234.95 129.54 0) (effects (font (size 1.1 1.1)) (justify left)) (uuid "529d4f23-e6aa-4199-9925-61742f26bf0d"))
+(wire (pts (xy 234.95 143.51) (xy 234.95 180.34)) (stroke (width 0) (type default)) (uuid "2d43c959-b5eb-4d0f-bf60-60ad1149371f"))
+(wire (pts (xy 175.26 180.34) (xy 234.95 180.34)) (stroke (width 0) (type default)) (uuid "b06ecdd3-77e7-4796-8907-b0e61422a6d7"))
+(wire (pts (xy 234.95 180.34) (xy 242.57 180.34)) (stroke (width 0) (type default)) (uuid "fccd27f8-13b5-49b8-aab4-29ca27a284cd"))
+(junction (at 234.95 180.34) (diameter 0) (color 0 0 0 0) (uuid "5f8ce8a1-0d0f-4fc6-b9dd-cb1a5aadc599"))
+(label "BAT_ALERT_N" (at 242.57 180.34 0) (effects (font (size 1.1 1.1)) (justify left bottom)) (uuid "ae87edd3-6e03-4780-a678-b9fb1627b3e9"))
+(text "VDD and CELL sense protected battery after F1." (at 35.56 229.87 0) (effects (font (size 1.15 1.15)) (justify left top)) (uuid "93fa9be1-7119-40fc-9ea3-2361dc6e8d4d"))
+(text "No battery-derived analog voltage reaches ESP GPIO." (at 35.56 236.22 0) (effects (font (size 1.15 1.15)) (justify left top)) (uuid "c1a6833a-cd13-4b3c-9e6f-b0b00b442156"))
+(text "SCL/SDA pull-ups use host 3V3, not the battery." (at 35.56 242.57 0) (effects (font (size 1.15 1.15)) (justify left top)) (uuid "7ae0d6dd-2735-4d57-8afb-33ceaa57860e"))
+(text "Bus: 100kHz; total capacitance target <=150pF." (at 35.56 247.65 0) (effects (font (size 1.15 1.15)) (justify left top)) (uuid "cbbaad33-c057-4dda-88e7-6b6e32f402ac"))
+(text "Fuel-gauge SOC requires matching/validating cell model." (at 35.56 254 0) (effects (font (size 1.15 1.15)) (justify left top)) (uuid "1587424c-c600-4bd5-8475-dcf1e9c8f3bf"))
+(text "Do not set safe-stop thresholds from SOC alone." (at 35.56 260.35 0) (effects (font (size 1.15 1.15)) (justify left top)) (uuid "c8b46414-dbe6-4689-a666-71713d34bc37"))
+(text "3. Record button and status LED" (at 270.51 132.08 0) (effects (font (size 1.6 1.6)) (justify left top)) (uuid "201fdee5-42a2-446e-81e2-3d1479e44314"))
+(symbol (lib_id "Device:R") (at 289.56 149.86 0) (unit 1)
+    (exclude_from_sim yes) (in_bom yes) (on_board yes) (dnp no)
+    (uuid "6734a0b9-273b-4846-8516-d36fc168ab39")
+    (property "Reference" "R4" (at 293.37 148.59 0) (effects (font (size 1.1 1.1)) (justify left)))
+    (property "Value" "10k 1%" (at 293.37 151.13 0) (effects (font (size 1.1 1.1)) (justify left)))
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 289.56 149.86 0) (hide yes) (effects (font (size 1.1 1.1)) )) (property "Datasheet" "" (at 289.56 149.86 0) (hide yes) (effects (font (size 1.1 1.1)) ))
+    
+    (instances (project "neocam-power-v0" (path "/f9993b18-d3df-48ee-ae00-0b9fd455017d" (reference "R4") (unit 1)))))
+(wire (pts (xy 289.56 146.05) (xy 289.56 139.7)) (stroke (width 0) (type default)) (uuid "af9a2fc5-9612-42f4-8341-2dab9efaa515"))
+(global_label "3V3_XIAO" (shape bidirectional) (at 289.56 139.7 0) (effects (font (size 1.1 1.1)) (justify left)) (uuid "b370ed35-63d4-4527-b69c-5b3cf5474c60"))
+(wire (pts (xy 289.56 153.67) (xy 289.56 165.1)) (stroke (width 0) (type default)) (uuid "a3b91950-a13b-451b-92be-4272e641fad5"))
+(wire (pts (xy 289.56 165.1) (xy 289.56 185.42)) (stroke (width 0) (type default)) (uuid "9a7edcbe-38dd-4153-b2aa-276808219cc3"))
+(label "REC_N" (at 289.56 165.1 0) (effects (font (size 1.1 1.1)) (justify left bottom)) (uuid "49e099f0-6a81-4745-a465-668c193eb105"))
+(junction (at 289.56 165.1) (diameter 0) (color 0 0 0 0) (uuid "e204c478-1f6d-49dd-b9f7-c26bcac422ce"))
+(symbol (lib_id "Switch:SW_Push") (at 299.72 185.42 0) (unit 1)
+    (exclude_from_sim yes) (in_bom yes) (on_board yes) (dnp no)
+    (uuid "af09ddfb-e882-47bb-ba6c-9a620154eea0")
+    (property "Reference" "SW1" (at 299.72 177.8 0) (effects (font (size 1.1 1.1)) ))
+    (property "Value" "B3U-1000P RECORD / STOP" (at 299.72 180.34 0) (effects (font (size 1.1 1.1)) ))
+    (property "Footprint" "Button_Switch_SMD:SW_SPST_B3U-1000P" (at 299.72 185.42 0) (hide yes) (effects (font (size 1.1 1.1)) )) (property "Datasheet" "https://components.omron.com/us-en/products/switches/B3U" (at 299.72 185.42 0) (hide yes) (effects (font (size 1.1 1.1)) ))
+    
+    (instances (project "neocam-power-v0" (path "/f9993b18-d3df-48ee-ae00-0b9fd455017d" (reference "SW1") (unit 1)))))
+(wire (pts (xy 289.56 185.42) (xy 294.64 185.42)) (stroke (width 0) (type default)) (uuid "71dc2b28-5444-4a6e-a28e-2b1c8d294ca9"))
+(wire (pts (xy 304.8 185.42) (xy 320.04 185.42)) (stroke (width 0) (type default)) (uuid "adc7bb3f-2f28-47b2-b8c8-41bd460a4ef8"))
+(wire (pts (xy 320.04 185.42) (xy 320.04 209.55)) (stroke (width 0) (type default)) (uuid "044d81e3-78cb-465a-8cc0-30a4c0f20d78"))
+(global_label "GND" (shape bidirectional) (at 320.04 209.55 0) (effects (font (size 1.1 1.1)) (justify left)) (uuid "b05c23d6-2620-49e6-bdc7-6c6e6f247a80"))
+(symbol (lib_id "Device:C") (at 270.51 185.42 0) (unit 1)
+    (exclude_from_sim yes) (in_bom yes) (on_board yes) (dnp no)
+    (uuid "9d228733-56dc-45e5-8848-9d624e1db179")
+    (property "Reference" "C2" (at 274.32 182.88 0) (effects (font (size 1.1 1.1)) (justify left)))
+    (property "Value" "100nF 10V X7R" (at 274.32 185.42 0) (effects (font (size 1.1 1.1)) (justify left)))
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 270.51 185.42 0) (hide yes) (effects (font (size 1.1 1.1)) )) (property "Datasheet" "" (at 270.51 185.42 0) (hide yes) (effects (font (size 1.1 1.1)) ))
+    
+    (instances (project "neocam-power-v0" (path "/f9993b18-d3df-48ee-ae00-0b9fd455017d" (reference "C2") (unit 1)))))
+(wire (pts (xy 270.51 181.61) (xy 270.51 165.1)) (stroke (width 0) (type default)) (uuid "b395a8bc-1503-40e0-a535-16912700f7de"))
+(wire (pts (xy 270.51 165.1) (xy 289.56 165.1)) (stroke (width 0) (type default)) (uuid "5b3370b2-e826-4faa-bf97-360fb7e4d118"))
+(wire (pts (xy 270.51 189.23) (xy 270.51 209.55)) (stroke (width 0) (type default)) (uuid "2854950b-3d87-4494-bb0a-b8ca2c85d61e"))
+(global_label "GND" (shape bidirectional) (at 270.51 209.55 0) (effects (font (size 1.1 1.1)) (justify left)) (uuid "945806bc-fad8-423a-acf1-a23cfcb3900e"))
+(text "Active LOW on D1/GPIO2; firmware debounces." (at 265.43 217.17 0) (effects (font (size 1.15 1.15)) (justify left top)) (uuid "268a1364-0088-4d73-85c5-d6cab1c76ee0"))
+(symbol (lib_id "Device:R") (at 289.56 240.03 90) (unit 1)
+    (exclude_from_sim yes) (in_bom yes) (on_board yes) (dnp no)
+    (uuid "64997388-8321-45dd-9516-290d51018969")
+    (property "Reference" "R5" (at 289.56 232.41 90) (effects (font (size 1.1 1.1)) ))
+    (property "Value" "2.2k 1%" (at 289.56 234.95 90) (effects (font (size 1.1 1.1)) ))
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 289.56 240.03 0) (hide yes) (effects (font (size 1.1 1.1)) )) (property "Datasheet" "" (at 289.56 240.03 0) (hide yes) (effects (font (size 1.1 1.1)) ))
+    
+    (instances (project "neocam-power-v0" (path "/f9993b18-d3df-48ee-ae00-0b9fd455017d" (reference "R5") (unit 1)))))
+(wire (pts (xy 285.75 240.03) (xy 270.51 240.03)) (stroke (width 0) (type default)) (uuid "a47143de-644e-4eae-b74e-f9755c198982"))
+(label "STATUS_LED" (at 270.51 240.03 0) (effects (font (size 1.1 1.1)) (justify left bottom)) (uuid "c28f228c-3da8-4fc2-a747-98c5c94ed5e8"))
+(symbol (lib_id "Device:LED") (at 314.96 240.03 180) (unit 1)
+    (exclude_from_sim yes) (in_bom yes) (on_board yes) (dnp no)
+    (uuid "1d7a3180-ab2b-4fdb-96a8-e135cb00edbc")
+    (property "Reference" "D1" (at 314.96 232.41 0) (effects (font (size 1.1 1.1)) ))
+    (property "Value" "RED 0603" (at 314.96 234.95 0) (effects (font (size 1.1 1.1)) ))
+    (property "Footprint" "LED_SMD:LED_0603_1608Metric" (at 314.96 240.03 0) (hide yes) (effects (font (size 1.1 1.1)) )) (property "Datasheet" "" (at 314.96 240.03 0) (hide yes) (effects (font (size 1.1 1.1)) ))
+    
+    (instances (project "neocam-power-v0" (path "/f9993b18-d3df-48ee-ae00-0b9fd455017d" (reference "D1") (unit 1)))))
+(wire (pts (xy 293.37 240.03) (xy 311.15 240.03)) (stroke (width 0) (type default)) (uuid "a5af6d07-f712-4847-b7b2-1288520d5d8c"))
+(wire (pts (xy 318.77 240.03) (xy 335.28 240.03)) (stroke (width 0) (type default)) (uuid "da4afd3e-0973-4960-8d14-74fc2e716d94"))
+(global_label "GND" (shape bidirectional) (at 335.28 240.03 0) (effects (font (size 1.1 1.1)) (justify left)) (uuid "d0fdfcc7-a216-4574-8bc9-0baf219be8c0"))
+(text "D3/GPIO4; GPIO21 reserved for microSD CS." (at 265.43 250.19 0) (effects (font (size 1.15 1.15)) (justify left top)) (uuid "38a1f981-2595-4cb9-84a6-c78bee9d813d"))
+(text "4. Rear pogo charging - reserved only" (at 325.12 140.97 0) (effects (font (size 1.4 1.4)) (justify left top)) (uuid "090b5db1-f580-4b15-a54b-c226420fc652"))
+(symbol (lib_id "NeoCam:Rear_Charging_Reserved") (at 364.49 165.1 0) (unit 1)
+    (exclude_from_sim yes) (in_bom yes) (on_board yes) (dnp yes)
+    (uuid "e01d1a6e-d432-48ad-a517-b4a19e09bb09")
+    (property "Reference" "J2" (at 364.49 157.48 0) (effects (font (size 1.1 1.1)) ))
+    (property "Value" "POGO FUTURE / DNP" (at 364.49 160.02 0) (effects (font (size 1.1 1.1)) ))
+    (property "Footprint" "" (at 364.49 165.1 0) (hide yes) (effects (font (size 1.1 1.1)) )) (property "Datasheet" "" (at 364.49 165.1 0) (hide yes) (effects (font (size 1.1 1.1)) ))
+    
+    (instances (project "neocam-power-v0" (path "/f9993b18-d3df-48ee-ae00-0b9fd455017d" (reference "J2") (unit 1)))))
+(no_connect (at 359.41 165.1) (uuid "da1dd8ed-d945-4b1c-b5df-d1542c6cbd41"))
+(no_connect (at 359.41 167.64) (uuid "3891c9a5-fa88-4bdd-9ff1-499db2305156"))
+(text "Not electrically implemented in v0.5." (at 325.12 180.34 0) (effects (font (size 1.15 1.15)) (justify left top)) (uuid "42ce24dd-ecd7-431a-a768-6cf446d86377"))
+(text "No connection to BAT or USB VBUS." (at 325.12 185.42 0) (effects (font (size 1.15 1.15)) (justify left top)) (uuid "bb731a76-5db2-4a73-99c6-fc34bdb21f09"))
+(text "Needs 5V protection, source ORing," (at 325.12 191.77 0) (effects (font (size 1.15 1.15)) (justify left top)) (uuid "c1a6a6c3-59ca-4e2a-9195-64a9d61ab0a7"))
+(text "reverse-current and polarity design." (at 325.12 198.12 0) (effects (font (size 1.15 1.15)) (justify left top)) (uuid "00147a04-2568-415c-bb22-b9ee0422cbf3"))
+(text "Operating target: >=45min standalone image + audio; Wi-Fi/BLE OFF. 720p/30FPS remains a functional target." (at 20.32 270.51 0) (effects (font (size 1.15 1.15)) (justify left top)) (uuid "588bdcb4-4a2e-4abc-aac4-25b15b048982"))
+(text "MUX/timing/hold-up limits are qualification budgets; switching, runtime, thermal and file finalization remain unmeasured." (at 20.32 275.59 0) (effects (font (size 1.15 1.15)) (justify left top)) (uuid "0a706ef8-8b03-4d58-9f55-749d2d6545e1"))
+(sheet_instances (path "/" (page "1"))) (embedded_fonts no)
+)

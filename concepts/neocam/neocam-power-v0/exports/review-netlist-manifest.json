@@ -1,0 +1,113 @@
+{
+  "purpose": "Three-sheet connectivity review, not a fabrication/import netlist",
+  "only_changes": {
+    "neocam-power-v0.kicad_sch": {
+      "R_MB9": {
+        "on_board": [
+          "no",
+          "yes"
+        ]
+      }
+    },
+    "neocam-power-mux-v0.6.kicad_sch": {},
+    "neocam-power-3v3-v0.6.kicad_sch": {
+      "U_MB3": {
+        "on_board": [
+          "no",
+          "yes"
+        ]
+      },
+      "C_MB3": {
+        "on_board": [
+          "no",
+          "yes"
+        ]
+      },
+      "C_MB4": {
+        "on_board": [
+          "no",
+          "yes"
+        ]
+      },
+      "R_MB13": {
+        "on_board": [
+          "no",
+          "yes"
+        ]
+      },
+      "L_MB4": {
+        "on_board": [
+          "no",
+          "yes"
+        ]
+      },
+      "C_MB5": {
+        "on_board": [
+          "no",
+          "yes"
+        ]
+      },
+      "C_MB6": {
+        "on_board": [
+          "no",
+          "yes"
+        ]
+      },
+      "FB_SENSE1": {
+        "on_board": [
+          "no",
+          "yes"
+        ]
+      },
+      "C_SENSE8": {
+        "on_board": [
+          "no",
+          "yes"
+        ]
+      },
+      "C_SENSE9": {
+        "on_board": [
+          "no",
+          "yes"
+        ]
+      }
+    }
+  },
+  "source_files": {
+    "neocam-power-v0.kicad_sch": {
+      "source_sha256": "71af8c084b02d79b5d82300148adb13f45e6ca5f38b5a4e6606bae5fa9fb821a",
+      "source_normalized_sha256": "9fbc178162929c8c3f4aa2d41971f59f7dc5b47cfa232b4934f5587b272c95b1",
+      "review_source_normalized_sha256": "9fbc178162929c8c3f4aa2d41971f59f7dc5b47cfa232b4934f5587b272c95b1",
+      "normalized_identical": true
+    },
+    "neocam-power-mux-v0.6.kicad_sch": {
+      "source_sha256": "d4306ec41473c0f3ba9831f9001e58d0c0692e1891142d3469da7a7d2cd17d29",
+      "source_normalized_sha256": "429cf4f063dd9cd2812a392f8e89ffd762ce3a1639306c2711e506426a9baedb",
+      "review_source_normalized_sha256": "429cf4f063dd9cd2812a392f8e89ffd762ce3a1639306c2711e506426a9baedb",
+      "normalized_identical": true
+    },
+    "neocam-power-3v3-v0.6.kicad_sch": {
+      "source_sha256": "87547ee53f0e61786ec62856d690187c7b3a0d0402c4c62fb5b91438813e195e",
+      "source_normalized_sha256": "5dfec7ce977487d2a268e0e1b34afccb16536447c3f9b294f0523e51df71c598",
+      "review_source_normalized_sha256": "5dfec7ce977487d2a268e0e1b34afccb16536447c3f9b294f0523e51df71c598",
+      "normalized_identical": true
+    }
+  },
+  "stock_refs_temporarily_included": [
+    "C_MB3",
+    "C_MB4",
+    "C_MB5",
+    "C_MB6",
+    "C_SENSE8",
+    "C_SENSE9",
+    "FB_SENSE1",
+    "L_MB4",
+    "R_MB13",
+    "R_MB9",
+    "U_MB3"
+  ],
+  "normalization": "Only the 11 explicit stock-part on_board booleans normalized to the same sentinel; every wire,pin,label,value,BOM flag unchanged",
+  "normalized_sources_identical": true,
+  "output": "neocam-power-v0-review-full.net",
+  "output_sha256": "9f3679c02d297b8ebe66665d930fabd8bd3be638b7383504d172af859736d0c5"
+}

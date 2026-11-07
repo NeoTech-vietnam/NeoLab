@@ -1,0 +1,36 @@
+﻿reference,value,lib_id,x,y,angle,dnp,existing_on_xiao,sheet_path,manufacturer_part,footprint,datasheet
+BT1,DNK102050 1S 1000mAh + PCM,Device:Battery_Cell,35,67,0,False,False,/f9993b18-d3df-48ee-ae00-0b9fd455017d,,,https://www.dnkpower.com/wp-content/uploads/2023/11/DNK102050-3.7V-1000mAh-Lipo-Battery-Specification.pdf
+J1,JST PH2 battery,Connector_Generic:Conn_01x02,65,58,0,False,False,/f9993b18-d3df-48ee-ae00-0b9fd455017d,,Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical,
+F1,046701.5NR | 1.5A,Device:Fuse,80,45,90,False,False,/f9993b18-d3df-48ee-ae00-0b9fd455017d,,Fuse:Fuse_0603_1608Metric,https://www.littelfuse.com/products/fuses/surface-mount-fuses/surface-mount-fuses/467.aspx
+U1,XIAO Sense; remove Q1 + D2,NeoCam:XIAO_ESP32S3_Sense_Power_Interface,160,83,0,False,False,/f9993b18-d3df-48ee-ae00-0b9fd455017d,,,https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/
+TP1,BAT,Connector:TestPoint,255,115,0,False,False,/f9993b18-d3df-48ee-ae00-0b9fd455017d,,TestPoint:TestPoint_Pad_D1.5mm,
+TP2,VIN,Connector:TestPoint,295,115,0,False,False,/f9993b18-d3df-48ee-ae00-0b9fd455017d,,TestPoint:TestPoint_Pad_D1.5mm,
+TP3,VBUS,Connector:TestPoint,335,115,0,False,False,/f9993b18-d3df-48ee-ae00-0b9fd455017d,,TestPoint:TestPoint_Pad_D1.5mm,
+TP4,GND,Connector:TestPoint,375,115,0,False,False,/f9993b18-d3df-48ee-ae00-0b9fd455017d,,TestPoint:TestPoint_Pad_D1.5mm,
+U2,MAX17048G+,NeoCam:MAX17048G_Plus,145,175,0,False,False,/f9993b18-d3df-48ee-ae00-0b9fd455017d,,,https://www.analog.com/media/en/technical-documentation/data-sheets/MAX17048-MAX17049.pdf
+C1,100nF 10V X7R,Device:C,80,175,0,False,False,/f9993b18-d3df-48ee-ae00-0b9fd455017d,,Capacitor_SMD:C_0603_1608Metric,
+R1,2.2k 1%,Device:R,195,140,0,False,False,/f9993b18-d3df-48ee-ae00-0b9fd455017d,,Resistor_SMD:R_0603_1608Metric,
+R2,2.2k 1%,Device:R,215,140,0,False,False,/f9993b18-d3df-48ee-ae00-0b9fd455017d,,Resistor_SMD:R_0603_1608Metric,
+R3,10k 1%,Device:R,235,140,0,False,False,/f9993b18-d3df-48ee-ae00-0b9fd455017d,,Resistor_SMD:R_0603_1608Metric,
+R4,10k 1%,Device:R,290,150,0,False,False,/f9993b18-d3df-48ee-ae00-0b9fd455017d,,Resistor_SMD:R_0603_1608Metric,
+SW1,B3U-1000P RECORD / STOP,Switch:SW_Push,300,185,0,False,False,/f9993b18-d3df-48ee-ae00-0b9fd455017d,,Button_Switch_SMD:SW_SPST_B3U-1000P,https://components.omron.com/us-en/products/switches/B3U
+C2,100nF 10V X7R,Device:C,270,185,0,False,False,/f9993b18-d3df-48ee-ae00-0b9fd455017d,,Capacitor_SMD:C_0603_1608Metric,
+R5,2.2k 1%,Device:R,290,240,90,False,False,/f9993b18-d3df-48ee-ae00-0b9fd455017d,,Resistor_SMD:R_0603_1608Metric,
+D1,RED 0603,Device:LED,315,240,180,False,False,/f9993b18-d3df-48ee-ae00-0b9fd455017d,,LED_SMD:LED_0603_1608Metric,
+J2,POGO FUTURE / DNP,NeoCam:Rear_Charging_Reserved,365,165,0,True,False,/f9993b18-d3df-48ee-ae00-0b9fd455017d,,,
+U3,TPS2121RUXR,NeoCam:TPS2121RUXR,220,115,0,False,False,/f9993b18-d3df-48ee-ae00-0b9fd455017d/c37f59b0-4f78-44a4-ab3c-4e5860925377,,,https://www.ti.com/lit/ds/symlink/tps2121.pdf
+C3,4.7uF 10V X7R,Device:C,110,100,0,False,False,/f9993b18-d3df-48ee-ae00-0b9fd455017d/c37f59b0-4f78-44a4-ab3c-4e5860925377,,Capacitor_SMD:C_0805_2012Metric,
+R7,20k 1%,Device:R,65,115,0,False,False,/f9993b18-d3df-48ee-ae00-0b9fd455017d/c37f59b0-4f78-44a4-ab3c-4e5860925377,,Resistor_SMD:R_0603_1608Metric,
+R8,10k 1%,Device:R,65,140,0,False,False,/f9993b18-d3df-48ee-ae00-0b9fd455017d/c37f59b0-4f78-44a4-ab3c-4e5860925377,,Resistor_SMD:R_0603_1608Metric,
+C4,4.7uF 10V X7R,Device:C,150,125,0,False,False,/f9993b18-d3df-48ee-ae00-0b9fd455017d/c37f59b0-4f78-44a4-ab3c-4e5860925377,,Capacitor_SMD:C_0805_2012Metric,
+R9,20k 1%,Device:R,95,165,0,False,False,/f9993b18-d3df-48ee-ae00-0b9fd455017d/c37f59b0-4f78-44a4-ab3c-4e5860925377,,Resistor_SMD:R_0603_1608Metric,
+R10,10k 1%,Device:R,95,190,0,False,False,/f9993b18-d3df-48ee-ae00-0b9fd455017d/c37f59b0-4f78-44a4-ab3c-4e5860925377,,Resistor_SMD:R_0603_1608Metric,
+C5,4.7uF 10V X7R,Device:C,310,110,0,False,False,/f9993b18-d3df-48ee-ae00-0b9fd455017d/c37f59b0-4f78-44a4-ab3c-4e5860925377,Value/package selected; supplier code pending,Capacitor_SMD:C_0805_2012Metric,
+C6,100nF 10V,Device:C,330,110,0,False,False,/f9993b18-d3df-48ee-ae00-0b9fd455017d/c37f59b0-4f78-44a4-ab3c-4e5860925377,Value/package selected; supplier code pending,Capacitor_SMD:C_0603_1608Metric,
+C8,330uF 10V,Device:C_Polarized,350,110,0,False,False,/f9993b18-d3df-48ee-ae00-0b9fd455017d/c37f59b0-4f78-44a4-ab3c-4e5860925377,T520X337M010ATE025,Capacitor_Tantalum_SMD:CP_EIA-7343-43_Kemet-X,
+C9,330uF 10V,Device:C_Polarized,370,110,0,False,False,/f9993b18-d3df-48ee-ae00-0b9fd455017d/c37f59b0-4f78-44a4-ab3c-4e5860925377,T520X337M010ATE025,Capacitor_Tantalum_SMD:CP_EIA-7343-43_Kemet-X,
+C10,330uF 10V,Device:C_Polarized,390,110,0,False,False,/f9993b18-d3df-48ee-ae00-0b9fd455017d/c37f59b0-4f78-44a4-ab3c-4e5860925377,T520X337M010ATE025,Capacitor_Tantalum_SMD:CP_EIA-7343-43_Kemet-X,
+R12,80.0k 1%,Device:R,275,155,0,False,False,/f9993b18-d3df-48ee-ae00-0b9fd455017d/c37f59b0-4f78-44a4-ab3c-4e5860925377,,Resistor_SMD:R_0603_1608Metric,
+C7,1uF 10V X7R,Device:C,255,190,0,False,False,/f9993b18-d3df-48ee-ae00-0b9fd455017d/c37f59b0-4f78-44a4-ab3c-4e5860925377,,Capacitor_SMD:C_0603_1608Metric,
+R11,10k 1%,Device:R,310,180,0,False,False,/f9993b18-d3df-48ee-ae00-0b9fd455017d/c37f59b0-4f78-44a4-ab3c-4e5860925377,,Resistor_SMD:R_0603_1608Metric,
+TP5,MUX_STATUS,Connector:TestPoint,345,185,0,False,False,/f9993b18-d3df-48ee-ae00-0b9fd455017d/c37f59b0-4f78-44a4-ab3c-4e5860925377,,TestPoint:TestPoint_Pad_D1.5mm,

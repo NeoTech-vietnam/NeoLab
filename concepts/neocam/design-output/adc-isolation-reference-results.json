@@ -1,0 +1,9 @@
+{
+  "classification": "ideal_model_of_rejected_ADC_alternative_not_final_circuit",
+  "QSPICE_header": "Title: * NeoCam ADC isolation: ideal switch + explicit leakage stress,NOT TI model.\nDate: Fri Nov  6 07:12:34 2026\nPlotname: Transient Analysis\nFlags: real\nAbscissa:     0.000000000000000e+00     1.200000000000000e-01                     \nNo. Variables: 5\nNo. Points: 12206                \nCommand: QSPICE64, Build Oct 22 2026 10:48:27\n.param temp=27\nVariables:\n\t0\tTime\ttime\n\t1\tV(pack)\tvoltage\n\t2\tV(vdd)\tvoltage\n\t3\tV(div)\tvoltage\n\t4\tV(adc)\tvoltage\n",
+  "ADC_on_at_60ms_V": 1.4113145324357854,
+  "DIV_on_at_60ms_V": 1.4113427587264338,
+  "ADC_off_max_85to120ms_V": 0.2000019167331181,
+  "DIV_off_at_120ms_V": 2.116735034846521,
+  "limits": "ideal_switch_has_no_real_tOFF; imposed_2uA_not_empirical_leak; no_ESP_clamp_model"
+}

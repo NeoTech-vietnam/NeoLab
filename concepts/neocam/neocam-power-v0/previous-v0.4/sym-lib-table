@@ -1,0 +1,4 @@
+(sym_lib_table
+ (version 7)
+ (lib (name "NeoCam")(type "KiCad")(uri "${KIPRJMOD}/NeoCam.kicad_sym")(options "")(descr "NeoCam reference module interfaces"))
+)

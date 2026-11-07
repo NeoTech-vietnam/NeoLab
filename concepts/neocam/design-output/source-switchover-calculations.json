@@ -1,0 +1,112 @@
+{
+  "design_revision": "v0.5",
+  "classification": "source_selection_and_hold_up_requirements_not_hardware_acceptance",
+  "selected_mux": {
+    "part": "TPS2121RUXR",
+    "mode": "XCOMP_USB_PR1_vs_BAT_CP2",
+    "datasheet_fast_switchover_typ_s_not_MAX": 5e-06,
+    "datasheet_RON_max_25C_ohm_at_input5V_200mA": 0.07,
+    "qualification_RON_at_battery_voltage_ohm": 0.1,
+    "normal_SYS_load_limit_A": 0.9,
+    "IN2_true_min_V": 3.8,
+    "USB_at_IN1_V_contract": [
+      4.75,
+      5.25
+    ],
+    "USB_source_A_contract": 3,
+    "R_ILIM_ohm": 80000,
+    "R_ILIM_tolerance": 0.01,
+    "ILIM_nominal_formula_A": 1.4986047918266017,
+    "ILIM_table_A_at_exact80k": [
+      1,
+      1.5,
+      2
+    ],
+    "ILIM_qualification_A": [
+      0.95,
+      2.2
+    ],
+    "ILIM_note": "not_1A_cell_fault_protection; resistor_tolerance_not_covered_by_exact80k_test_point"
+  },
+  "hold_up": {
+    "gap_total_s_qualification": 5e-05,
+    "load_A_bound": 1.0,
+    "reverse_charge_C_bound": 2e-05,
+    "cap_peak_A_bound": 3.0,
+    "Ceff_min_F_qualification": 0.00075,
+    "ESR_max_ohm_qualification": 0.015,
+    "ESL_layout_drop_V_budget": 0.02,
+    "steady_floor_V": 3.6999999999999997,
+    "forward_charge_C": 5e-05,
+    "total_charge_C": 7.000000000000001e-05,
+    "drop_capacitance_V": 0.09333333333333334,
+    "drop_ESR_V": 0.045,
+    "total_drop_V": 0.15833333333333333,
+    "SYS_min_V_bound": 3.5416666666666665,
+    "margin_over_SYS3V5_V": 0.04166666666666652,
+    "minimum_Ceff_F_for_chosen_bounds": 0.0005185185185185195,
+    "maximum_gap_s_for_chosen_other_bounds": 8.124999999999982e-05,
+    "capacitor_energy_3V7_to_3V5_J": 0.0005400000000000004
+  },
+  "selected_capacitors": {
+    "part_each": "T520X337M010ATE025",
+    "quantity": 3,
+    "Cnom_total_F": 0.00099,
+    "Cmin_initial_tolerance_F": 0.0007920000000000001,
+    "Cmax_initial_tolerance_F": 0.001188,
+    "ESR_parallel_25C_ohm": 0.008333333333333333,
+    "endurance_corner_example_not_full_life_guarantee": {
+      "C_F_initial_minus20_then_endurance_minus20": 0.0006336000000000001,
+      "ESR_ohm_initial_limit_times2_parallel": 0.016666666666666666,
+      "SYS_floor_V_same_other_bounds_no_added_temperature_or_layout": 3.519520202020202,
+      "note": "does_not_meet_selected_750uF_15mOhm_contract; separate_age_temperature_qualification_required"
+    },
+    "dimensions_each_mm": [
+      7.3,
+      4.3,
+      4.3
+    ],
+    "note": "verify_correct_part_lifecycle_and_Ceff_ESR_over_temperature_age; no_MLCC_counted_in_hold_bound"
+  },
+  "priority_dividers": {
+    "top_ohm": 20000,
+    "bottom_ohm": 10000,
+    "tolerance": 0.01,
+    "worst_USB_priority_margin_V": 0.05156115067945225,
+    "worst_CP2_fast_mode_margin_V": 0.1491695016611294
+  },
+  "startup": {
+    "C_SS_F": 1e-06,
+    "slew_5V_estimated_typ_V_per_s": 88,
+    "slew_V_per_s_qualification": 200,
+    "cap_inrush_A_at_Cmax_and_qualified_slew": 0.2376,
+    "PREP_load_A_contract": 0.5,
+    "startup_SYS_A_bound": 0.7376,
+    "startup_battery_A_bound_including_aux2mA": 0.7396,
+    "USB_current_A_bound_with_qualified_ILIMmax_and_charge_alloc": 2.352,
+    "note": "slew_and_ilimit_bounds_require_validation; initial_and_resettling_states_are_not_5us"
+  },
+  "recording_allocation_check": {
+    "I_3V3_A": 0.6,
+    "camera_A": 0.15,
+    "aux_A_allocation": 0.002,
+    "buck_efficiency_floor_choice": 0.85,
+    "mux_input_V": 3.8,
+    "SYS_coupled_V": 3.72221872969139,
+    "SYS_coupled_I_A": 0.7778127030861011,
+    "normal_0V9A_contract_met_in_model": true
+  },
+  "sources": {
+    "mux": "https://www.ti.com/lit/ds/symlink/tps2121.pdf",
+    "cap": "https://yageogroup.com/content/datasheet/asset/file/KEM_T2076_T52X-530"
+  },
+  "unclosed": [
+    "actual_gap_reverse_charge_and_cap_peak",
+    "Ceff_ESR_layout_temperature",
+    "buck_3V3_line_step_response",
+    "actual_revision_and_rework",
+    "pack_charger_fault_coordination",
+    "runtime_45min_with_new_voltage_eligibility",
+    "USB_standard_and_overvoltage_transient_compliance"
+  ]
+}

@@ -1,0 +1,13 @@
+﻿VDD3P3_RTC_V_example,SPI_memory_current_A_imposed,R_SPI_ohm_TYP,VDD_SPI_V_example,above_memory_2V7_in_this_example,classification
+3.1,0.01,14,2.96,True,typical_resistance_illustration_not_memory_power_guarantee
+3.1,0.02,14,2.8200000000000003,True,typical_resistance_illustration_not_memory_power_guarantee
+3.1,0.03,14,2.68,False,typical_resistance_illustration_not_memory_power_guarantee
+3.1,0.04,14,2.54,False,typical_resistance_illustration_not_memory_power_guarantee
+3.234,0.01,14,3.094,True,typical_resistance_illustration_not_memory_power_guarantee
+3.234,0.02,14,2.9539999999999997,True,typical_resistance_illustration_not_memory_power_guarantee
+3.234,0.03,14,2.814,True,typical_resistance_illustration_not_memory_power_guarantee
+3.234,0.04,14,2.674,False,typical_resistance_illustration_not_memory_power_guarantee
+3.3,0.01,14,3.1599999999999997,True,typical_resistance_illustration_not_memory_power_guarantee
+3.3,0.02,14,3.0199999999999996,True,typical_resistance_illustration_not_memory_power_guarantee
+3.3,0.03,14,2.88,True,typical_resistance_illustration_not_memory_power_guarantee
+3.3,0.04,14,2.7399999999999998,True,typical_resistance_illustration_not_memory_power_guarantee

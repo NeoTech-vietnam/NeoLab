@@ -1,0 +1,1 @@
+PASS: native/review three-sheet graphs; 14 exact named nets; TPS2121 pins/controls/3bulk; SGM6029 ball map, EN=VIN, SW-L-OUT and VOS=OUT,249kMODE,stock caps; SD ferrite split and100nF+1uF; ESP3V3/SD/VDD_SPI separate taps; NO extra3V3bulk;11retainedpart flags and per-page normalizedhashes; protectedreturn/fuse/LED/pogo.

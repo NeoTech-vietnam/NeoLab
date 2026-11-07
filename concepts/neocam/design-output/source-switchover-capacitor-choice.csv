@@ -1,0 +1,4 @@
+﻿count_330uF,nominal_uF,initial_minus20percent_uF,ESR_parallel_25C_ohm,drop_V_with_same_50us_20uC_3A_stress,SYS_floor_V_example,classification
+1,330,264.0,0.025,0.36015151515151517,3.3398484848484844,initial_capacitance_and_ESR_only_not_full_temperature_bound
+2,660,528.0,0.0125,0.19007575757575756,3.5099242424242423,initial_capacitance_and_ESR_only_not_full_temperature_bound
+3,990,792.0000000000001,0.008333333333333333,0.13338383838383838,3.566616161616161,initial_capacitance_and_ESR_only_not_full_temperature_bound

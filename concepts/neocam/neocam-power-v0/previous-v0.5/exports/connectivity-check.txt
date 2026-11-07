@@ -1,0 +1,1 @@
+PASS: native and review two-sheet graphs; 12 exact named nets; TPS2121 all12pins, bothOUTpins, PR1/CP2 dividers, ILIM/SS, STtestpoint, 3polarizedbulkcapacitors; removedQM1/R6/D2 absent; retainedR9 flags; sourcehashes; protectedreturn/fuse/LED/pogo.

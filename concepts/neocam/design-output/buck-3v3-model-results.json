@@ -1,0 +1,17 @@
+{
+  "classification": "imposed_charge_RC_model_not_buck_line_transient_or_hardware_acceptance",
+  "header": "Title: * NeoCam v0.6 OUTPUT CHARGE ENVELOPE,NOT an SGM6029 controller model.\nDate: Fri Nov  6 11:09:25 2026\nPlotname: Transient Analysis\nFlags: real\nAbscissa:     0.000000000000000e+00     5.000000000000000e-05                     \nNo. Variables: 5\nNo. Points: 25144                \nCommand: QSPICE64, Build Oct 22 2026 10:48:27\n.param temp=27\nVariables:\n\t0\tTime\ttime\n\t1\tV(rail_lo)\tvoltage\n\t2\tV(rail_hi)\tvoltage\n\t3\tV(cap_lo)\tvoltage\n\t4\tV(cap_hi)\tvoltage\n",
+  "rail_low_min_V_including_modeled_ESR": 3.1928422705150896,
+  "rail_high_max_V_including_modeled_ESR": 3.423926183587827,
+  "load_low_min_V_after_branch30_ripple20_ring20mV_allowances": 3.12284227051509,
+  "load_high_max_V_after_ripple20_ring20mV_allowances": 3.463926183587827,
+  "not_modeled": [
+    "actual VIN transition",
+    "SGM6029 control loop or delays",
+    "inductor and duty response",
+    "actual ferrite/local decoupling",
+    "VDD_SPI",
+    "ESP32,SD,recording",
+    "loaded DC voltage proof"
+  ]
+}

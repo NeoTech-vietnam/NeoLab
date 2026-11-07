@@ -1,0 +1,1 @@
+PASS: native netlist + 9 exact full-review net checks; native schematic QM1 G1/S2/D3 and D2 K1/A2 pin maps; retained D2/R9 excluded from BOM/board; normalized source/review hashes identical after only two documented placement booleans; protected return, fuse, LED and reserved pogo checks.

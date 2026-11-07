@@ -1,0 +1,20 @@
+* NeoCam v0.5 HOLD-UP ENVELOPE, NOT a TI TPS2121 macromodel.
+* Imposed 50us blackout + 20uC reverse drain; does not predict actual switch time.
+* Starts at conservative battery steady floor; USB coasting/detection not modeled.
+* Load1A is reserve above normal<=0.9A. Qualified Ceff750uF/ESR15m.
+* Two events: post-coast USB->BAT envelope at200us; BAT->USB at1000us.
+Vbat bat 0 3.8
+Vusb usb 0 5
+VbatCtl bat_ctl 0 PWL(0 1 200u 1 200.001u 0 250u 0 250.001u 1 1m 1 1.000001m 0 3m 0)
+VusbCtl usb_ctl 0 PWL(0 0 1.05m 0 1.050001m 1 3m 1)
+Bbat 0 sys I=if(V(bat_ctl)>0.5,min(max((V(bat)-V(sys))/0.1,0),1.5),0)
+Busb 0 sys I=if(V(usb_ctl)>0.5,min(max((V(usb)-V(sys))/0.1,0),1.5),0)
+Iload sys 0 1
+* Reverse stress2A x10us=20uC. Total cap peak=load1A+reverse2A=3A.
+Ireverse sys 0 PWL(0 0 200u 0 200.001u 2 210u 2 210.001u 0 1m 0 1.000001m 2 1.01m 2 1.010001m 0 3m 0)
+Resr sys cstore 0.015
+Cstore cstore 0 750u
+.nodeset V(sys)=3.7 V(cstore)=3.7
+.tran 0 3m 0 0.2u
+.save V(sys) V(cstore) V(bat) V(usb) V(bat_ctl) V(usb_ctl)
+.end

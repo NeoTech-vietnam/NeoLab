@@ -2,6 +2,10 @@
 
 Ngày ghi nhận: **2026-11-04**. Đây là hồ sơ phân tích và bài tính từ tài liệu hãng; chưa phải thiết kế nguồn hoàn chỉnh, BOM đã chốt hoặc kết quả đo NeoCam.
 
+**Tiếp nối v0.6:** [thiết kế buck 3V3](buck-3v3-design.md) kiểm tra đầu ra tại ESP/SD/VDD_SPI; giữ nguyên miền pin/mux dưới đây. Chưa chứng minh các rail đều đạt hoặc thời lượng 45 phút.
+
+**Cập nhật 2026-11-06, v0.5:** xem [hồ sơ nguồn hiện hành](power-design-review.md), [bài tính chuyển USB/pin](usb-battery-switchover-design.md) và [thẩm định pack](references/battery-pcm-selection-audit-2026-11-06.md). Đã có sơ đồ TPS2121 + ba tụ 330 µF; điều kiện chuyển nguồn đang tính yêu cầu IN2 thật ≥3,8 V dưới tải. DNK102050 là pin tham chiếu có điều kiện; phối hợp cell 1 A/ILIM/PCM/charger và thời lượng 45 phút còn mở. Phép so sánh 4,234 V ở phần 5 không đại diện toàn thuật toán sạc SGM40567 vì còn bù sụt áp; không dùng nó một mình để kết luận tương thích. Các mục bên dưới giữ lịch sử phân tích.
+
 ## 1. Bài toán và trạng thái
 
 NeoCam dự kiến dùng pin lithium một cell, **3,7 V danh định**, với XIAO ESP32-S3 Sense và firmware ESP-IDF. Mục tiêu người dùng đã chọn là quay và lưu **720p/30 FPS có âm thanh**, đồng thời xem trước hình **720p/12 FPS không tiếng** qua Wi-Fi trong **ít nhất 45 phút**. Đó là mục tiêu, chưa chứng minh board, firmware, pin hay dung lượng đã đáp ứng. Xem [bài toán quay độc lập](standalone-video-audio-problem.md).

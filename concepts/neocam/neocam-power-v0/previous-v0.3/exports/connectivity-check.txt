@@ -1,0 +1,1 @@
+PASS: 7 exact named-net checks; protected return; fuse not bypassed; LED polarity; both reserved pogo pins isolated.

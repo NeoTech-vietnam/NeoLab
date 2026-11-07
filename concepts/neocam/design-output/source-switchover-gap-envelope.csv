@@ -1,0 +1,10 @@
+﻿gap_us_scenario,Ceff_uF_qualification,forward_load_A,reverse_charge_uC_budget,cap_peak_A_budget,ESR_ohm_budget,total_drop_V_bound,SYS_floor_V_bound,meets_design_SYS_3V5,classification
+5,750.0,1.0,20.0,3.0,0.015,0.09833333333333334,3.6016666666666666,True,conditional_requirement_not_TPS2121_timing_prediction
+10,750.0,1.0,20.0,3.0,0.015,0.105,3.5949999999999998,True,conditional_requirement_not_TPS2121_timing_prediction
+20,750.0,1.0,20.0,3.0,0.015,0.11833333333333333,3.5816666666666666,True,conditional_requirement_not_TPS2121_timing_prediction
+50,750.0,1.0,20.0,3.0,0.015,0.1583333333333333,3.5416666666666665,True,conditional_requirement_not_TPS2121_timing_prediction
+75,750.0,1.0,20.0,3.0,0.015,0.19166666666666662,3.5083333333333333,True,conditional_requirement_not_TPS2121_timing_prediction
+81.25,750.0,1.0,20.0,3.0,0.015,0.19999999999999998,3.4999999999999996,True,conditional_requirement_not_TPS2121_timing_prediction
+100,750.0,1.0,20.0,3.0,0.015,0.22499999999999995,3.4749999999999996,False,conditional_requirement_not_TPS2121_timing_prediction
+200,750.0,1.0,20.0,3.0,0.015,0.3583333333333333,3.3416666666666663,False,conditional_requirement_not_TPS2121_timing_prediction
+1000,750.0,1.0,20.0,3.0,0.015,1.425,2.2749999999999995,False,conditional_requirement_not_TPS2121_timing_prediction

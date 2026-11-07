@@ -2,6 +2,8 @@
 
 Ngày ghi nhận: **2026-11-03**. Trạng thái: **yêu cầu và bài toán đang xác định; chưa có kết quả thực nghiệm cho chế độ này trong hồ sơ NeoCam**.
 
+**Cập nhật 2026-11-06:** đây là hồ sơ mục tiêu đồng thời có Wi-Fi. Chế độ ưu tiên hiện tại đã được tách thành [quay độc lập có tiếng 45 phút, radio tắt](standalone-normal-recording-behavior.md). [Hồ sơ nguồn v0.5](power-design-review.md) và [thiết kế chuyển USB/pin](usb-battery-switchover-design.md) tổng hợp mạch KiCad, tính toán và lựa chọn hiện hành; các câu “chưa có sơ đồ” bên dưới mô tả mốc 2026-11-03.
+
 ## Mục tiêu người dùng
 
 NeoCam có pin riêng, có thể hoạt động độc lập mà không cần gắn vào màn hình hoặc module Neo khác. NeoCam cần **quay và lưu video có cả hình ảnh và âm thanh**, để khi lấy video ra xem lại có thể nghe được tiếng. Người dùng cũng cần **xem hình trực tiếp trên điện thoại đồng thời khi đang ghi**; luồng xem trực tiếp này **không cần âm thanh**.
