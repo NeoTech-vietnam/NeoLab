@@ -70,3 +70,7 @@ Người dùng đã xác nhận camera **OV3660**, bo mở rộng v1.1 và micro
 Bài toán hiện đang xét là [quay video độc lập có âm thanh và hệ thống nguồn cho chế độ đó](standalone-video-audio-problem.md). Các bước chuẩn bị board dưới đây chưa phải bằng chứng rằng chức năng này đã hoạt động.
 
 Kiểm tra đúng board/camera/antenna và cáp USB dữ liệu, ghi phiên bản ESP-IDF, thiết lập target `esp32s3` và PSRAM đúng board, rồi nạp chương trình đọc thông tin camera. Dùng [component camera chính thức của Espressif](https://github.com/espressif/esp32-camera) để chụp ảnh, sau đó thêm xem hình qua Wi-Fi nội bộ; đối chiếu pin map với [tài liệu XIAO của Seeed](https://wiki.seeedstudio.com/xiao_esp32s3_camera_usage/). Đầu ra đầu tiên là ảnh thật và log chạy; không cần chờ hệ đồng hồ hoàn chỉnh.
+
+## Thiết kế và phát triển phần mềm
+
+[Kế hoạch firmware NeoCam và hướng dẫn tiếp tục trên máy khác](software-development-plan.md) tổng hợp yêu cầu đã chốt, tham chiếu GO 3, cấu trúc ApplicationLayer/RTE/BSW, interface ESP-IDF, các chặng D0–D9 và cổng nghiệm thu. Bắt đầu tại D0; firmware và hiệu năng vẫn chưa được kiểm chứng.
