@@ -1,0 +1,7 @@
+#ifndef MEDIA_BUF_CFG_H
+#define MEDIA_BUF_CFG_H
+
+#define MEDIA_BUF_SLOT_COUNT 2U
+#define MEDIA_BUF_SLOT_SIZE (256U * 1024U)
+
+#endif
