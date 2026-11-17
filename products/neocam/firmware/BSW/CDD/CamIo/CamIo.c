@@ -9,10 +9,19 @@
 static EbOs_MutexType camera_mutex;
 static Neo_CameraInfoType camera_info;
 static boolean initialized;
+static const Neo_ProfileType *active_profile;
+
+static boolean supported_size(uint16 width, uint16 height)
+{
+    return (width == 640U && height == 480U) ||
+           (width == 1280U && height == 720U) ||
+           (width == 1600U && height == 1200U) ||
+           (width == 2048U && height == 1536U);
+}
 
 Neo_StatusType CamIo_ValidateConfig(const CamIo_ConfigType *config)
 {
-    if (config == NULL_PTR || config->width != 640U || config->height != 480U ||
+    if (config == NULL_PTR || !supported_size(config->width, config->height) ||
         config->jpeg_quality > 63U || config->native_buffers == 0U ||
         config->native_buffers > 2U || config->xclk_hz == 0U ||
         config->xclk_hz > INT32_MAX || config->pin_pwdn < -1 || config->pin_reset < -1) {
@@ -63,7 +72,18 @@ Neo_StatusType CamIo_Init(void)
     if (result != NEO_OK) {
         return result;
     }
-    result = CamIo_BackendInit(&CamIo_Config, &camera_info);
+    active_profile = Neo_ProfileGet(NEO_PROFILE_SAFE);
+    if (active_profile == NULL_PTR) {
+        EbOs_MutexDelete(camera_mutex);
+        camera_mutex = NULL_PTR;
+        return NEO_E_PARAM;
+    }
+    CamIo_ConfigType config = CamIo_Config;
+    config.width = active_profile->width;
+    config.height = active_profile->height;
+    config.jpeg_quality = active_profile->jpeg_quality;
+    result = CamIo_ValidateConfig(&config);
+    if (result == NEO_OK) result = CamIo_BackendInit(&config, &camera_info);
     if (result != NEO_OK) {
         /* Keep the original initialization error. A failed cleanup remains
          * retryable through Deinit, without admitting captures/reinitializing. */
@@ -95,6 +115,7 @@ Neo_StatusType CamIo_Deinit(void)
     result = CamIo_BackendDeinit();
     if (result == NEO_OK) {
         initialized = FALSE;
+        active_profile = NULL_PTR;
         memset(&camera_info, 0, sizeof(camera_info));
     }
     EbOs_MutexUnlock(camera_mutex);
@@ -105,18 +126,56 @@ Neo_StatusType CamIo_Deinit(void)
     return result;
 }
 
-Neo_StatusType CamIo_Capture(Neo_FrameType *frame)
+Neo_StatusType CamIo_SetProfile(Neo_ProfileIdType profile)
+{
+    const Neo_ProfileType *next = Neo_ProfileGet(profile);
+    if (next == NULL_PTR) return NEO_E_PARAM;
+    CamIo_ConfigType config = CamIo_Config;
+    config.width = next->width;
+    config.height = next->height;
+    config.jpeg_quality = next->jpeg_quality;
+    Neo_StatusType result = CamIo_ValidateConfig(&config);
+    if (result != NEO_OK) return result;
+    if (camera_mutex == NULL_PTR) return NEO_E_NOT_READY;
+    result = EbOs_MutexLock(camera_mutex, 0U);
+    if (result != NEO_OK) return NEO_E_BUSY;
+    if (initialized && active_profile == next) {
+        EbOs_MutexUnlock(camera_mutex);
+        return NEO_OK;
+    }
+    /* No native framebuffer survives Capture. Copied leases do not prevent
+     * reconfiguration, in particular the photo lease during preview restore. */
+    initialized = FALSE;
+    result = CamIo_BackendDeinit();
+    if (result == NEO_OK) {
+        Neo_CameraInfoType next_info = {0};
+        result = CamIo_BackendInit(&config, &next_info);
+        if (result == NEO_OK) {
+            camera_info = next_info;
+            active_profile = next;
+            initialized = TRUE;
+        } else {
+            /* A failed cleanup remains owned by camera_mutex for retry. */
+            (void)CamIo_BackendDeinit();
+        }
+    }
+    EbOs_MutexUnlock(camera_mutex);
+    return result;
+}
+
+static Neo_StatusType capture(Neo_FrameType *frame, boolean photo)
 {
     if (frame == NULL_PTR) {
         return NEO_E_PARAM;
     }
     memset(frame, 0, sizeof(*frame));
-    if (!initialized) {
+    if (camera_mutex == NULL_PTR) {
         return NEO_E_NOT_READY;
     }
     uint8 *destination;
     Neo_BufferTokenType token;
-    Neo_StatusType result = MediaBuf_Acquire(&destination, &token);
+    Neo_StatusType result = photo ? MediaBuf_AcquirePhoto(&destination, &token)
+                                 : MediaBuf_Acquire(&destination, &token);
     if (result != NEO_OK) {
         return result;
     }
@@ -125,24 +184,36 @@ Neo_StatusType CamIo_Capture(Neo_FrameType *frame)
         (void)MediaBuf_Release(token);
         return result;
     }
+    /* Recheck after taking the operation lock in case a mode change failed. */
+    if (!initialized) {
+        EbOs_MutexUnlock(camera_mutex);
+        (void)MediaBuf_Release(token);
+        return NEO_E_NOT_READY;
+    }
     CamIo_BackendFrameType native = {0};
     uint64 before = LocalTime_GetUs();
     result = CamIo_BackendAcquire(&native);
-    uint64 duration_ms = (LocalTime_GetUs() - before) / 1000U;
+    uint64 duration_us = LocalTime_GetUs() - before;
+    uint64 duration_ms = duration_us / 1000U;
     if (result == NEO_OK) {
         if (!native.jpeg || native.data == NULL_PTR || native.length == 0U ||
             native.width == 0U || native.width > UINT16_MAX ||
             native.height == 0U || native.height > UINT16_MAX) {
             result = NEO_E_IO;
-        } else if (native.length > MEDIA_BUF_SLOT_SIZE) {
+        } else if (native.length > MediaBuf_Capacity(token)) {
             result = NEO_E_TOO_LARGE;
         } else {
+            uint64 copy_started = LocalTime_GetUs();
             memcpy(destination, native.data, native.length);
+            uint64 copy_duration = LocalTime_GetUs() - copy_started;
             frame->data = destination;
             frame->length = native.length;
             frame->width = (uint16)native.width;
             frame->height = (uint16)native.height;
             frame->capture_ms = duration_ms > UINT32_MAX ? UINT32_MAX : (uint32)duration_ms;
+            frame->acquire_us = duration_us > UINT32_MAX ? UINT32_MAX : (uint32)duration_us;
+            frame->copy_us = copy_duration > UINT32_MAX ? UINT32_MAX : (uint32)copy_duration;
+            frame->target_fps = active_profile->target_fps;
             frame->timestamp_us = native.timestamp_us;
             frame->token = token;
         }
@@ -157,6 +228,9 @@ Neo_StatusType CamIo_Capture(Neo_FrameType *frame)
     return result;
 }
 
+Neo_StatusType CamIo_Capture(Neo_FrameType *frame) { return capture(frame, FALSE); }
+Neo_StatusType CamIo_CapturePhoto(Neo_FrameType *frame) { return capture(frame, TRUE); }
+
 Neo_StatusType CamIo_Release(Neo_BufferTokenType token)
 {
     return MediaBuf_Release(token);
@@ -167,12 +241,13 @@ Neo_StatusType CamIo_GetInfo(Neo_CameraInfoType *info)
     if (info == NULL_PTR) {
         return NEO_E_PARAM;
     }
-    if (!initialized) {
+    if (camera_mutex == NULL_PTR) {
         return NEO_E_NOT_READY;
     }
     Neo_StatusType result = EbOs_MutexLock(camera_mutex, EBOS_WAIT_FOREVER);
     if (result == NEO_OK) {
-        *info = camera_info;
+        if (initialized) *info = camera_info;
+        else result = NEO_E_NOT_READY;
         EbOs_MutexUnlock(camera_mutex);
     }
     return result;

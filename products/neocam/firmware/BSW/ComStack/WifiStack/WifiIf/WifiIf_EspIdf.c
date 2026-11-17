@@ -86,6 +86,8 @@ Neo_StatusType WifiIf_Init(const WifiMgr_ConfigType *config)
     wifi.ap.max_connection = config->max_clients;
     wifi.ap.authmode = config->password[0] == '\0' ? WIFI_AUTH_OPEN : WIFI_AUTH_WPA2_PSK;
     error = esp_wifi_set_mode(WIFI_MODE_AP);
+    if (error == ESP_OK) error = esp_wifi_set_bandwidth(WIFI_IF_AP,
+        config->bandwidth_mhz == 40U ? WIFI_BW40 : WIFI_BW20);
     if (error == ESP_OK) error = esp_wifi_set_config(WIFI_IF_AP, &wifi);
     if (error != ESP_OK) goto failed;
     return NEO_OK;

@@ -10,6 +10,7 @@ typedef unsigned UBaseType_t;
 #define pdTRUE 1
 #define pdFALSE 0
 #define pdPASS 1
-#define pdMS_TO_TICKS(ms) ((TickType_t)(ms))
+extern uint32_t fake_http_tick_ms;
+#define pdMS_TO_TICKS(ms) ((TickType_t)((ms) / fake_http_tick_ms))
 
 #endif

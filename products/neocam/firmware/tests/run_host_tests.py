@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Compile real portable modules against small backend fakes; no external deps."""
+"""Run portable C/backend-fake regressions and Python tooling tests (Pillow needed)."""
 import argparse
 import os
 from pathlib import Path
 import re
 import subprocess
+import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 BUILD = ROOT / "tests/.build"
@@ -13,16 +14,20 @@ INCLUDES = [
     "BSW/Infrastruc/CUCEL/Platform", "BSW/Infrastruc/CUCEL/Standard",
     "BSW/Infrastruc/CUCEL/MemMap", "BSW/Infrastruc/BootCtrl",
     "BSW/Infrastruc/BswLib/MediaBuf", "BSW/CDD/CamIo",
+    "BSW/CDD/CamPipe",
     "BSW/SysSrv/EbOs", "BSW/SysSrv/LocalTime",
     "BSW/ComStack/WifiStack/WifiMgr", "BSW/ComStack/WifiStack/WifiIf",
     "BSW/ComStack/WifiStack/HttpSrv", "Rte", "ApplicationLayer/ASW/CamHmi",
     "ApplicationLayer/ASW/CamDiag", "ApplicationLayer/DE/CamDev",
+    "ApplicationLayer/ASV/CamSupv",
 ]
 CASES = {
     "boot_ctrl": ["BSW/Infrastruc/BootCtrl/BootCtrl.c"],
     "nvs": ["BSW/Infrastruc/BootCtrl/BootCtrl_EspIdf.c"],
     "camera_buffers": ["BSW/CDD/CamIo/CamIo.c", "BSW/CDD/CamIo/CamIo_Cfg.c",
-                       "BSW/Infrastruc/BswLib/MediaBuf/MediaBuf.c"],
+                       "BSW/Infrastruc/BswLib/MediaBuf/MediaBuf.c", "STConf/CONFIG/CameraProfiles/Neo_Profiles.c"],
+    "cam_pipe": ["BSW/CDD/CamPipe/CamPipe.c", "BSW/Infrastruc/BswLib/MediaBuf/MediaBuf.c",
+                 "STConf/CONFIG/CameraProfiles/Neo_Profiles.c"],
     "wifi_config": ["BSW/ComStack/WifiStack/WifiMgr/WifiMgr_Config.c",
                     "BSW/ComStack/WifiStack/WifiMgr/WifiMgr_Cfg.c"],
     "wifi_manager": ["BSW/ComStack/WifiStack/WifiMgr/" + name for name in
@@ -30,7 +35,8 @@ CASES = {
     "http_srv": ["BSW/ComStack/WifiStack/HttpSrv/" + name for name in
                  ("HttpSrv.c", "HttpSrv_Cfg.c", "HttpSrv_EspIdf.c")],
     "application": ["Rte/Rte.c", "ApplicationLayer/ASW/CamHmi/CamHmi.c",
-                    "ApplicationLayer/ASW/CamDiag/CamDiag.c", "ApplicationLayer/DE/CamDev/CamDev.c"],
+                    "ApplicationLayer/ASW/CamDiag/CamDiag.c", "ApplicationLayer/DE/CamDev/CamDev.c",
+                    "ApplicationLayer/ASV/CamSupv/CamSupv.c", "STConf/CONFIG/CameraProfiles/Neo_Profiles.c"],
 }
 
 
@@ -95,6 +101,9 @@ def main():
         subprocess.run(command, check=True)
         subprocess.run([str(binary)], check=True)
         print(f"PASS {name}", flush=True)
+    for name in ("performance", "benchmark_camera"):
+        subprocess.run([sys.executable, str(ROOT / f"tests/test_{name}.py")], check=True)
+        print(f"PASS {name} tooling", flush=True)
 
 
 if __name__ == "__main__":

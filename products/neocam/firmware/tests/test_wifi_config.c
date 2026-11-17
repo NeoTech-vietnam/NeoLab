@@ -7,6 +7,17 @@ int main(void)
 {
     WifiMgr_ConfigType config = WifiMgr_Config;
     assert(WifiMgr_ValidateConfig(&config) == NEO_OK);
+    assert(config.channel == NEOCAM_WIFI_CHANNEL);
+    assert(config.bandwidth_mhz == NEOCAM_WIFI_BANDWIDTH);
+    config.bandwidth_mhz = 40U;
+    assert(WifiMgr_ValidateConfig(&config) == NEO_OK);
+    config.bandwidth_mhz = 20U;
+    assert(WifiMgr_ValidateConfig(&config) == NEO_OK);
+    config.bandwidth_mhz = 0U;
+    assert(WifiMgr_ValidateConfig(&config) == NEO_E_PARAM);
+    config.bandwidth_mhz = 80U;
+    assert(WifiMgr_ValidateConfig(&config) == NEO_E_PARAM);
+    config.bandwidth_mhz = WifiMgr_Config.bandwidth_mhz;
     assert(WifiMgr_ValidateConfig(NULL_PTR) == NEO_E_PARAM);
     config.ssid = NULL_PTR;
     assert(WifiMgr_ValidateConfig(&config) == NEO_E_PARAM);

@@ -18,11 +18,12 @@ Neo_StatusType CamIo_BackendInit(const CamIo_ConfigType *config,
         ESP_LOGE("CamIo", "PSRAM unavailable");
         return NEO_E_MEMORY;
     }
-    /* This demo supports precisely its existing VGA profile. Reject an
-     * unimplemented C configuration rather than silently selecting another. */
-    if (config->width != 640U || config->height != 480U) {
-        return NEO_E_PARAM;
-    }
+    framesize_t framesize;
+    if (config->width == 640U && config->height == 480U) framesize = FRAMESIZE_VGA;
+    else if (config->width == 1280U && config->height == 720U) framesize = FRAMESIZE_HD;
+    else if (config->width == 1600U && config->height == 1200U) framesize = FRAMESIZE_UXGA;
+    else if (config->width == 2048U && config->height == 1536U) framesize = FRAMESIZE_QXGA;
+    else return NEO_E_PARAM;
     const camera_config_t native = {
         .pin_pwdn = config->pin_pwdn,
         .pin_reset = config->pin_reset,
@@ -44,7 +45,7 @@ Neo_StatusType CamIo_BackendInit(const CamIo_ConfigType *config,
         .ledc_timer = LEDC_TIMER_0,
         .ledc_channel = LEDC_CHANNEL_0,
         .pixel_format = PIXFORMAT_JPEG,
-        .frame_size = FRAMESIZE_VGA,
+        .frame_size = framesize,
         .jpeg_quality = config->jpeg_quality,
         .fb_count = config->native_buffers,
         .fb_location = CAMERA_FB_IN_PSRAM,
@@ -62,6 +63,10 @@ Neo_StatusType CamIo_BackendInit(const CamIo_ConfigType *config,
         /* Core owns rollback and retains the partial-init mutex if it fails. */
         ESP_LOGE("CamIo", "Camera initialized without sensor metadata");
         return NEO_E_IO;
+    }
+    if (sensor->status.framesize != framesize) {
+        ESP_LOGE("CamIo", "Sensor clamped requested camera resolution");
+        return NEO_E_PARAM;
     }
     camera_sensor_info_t *sensor_info = esp_camera_sensor_get_info(&sensor->id);
     *info = (Neo_CameraInfoType){

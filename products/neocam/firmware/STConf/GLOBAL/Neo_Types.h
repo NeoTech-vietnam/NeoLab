@@ -29,6 +29,11 @@ typedef struct {
     uint32 capture_ms;
     uint64 timestamp_us;
     Neo_BufferTokenType token;
+    uint64 sequence;
+    uint32 profile_epoch;
+    uint16 target_fps;
+    uint32 copy_us;
+    uint32 acquire_us;
 } Neo_FrameType;
 
 typedef struct {

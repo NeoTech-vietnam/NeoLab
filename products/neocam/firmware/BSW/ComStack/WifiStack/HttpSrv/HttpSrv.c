@@ -3,7 +3,8 @@
 Neo_StatusType HttpSrv_Start(const Neo_HttpPortsType *ports)
 {
     if (ports == NULL_PTR || ports->page == NULL_PTR || ports->metrics == NULL_PTR ||
-        ports->frame == NULL_PTR || ports->release == NULL_PTR ||
+        ports->frame == NULL_PTR || ports->stream_next == NULL_PTR || ports->photo == NULL_PTR ||
+        ports->profile == NULL_PTR || ports->select_profile == NULL_PTR || ports->release == NULL_PTR ||
         ports->stream_opened == NULL_PTR || ports->stream_frame == NULL_PTR) return NEO_E_PARAM;
     return HttpSrv_BackendStart(ports);
 }

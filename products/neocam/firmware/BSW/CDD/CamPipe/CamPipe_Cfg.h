@@ -1,0 +1,18 @@
+#ifndef CAM_PIPE_CFG_H
+#define CAM_PIPE_CFG_H
+
+#define CAM_PIPE_DEFAULT_PROFILE NEO_PROFILE_SAFE
+#define CAM_PIPE_OPERATION_TIMEOUT_MS 10000U
+#define CAM_PIPE_WARMUP_TIMEOUT_MS 2000U
+#define CAM_PIPE_WARMUP_FRAMES 3U
+#define CAM_PIPE_TIMING_SAMPLES 64U
+#define CAM_PIPE_WORKER_STACK_BYTES 8192U
+#define CAM_PIPE_WORKER_PRIORITY 5U
+#ifndef NEOCAM_PRODUCER_CORE
+#define NEOCAM_PRODUCER_CORE (-1)
+#endif
+
+_Static_assert(NEOCAM_PRODUCER_CORE >= -1 && NEOCAM_PRODUCER_CORE <= 1,
+               "Producer affinity must be unpinned, core 0, or core 1");
+
+#endif

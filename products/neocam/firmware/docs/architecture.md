@@ -1,7 +1,8 @@
 # NeoCam camera-demo architecture
 
-This migration implements the existing VGA/SoftAP demo using the agreed reference
-hierarchy. ESP-IDF 6.0.1, camera 2.1.7 and JPEG 1.3.1 are the pinned backends.
+This implementation extends the VGA/SoftAP demo with fixed preview profiles and
+OV3660 full-resolution photos using the agreed reference hierarchy.
+ESP-IDF 6.0.1, camera 2.1.7 and JPEG 1.3.1 are the pinned backends.
 The reference workbook taxonomy is retained; NeoCam-specific packages are additions.
 No unused Spi/I2c/NvM, recording, microphone, or SD implementation is claimed.
 
@@ -12,18 +13,21 @@ No unused Spi/I2c/NvM, recording, microphone, or SD implementation is claimed.
 | Infrastruc/CUCEL/Platform, Standard | CPU/endian/types, returns, switches and version structure | R24-11 standard-type subset; no project types added to Platform_Types.h |
 | Infrastruc/CUCEL/MemMap | Repeated section markers, invalid/nested/mismatched transition diagnostics | Selected memory-mapping pattern adapted to GCC/ESP-IDF linker sections |
 | Infrastruc/BootCtrl | Serialized start/stop of configured steps; primary and cleanup failures | Project lifecycle adapter, not EcuM or AUTOSAR OS startup |
-| Infrastruc/BswLib/MediaBuf | Owns two copied JPEG slots and persistent generation tokens | NeoCam extension; independent of NvM and MemMap |
+| Infrastruc/BswLib/MediaBuf | Owns reference-counted preview/photo slots and persistent generation tokens | NeoCam extension; independent of NvM and MemMap |
 | SysSrv/EbOs | Opaque mutexes; task delay | FreeRTOS adapter, not an AUTOSAR OS implementation |
 | SysSrv/LocalTime | Monotonic microseconds | NeoCam extension; not synchronized StbM time |
 | CDD/CamIo | Owns camera/SCCB backend and serialized native frame acquisition | CDD adaptation using esp32-camera directly |
+| CDD/CamPipe | Single acquisition producer, latest publication, mode/photo state machine, timing and resource sampling | NeoCam CDD extension; no standard AUTOSAR camera API claimed |
 | ComStack/WifiStack/WifiIf | Owns AP netif, event registration, Wi-Fi lifecycle and native diagnostics | ESP-IDF adapter |
 | ComStack/WifiStack/WifiMgr | Validates C configuration; waits for AP start/stop events | NeoCam extension; not 802.11p WEth |
-| ComStack/WifiStack/HttpSrv | Owns server, async stream request, worker and socket lease | NeoCam HTTP transport extension |
+| ComStack/WifiStack/HttpSrv | Owns server, one async stream and one async image worker, socket leases and absolute send deadlines | NeoCam HTTP transport extension |
 | ApplicationLayer/ASW/CamHmi | Dashboard, capture policy and HTTP application ports | Application component |
 | ApplicationLayer/ASW/CamDiag | Metrics and JSON schema, serialized through RTE diagnostic mutex | Application component |
 | ApplicationLayer/DE/CamDev | Camera device operations mapped to BSW through RTE | Device encapsulation |
+| ApplicationLayer/ASV/CamSupv | Validates requested profile names; photo/profile application ports and status JSON | Application service; command execution belongs to CamPipe |
 | Rte | Typed, statically wired provider/client ports | Hand-written adaptation, no ARXML/RTE generator |
 | STConf/ConfAr | Composition and startup-step tables | C source, compiled with the main composition component |
+| STConf/CONFIG/CameraProfiles | One immutable table for backend, application and diagnostics | Hand-written project configuration |
 
 Standards references: [Platform Types](https://www.autosar.org/fileadmin/standards/R24-11/CP/AUTOSAR_CP_SWS_PlatformTypes.pdf),
 [Standard Types](https://www.autosar.org/fileadmin/standards/R24-11/CP/AUTOSAR_CP_SWS_StandardTypes.pdf),
@@ -52,8 +56,10 @@ flowchart TD
     Main --> Wiring[Static application/provider ports]
     HTTP[BSW HttpSrv] -->|configured callbacks| RTE[Rte]
     RTE -->|application ports| HMI[CamHmi]
-    HMI -->|device and diagnostic ports through RTE| App[CamDev / CamDiag]
-    App -->|camera services through RTE| Camera[BSW CamIo]
+    HMI -->|device, supervisor and diagnostic ports through RTE| App[CamDev / CamSupv / CamDiag]
+    App -->|camera services through RTE| Pipe[BSW CamPipe]
+    Pipe --> Camera[BSW CamIo]
+    Pipe --> Pool
     Camera --> Pool[BSW MediaBuf]
     Camera --> Native[esp32-camera / SCCB / DVP]
     HTTP --> IDF[ESP-IDF HTTP + FreeRTOS worker]
@@ -64,10 +70,12 @@ Function-pointer connections are installed at startup. They permit calls into th
 application without a BSW-to-application header/build dependency. Three grouped
 IDF components plus main use explicit source lists; package does not mean task.
 
-The IDF HTTP server task handles page, metrics and single captures. One asynchronous
-worker handles the long-lived stream. SDK camera/Wi-Fi/network tasks remain backend
-implementation details. Camera acquisition is on demand and serialized by one
-mutex; continuous producer/fan-out is deferred to recording work.
+The IDF HTTP server task handles page, metrics and profile control. Separate bounded
+async workers handle the stream and a single capture/photo response. The CamPipe
+producer is the only native acquisition caller after startup. SDK camera/Wi-Fi/network
+tasks remain backend details. The stream requests a strictly newer sequence and
+uses the profile's target cadence with carried absolute deadlines; missed send
+opportunities are skipped. There is no catch-up queue or repeated old frame.
 
 All lifecycle calls require one serialized composition owner and quiescent users
 before destruction. Data-path calls may run concurrently. Camera acquisition uses
@@ -91,11 +99,19 @@ allocated explicitly with `MALLOC_CAP_SPIRAM | MALLOC_CAP_8BIT`; this is CPU-cop
 memory, not a promise of DMA suitability. Driver/DMA buffers stay driver-owned.
 Run `python3 STConf/TOOLCONF/check_build.py` to inspect the actual map/configuration.
 
-The two 256 KiB JPEG slots are allocated at startup and freed only with zero live
-leases. A token contains a slot and generation. Generations survive service restart
+Four 512 KiB preview slots and one dedicated 1 MiB photo slot are allocated at startup
+and freed only with zero live leases. Native JPEG buffers are separately configured
+as two 1 MiB buffers: approximately 5 MiB of payload capacity in total, before
+driver/network/allocator overhead. Actual heap headroom must be measured on the board.
+The default keeps CPU 160 MHz, PSRAM 40 MHz and PSRAM DMA disabled. Experimental
+overlays are isolated from that baseline; see [optimization.md](optimization.md).
+A token contains a slot and generation. Generations survive service restart
 and never wrap to an old token: a slot that reaches UINT32_MAX becomes unavailable.
-A lease transfers only on successful capture; the HTTP consumer releases once after
-send success or failure. The backend and SDK may still allocate dynamically.
+A lease transfers only on successful acquisition. CamPipe retains the latest
+publication; each consumer receives its own reference and releases once after send
+success or failure. Replacing the latest frame releases only the publisher reference.
+Copied JPEGs stay immutable while referenced. The backend and SDK may still allocate
+dynamically; this is not static AUTOSAR memory allocation throughout the SDK.
 
 ## Sequences
 
@@ -105,11 +121,11 @@ sequenceDiagram
     participant Boot as BootCtrl
     participant Core as NVS/pool/camera
     participant App as RTE/application
-    participant Net as Wi-Fi/HTTP
+    participant Net as Wi-Fi/producer/HTTP
     Main->>Boot: NeoCam_Start()
     Boot->>Core: Initialize in configured order
     Boot->>App: Connect ports, initialize diagnostics
-    Boot->>Net: Initialize AP, wait AP_START, start HTTP
+    Boot->>Net: Initialize AP, wait AP_START, start producer, start HTTP
     alt any step fails
         Boot->>Boot: Preserve primary error and failed stage
         Boot->>Net: Reverse cleanup of attempted/acquired steps
@@ -131,46 +147,89 @@ sequenceDiagram
     participant HTTP as HttpSrv server task
     participant Worker as Stream worker
     participant App as RTE/application ports
+    participant Pipe as CamPipe producer
     participant Cam as CamIo
     participant Native as esp32-camera
+    loop Continuous acquisition
+        Pipe->>Cam: CamIo_Capture()
+        Cam->>Cam: Reserve preview slot and camera mutex
+        Cam->>Native: esp_camera_fb_get()
+        Native-->>Cam: Native JPEG
+        Cam->>Cam: Validate dimensions/size and copy
+        Cam->>Native: esp_camera_fb_return()
+        Cam-->>Pipe: Copied frame and generation token
+        Pipe->>Pipe: Assign sequence/epoch, replace latest publication
+    end
     Browser->>HTTP: GET /stream
     HTTP->>HTTP: Reserve single stream, async begin
     HTTP->>Worker: Create worker with owned request
     HTTP-->>HTTP: Return to serve metrics/capture
-    Worker->>App: Request frame
-    App->>Cam: Capture via CamDev/RTE
-    Cam->>Cam: Reserve project slot and camera mutex
-    Cam->>Native: esp_camera_fb_get()
-    Native-->>Cam: Native JPEG
-    Cam->>Cam: Validate and copy, retain driver timestamp
-    Cam->>Native: esp_camera_fb_return()
-    Cam-->>App: Copied JPEG and generation token
+    Worker->>App: Request next frame after last sequence
+    App->>Pipe: CamPipe_AcquireLatest(after_seq, timeout, frame)
+    Pipe->>Pipe: Retain latest immutable slot
+    Pipe-->>App: Copied JPEG, sequence, epoch, timestamp, token
     App-->>Worker: Frame descriptor
     Worker->>Browser: MIME header + JPEG
     Worker->>App: Update sent-frame metric, release token
-    Note over Worker: Repeat until stop, acquisition failure or send failure
+    Note over Worker: Repeat at target cadence; retry transient switching/busy states
     Worker->>Worker: shutdown socket while async lease protects it
     Worker->>HTTP: async handler complete exactly once
     Worker->>Worker: Acknowledge quiescence, self-delete
 ```
 
-Capture uses the same camera service and lease rules, on the normal HTTP task.
-Its acquisition wait and network response can briefly delay other synchronous
-requests, but streaming no longer holds that task indefinitely.
-Additional streams return 503. Capture pool pressure returns 503; a stream yields
-and retries. Oversized/invalid frames are returned to the native driver and fail.
+Capture retains the latest preview using the same lease rules in the image worker.
+Additional streams or image requests return 503. Capture pool pressure returns 503;
+a stream yields and retries. Oversized/invalid frames are returned to the native driver and fail.
 Send failures release copied slots and do not increment camera-failure metrics.
 
+```mermaid
+sequenceDiagram
+    participant Browser
+    participant Image as HttpSrv image worker
+    participant Sup as CamSupv / RTE
+    participant Pipe as CamPipe producer
+    participant Cam as CamIo / esp32-camera
+    Browser->>Image: GET /photo
+    Image->>Sup: Photo application callback
+    Sup->>Pipe: CamPipe_Photo(frame)
+    Pipe->>Pipe: Drop latest publication, drain preview consumer references
+    Pipe->>Cam: Set PHOTO profile, discard settling frames
+    Pipe->>Cam: Capture into dedicated photo slot
+    Pipe->>Cam: Restore previous preview profile, discard settling frames
+    Pipe-->>Sup: Photo lease after successful restoration
+    Sup-->>Image: JPEG descriptor
+    Image->>Browser: Send JPEG under image deadline
+    Image->>Sup: Release photo token exactly once
+```
+
+Profile POST admits one command and returns 202 before execution. The producer drops
+its publication and waits for old preview references before reinitializing the sensor.
+Warm-up requires three fresh, correctly sized frames within its deadline; duplicate
+native timestamps are discarded without counting toward those three frames.
+Each successful profile-setting call advances the epoch before warm-up, including
+restoration. An epoch alone does not establish successful settling or qualification.
+A failed change attempts to restore the
+previous profile; restoration failure enters ERROR and remains visible in status.
+Commands are serialized with photos. A timed-out photo caller never owns a late result;
+the producer releases it and still attempts preview restoration. Native acquisition
+can block beyond a nominal operation deadline by one backend call; cleanup never
+forcibly frees memory still in use.
+
 Shutdown sets the stopping flag, rejects new work, and waits up to the configured
-10 s for the async worker. Timeout retains the entire server and dependencies;
+10 s for both async workers. Timeout retains the entire server and dependencies;
 no task/buffer is forcibly destroyed. Once the worker is quiescent, httpd_stop()
 joins the synchronous server task before ports, camera, pool or Wi-Fi are released.
-The deadline governs async quiescence, not a forced deadline on httpd_stop().
+The deadline governs async quiescence, not a forced deadline on httpd_stop(). Each
+stream frame has one absolute 500 ms send deadline; each image response has 5 s
+after its acquisition callback returns. Acquisition/restoration time is separate,
+so this is not a five-second deadline for the whole photo request.
+Nonblocking sends/select avoid resetting that deadline for every partial write.
+After HTTP quiesces, composition stops the producer before camera/pool destruction.
 
 ## Subsequent work
 
 The original targets for video/audio recording, SD, STA preview, Mesh and power
 remain unimplemented. Add their real consumers before standard driver modules;
 do not represent native SCCB or SDSPI traffic as Spi/I2C calls that do not occur.
-For recording, replace on-demand preview acquisition with one timestamped producer
-and bounded recorder/preview consumers, retaining the public ownership contract.
+Recording can add a real bounded consumer to the timestamped producer, retaining the
+public ownership contract and defining its own backpressure/drop policy.

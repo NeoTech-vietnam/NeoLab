@@ -16,6 +16,8 @@ void EbOs_Delay(uint32 ms) { now_us += (uint64)ms * 1000U; }
 Neo_StatusType WifiIf_Init(const WifiMgr_ConfigType *config)
 {
     assert(config == &WifiMgr_Config);
+    assert(config->channel == NEOCAM_WIFI_CHANNEL);
+    assert(config->bandwidth_mhz == NEOCAM_WIFI_BANDWIDTH);
     return init_result;
 }
 Neo_StatusType WifiIf_Start(void)

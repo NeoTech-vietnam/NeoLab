@@ -3,6 +3,66 @@
 Migration checks: 2026-11-15. First hardware bring-up: 2026-11-16.
 This report separates software checks from board acceptance.
 
+## Preview/photo implementation — 2026-11-17
+
+The optimization changes are implemented; they have **not been flashed or measured
+on hardware**. No ESP USB device or `/dev/ttyACM*`/`ttyUSB*` port was visible during
+the final checks. The 2026-11-16 boot evidence below belongs to the earlier image.
+It must not be treated as validation of the new producer, modes, photos or DMA.
+
+Current software gates:
+
+| Gate | Result and scope |
+|---|---|
+| Host C regression | Eight groups pass strict C11 and address/undefined sanitizers; 26 public headers compile independently |
+| Buffer ownership | Four preview slots plus a separate photo slot; reference lifetime, stale/double tokens, exhaustion, exact native returns and profile reconfiguration checked with fakes |
+| Producer/modes | Latest-frame sequencing, epoch changes, warm-up, switch rollback, photo restoration, abandoned results and stop retries checked with deterministic backend fakes |
+| HTTP | Separate bounded stream/image workers; admission, partial-write deadlines, disconnect/shutdown release and retry paths checked against SDK fakes |
+| Pacing | Quantized 10 ms RTOS clock: 301 frames at 30 FPS and 601 at 60 FPS span 10 s ±10 ms; tests also check epoch changes and slow-send recovery without bursts |
+| Build tooling | 11 Python tests: cumulative overlays/options, stale-manifest invalidation, source-change detection, SDK/config/binary provenance, validation under `python -O` |
+| Receiver tooling | 10 Python tests: fragmented/bounded multipart parsing, full JPEG decoding, firmware-reported target FPS, monotonic identities, qualification rejection cases, and a real localhost stream/photo/restoration exchange |
+| Dashboard | Generated script passes Node syntax checking; HTML/JSON capacity and application dispatch checked by host tests |
+| Native firmware | Both baseline and combined experimental candidate build with ESP-IDF 6.0.1 and pass configuration/static-map checks |
+
+The complete host command is now `python3 tests/run_host_tests.py`; Pillow is needed
+for decoder/tooling tests. The sanitizer run uses `ASAN_OPTIONS=detect_leaks=0`
+for the existing ptrace limitation. Fake resource counters still check cleanup.
+Localhost tests validate the host receiver and HTTP framing; they do not exercise
+the ESP32 radio, sensor, DMA/cache behavior or physical task scheduling.
+
+| Local artifact | Application size | Free in 1 MiB app partition | Settings |
+|---|---:|---:|---|
+| `build-esp32s3/xiao_esp32s3_camera_stream.bin` | 935232 bytes | 113344 bytes | CPU 160 MHz, PSRAM 40 MHz, PSRAM DMA off |
+| `build-perf-network-ch6-ht40/xiao_esp32s3_camera_stream.bin` | 913744 bytes | 134832 bytes | CPU 240 MHz, PSRAM 80 MHz, performance optimization, DMA, core 1, network overlay, channel 6/configured 40 MHz |
+
+SHA256 of the baseline application:
+`d931f0c78d356f8ff67fa8a0469c90cdfe3b6665792cb5cfe7e554c2f3aa4a86`.
+SHA256 of the combined candidate:
+`72c81a9e40f0fb4c74d4bba57a71dd8c6f1084efac99829362bf0d073a04470c`.
+Both retain 8 MB quad DIO flash at 80 MHz and explicit 1 MiB native JPEG buffers.
+An isolated `performance.py baseline --configure-only` run also generated and
+validated the intended baseline settings from defaults; that separate directory
+is marked `state:"configured"`, `build_completed:false` and contains no claimed binary.
+The map checker verifies selected constants in flash and pool metadata in internal
+DRAM; it does not establish runtime payload/headroom or fragmentation results.
+
+The candidate `variant.json` records source/configuration/binary hashes, SDK
+release tag and local SDK edits, `build_completed:true`, `flash_completed:false`
+and `performance_validated:false`. A failed rebuild invalidates an earlier success
+manifest before changing build artifacts. The unchanged installed SDK HEAD matches
+the v6.0.1 release tag; its pre-existing local edit remains recorded.
+
+The pre-optimization source and known-flashed image set are preserved locally in
+`.migration-baseline/pre-optimization.tar.gz` and `pre-optimization-images/`.
+The latter's SHA256 manifest matches the earlier flashed application fingerprint
+below. These ignored local archives are recovery/comparison artifacts, not files
+provided by a fresh checkout.
+
+No achievable FPS, optical image-quality improvement, PSRAM headroom, sustained DMA
+stability or photo/reconnect/soak acceptance is claimed. Every preset remains
+`performance_validated:false`. Follow [optimization.md](optimization.md) for exact
+profile/build commands, the receiver tests and remaining qualification gates.
+
 ## First hardware bring-up — 2026-11-16
 
 Flashed the connected ESP32-S3 rev v0.2 on `/dev/ttyACM0`; bootloader, partition
